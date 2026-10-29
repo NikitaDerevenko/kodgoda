@@ -362,6 +362,43 @@ p{margin:0}
 @media (max-width:980px){.how{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.cal-wrap,.mx,.cert-wrap{grid-template-columns:minmax(0,1fr)}.cal{justify-self:stretch;max-width:none}.promo{grid-template-columns:minmax(0,1fr)}.promo .act{justify-items:start}}
 @media (max-width:520px){.how{grid-template-columns:minmax(0,1fr)}.cert{padding:20px}.cal{padding:12px}.cal-grid{gap:3px}.cal-grid .d{font-size:.78rem}}
+
+/* v12: открыто / закрыто */
+.fr-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;margin-bottom:22px}
+.fr-meter{min-width:240px;display:grid;gap:8px}
+.fr-meter .bar{height:8px;border-radius:99px;background:rgba(174,176,220,.15);overflow:hidden}
+.fr-meter .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--violet));border-radius:99px}
+.fr-meter small{color:var(--mist);font-size:.82rem}
+.fr-nums{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.fr-nums span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.85rem;color:var(--mist);background:var(--deep)}
+.fr-nums b{color:var(--sky);font-family:var(--font-display);font-size:1.1rem;margin-left:4px}
+.fr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fr-sec{border:1px solid var(--line);border-radius:var(--r);background:var(--deep);padding:22px;display:grid;gap:12px;align-content:start;min-width:0}
+.fr-sec.wide{grid-column:1/-1}
+.fr-sec h3{font-size:1.3rem;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.fr-sec h3 small{font-family:var(--font-body);font-size:.78rem;color:var(--mist);font-weight:500;white-space:nowrap}
+.fr-item{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start}
+.fr-item .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.72rem;margin-top:2px}
+.fr-item.open .ic{background:rgba(134,205,252,.18);color:var(--sky)}
+.fr-item.lock .ic{background:rgba(174,176,220,.12);color:var(--mist)}
+.fr-item b{display:block;font-size:.95rem;color:var(--star);margin-bottom:2px}
+.fr-item p{font-size:.9rem;color:var(--mist);line-height:1.55}
+.fr-item.lock b{color:var(--mist)}
+.fr-item.lock p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;filter:blur(5px);user-select:none;pointer-events:none;opacity:.8}
+.fr-months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.fr-m{border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:4px;min-width:0}
+.fr-m b{font-size:.8rem;color:var(--mist);font-weight:600;text-transform:capitalize}
+.fr-m span{font-family:var(--font-display);font-size:1.5rem;color:var(--sky);line-height:1}
+.fr-m p{font-size:.78rem;color:var(--mist);line-height:1.4}
+.fr-m.lock span,.fr-m.lock p{filter:blur(5px);user-select:none}
+.fr-m.lock{background:rgba(255,255,255,.015)}
+.fr-m.open{border-color:rgba(134,205,252,.5);background:rgba(134,205,252,.06)}
+.fr-cta{margin-top:18px;border:1px solid rgba(134,205,252,.45);border-radius:var(--r);padding:22px 24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:linear-gradient(110deg,rgba(146,120,242,.22),rgba(134,205,252,.08) 60%,rgba(20,26,70,.6))}
+.fr-cta h3{font-size:1.35rem}
+.fr-cta p{color:var(--mist);font-size:.92rem;margin-top:4px}
+.fr-cta .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.locks{display:grid;gap:10px;margin-top:4px}
+@media (max-width:900px){.fr-grid{grid-template-columns:minmax(0,1fr)}.fr-months{grid-template-columns:repeat(3,minmax(0,1fr))}.fr-cta,.fr-head{grid-template-columns:minmax(0,1fr)}.fr-cta .acts{justify-content:flex-start}.fr-meter{min-width:0}}
 @media (max-width:980px){.minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.minis{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.ladder{grid-template-columns:1fr 1fr}.step{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}.step:nth-child(2n){border-right:0!important}.step:nth-child(n+5){border-bottom:0!important}}
@@ -602,8 +639,23 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         </aside>
         <div class="res-cta">
           <button class="btn btn-primary js-order cta-pulse" data-product="report" type="button">Полный разбор «Мой 2027» — 498 ₽</button>
-          <button class="btn btn-ghost js-bot" type="button">Получать прогноз дня в Telegram</button>
+          <a class="btn btn-ghost" href="#" data-to="free">Смотреть мой разбор ↓</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="free">
+    <div class="wrap">
+      <div class="fr-head">
+        <div style="display:grid;gap:12px;min-width:0"><p class="eyebrow" id="frTag">Пример · 14.03.1987</p><h2>Ваш персональный разбор</h2><p class="lead">Я посчитала ваши числа по дате рождения. Часть разбора открыта бесплатно — остальное откроется в полном разборе «Мой 2027».</p></div>
+        <div class="fr-meter"><div class="bar"><i id="frBar" style="width:20%"></i></div><small id="frCount">Открыто 0 из 0 пунктов</small></div>
+      </div>
+      <div class="fr-nums" id="frNums"></div>
+      <div class="fr-grid" id="frGrid"></div>
+      <div class="fr-cta glow">
+        <div><h3>Откройте разбор целиком</h3><p id="frCtaText">Все пункты по вашей дате, прогноз на каждый месяц 2027 года и задачи — в одном файле. Придёт в Telegram в течение суток.</p></div>
+        <div class="acts"><button class="btn btn-primary js-order cta-pulse" data-product="report" type="button">Открыть всё — 498 ₽</button><button class="btn btn-ghost js-order" data-product="club" type="button">Клуб «Мой месяц» — 393 ₽/мес</button></div>
       </div>
     </div>
   </section>
@@ -690,6 +742,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
           <div><dt>Зона роста</dt><dd id="pGrow"></dd></div>
           <div><dt>Совет</dt><dd id="pTip"></dd></div>
         </dl>
+        <div class="locks" id="pairLocks"></div>
         <p class="note">Это общий расчёт по двум числам. На парной консультации я разбираю обе матрицы целиком: этапы отношений, сильные и уязвимые места, прогноз пары на год.</p>
         <button class="btn btn-ghost js-order" data-product="pair" type="button" style="justify-self:start">Записаться на парную консультацию — 6 888 ₽</button>
       </article>
@@ -705,6 +758,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <p class="lead">Матрица строится по дате рождения: каждое число — одна из 22 энергий (арканов). Посмотрите свои ключевые точки бесплатно, а полный разбор — предназначение, деньги, отношения, родовые задачи — я подготовлю лично.</p>
         <form class="calc" id="mxForm" novalidate style="max-width:none"><div class="date-in"><select id="xd" aria-label="День"></select><select id="xm" aria-label="Месяц"></select><select id="xy" aria-label="Год"></select></div><button class="btn btn-primary" type="submit" style="justify-self:start">Построить матрицу</button><p class="note" id="mxNote"></p></form>
         <div class="mx-list" id="mxList"></div>
+        <div class="locks" id="mxLocks"></div>
         <button class="btn btn-primary js-order" data-product="matrix" type="button" style="justify-self:start">Полный разбор матрицы — 2 498 ₽</button>
       </div>
     </div>
@@ -1485,6 +1539,68 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   }
   $('mxForm').addEventListener('submit',function(e){e.preventDefault();runMx(true);});
   runMx(false);
+
+  // v12: бесплатный разбор с закрытыми пунктами
+  var FILL='Здесь подробная расшифровка именно для вашей даты: что усилить, чего избегать и в какие месяцы действовать. Она откроется в полном разборе.';
+  function lockItem(t){return '<div class="fr-item lock"><span class="ic" aria-hidden="true">🔒</span><div><b>'+t+'</b><p aria-hidden="true">'+FILL+'</p></div></div>';}
+  function openItem(t,x){return '<div class="fr-item open"><span class="ic" aria-hidden="true">✓</span><div><b>'+t+'</b><p>'+x+'</p></div></div>';}
+  var CH=[null,
+    [['Сильная сторона','Вы умеете начинать и вести за собой — люди идут за вашей уверенностью.'],['Что мешает','Привычка всё делать самой: просить о помощи для вас — испытание.']],
+    [['Сильная сторона','Вы чувствуете людей с полуслова и умеете мирить даже самых упрямых.'],['Что мешает','Долгие сомнения перед выбором: вы взвешиваете, пока шанс не уходит.']],
+    [['Сильная сторона','Лёгкость и обаяние: вы заряжаете людей и легко находите слова.'],['Что мешает','Разбрасываетесь — много идей, но не все доводите до конца.']],
+    [['Сильная сторона','Надёжность: на вас можно опереться, вы доводите начатое до конца.'],['Что мешает','Жёсткость к себе и другим, сложно принять перемены.']],
+    [['Сильная сторона','Смелость и любопытство: вы не боитесь нового и быстро учитесь.'],['Что мешает','Скука от рутины — бросаете, когда пропадает драйв.']],
+    [['Сильная сторона','Заботливость и чувство красоты: рядом с вами людям тепло.'],['Что мешает','Берёте ответственность за всех и забываете о себе.']],
+    [['Сильная сторона','Глубина и интуиция: вы видите то, что другие не замечают.'],['Что мешает','Закрытость — вам трудно впустить людей ближе.']],
+    [['Сильная сторона','Деловая хватка и выносливость: вы умеете добиваться результата.'],['Что мешает','Трудоголизм и желание всё контролировать.']],
+    [['Сильная сторона','Широта взгляда и сострадание: вы видите картину целиком.'],['Что мешает','Держитесь за прошлое и тяжело отпускаете людей и ситуации.']]];
+  var RL=[null,
+    [['Ваша роль в паре','Вы — ведущая: вам важно уважение к вашим решениям.'],['Главный урок','Учиться слышать партнёра, а не только убеждать.']],
+    [['Ваша роль в паре','Вы — хранительница гармонии, чувствуете настроение партнёра.'],['Главный урок','Говорить о своих желаниях прямо, не ждать, что догадаются.']],
+    [['Ваша роль в паре','Вы приносите в отношения лёгкость, праздник и общение.'],['Главный урок','Не уходить от серьёзных разговоров в шутку.']],
+    [['Ваша роль в паре','Вы — опора и стабильность, на вас держится быт.'],['Главный урок','Добавлять в отношения нежность, а не только заботу делом.']],
+    [['Ваша роль в паре','Вам нужна свобода и новые впечатления вдвоём.'],['Главный урок','Не путать свободу с отстранённостью — партнёру важна близость.']],
+    [['Ваша роль в паре','Вы создаёте дом и тепло, ради семьи готовы на многое.'],['Главный урок','Не растворяться в партнёре и не жертвовать собой.']],
+    [['Ваша роль в паре','Вам важна глубина и духовная близость, а не только быт.'],['Главный урок','Впускать партнёра в свой внутренний мир.']],
+    [['Ваша роль в паре','Вы строите отношения как надёжный союз с общей целью.'],['Главный урок','Не переносить в пару роль руководителя.']],
+    [['Ваша роль в паре','Вы любите глубоко и умеете прощать.'],['Главный урок','Отпустить прошлые отношения, чтобы не сравнивать.']]];
+  var MO=[null,
+    [['Как приходят деньги','Через собственные проекты и лидерство — вам лучше работать на себя или руководить.'],['Ваша ошибка','Браться за всё одной — делегирование увеличит доход.']],
+    [['Как приходят деньги','Через партнёрство, связи и общение — деньги идут через людей.'],['Ваша ошибка','Недооценивать себя и стесняться называть цену.']],
+    [['Как приходят деньги','Через творчество, слово, публичность — ваши идеи продаются.'],['Ваша ошибка','Импульсивные траты на радости дня.']],
+    [['Как приходят деньги','Через мастерство и системный труд — чем выше профессионализм, тем выше доход.'],['Ваша ошибка','Держаться за стабильную, но маленькую зарплату.']],
+    [['Как приходят деньги','Через движение, продажи, перемены — вы умеете делать деньги из воздуха.'],['Ваша ошибка','Деньги быстро уходят — нужна система накоплений.']],
+    [['Как приходят деньги','Через заботу, красоту, обучение — дело должно быть по сердцу.'],['Ваша ошибка','Работать «за спасибо» для близких.']],
+    [['Как приходят деньги','Через знания, анализ и экспертизу.'],['Ваша ошибка','Откладывать решения, пока всё не будет идеально.']],
+    [['Как приходят деньги','Через управление и крупные проекты — одно из самых денежных чисел.'],['Ваша ошибка','Думать только о результате и выгорать.']],
+    [['Как приходят деньги','Через помощь людям и большие идеи.'],['Ваша ошибка','Отдавать больше, чем можете себе позволить.']]];
+  var PM=[null,'начинайте задуманное','договаривайтесь, не спешите','общайтесь, проявляйтесь','наводите порядок','ждите перемен','семья и дом','тишина и итоги','деньги и сделки','завершайте старое'];
+  var MNN=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+  function renderFree(d,m,y,user){
+    var dayN=chainOf(digits(d)).value,dm=chainOf(digits(pad(d)+pad(m))).value,dest=destiny(d,m,y),py=personalYear(d,m).value;
+    var A=r22(d),B=r22(m),C=r22(sum(digits(y))),Dd=r22(A+B+C),E=r22(A+B+C+Dd);
+    $('frTag').textContent=(user?'Ваш расчёт · ':'Пример · ')+pad(d)+'.'+pad(m)+'.'+y;
+    $('frNums').innerHTML='<span>Число дня рождения<b>'+dayN+'</b></span><span>Число судьбы<b>'+dest+'</b></span><span>Денежное число<b>'+dm+'</b></span><span>Личный год 2027<b>'+py+'</b></span><span>Центр матрицы<b>'+E+'</b></span>';
+    var open=0,total=0;
+    function sec(title,sub,opens,locks,wide){open+=opens.length;total+=opens.length+locks.length;
+      return '<article class="fr-sec'+(wide?' wide':'')+'"><h3>'+title+'<small>'+sub+'</small></h3>'+opens.map(function(o){return openItem(o[0],o[1]);}).join('')+locks.map(lockItem).join('')+'</article>';}
+    var g='';
+    g+=sec('Характер','число '+dayN,CH[dayN],['Ваша теневая сторона','Что даёт силы, а что забирает','Как вас видят окружающие']);
+    g+=sec('Отношения','число '+dest,RL[dest],['Какой партнёр вам подходит по числам','Сценарий отношений из вашего рода','Сложные месяцы для пары в 2027']);
+    g+=sec('Деньги','число '+dm,MO[dm],['Профессии и сферы, которые приносят доход','Что блокирует ваш денежный поток','Денежные месяцы 2027 года']);
+    g+=sec('Предназначение','аркан '+E,[['Ваша центральная энергия — '+ARC[E][0],ARC[E][1][0].toUpperCase()+ARC[E][1].slice(1)+'. Это ваша суть и зона комфорта.'],['Таланты от природы — '+ARC[B][0],ARC[B][1][0].toUpperCase()+ARC[B][1].slice(1)+'. Это дано вам с рождения.']],['Предназначение до 40 лет и после','Кармическая задача','Родовые программы и таланты рода']);
+    var months='',mo=0;for(var i=0;i<12;i++){var pm=chainOf(digits(String(py)+(i+1))).value,isO=i<2;if(isO)mo++;
+      months+='<div class="fr-m '+(isO?'open':'lock')+'"><b>'+MNN[i]+'</b><span>'+(isO?pm:'?')+'</span><p>'+(isO?PM[pm]:'откроется в разборе')+'</p></div>';}
+    open+=mo;total+=12;
+    g+='<article class="fr-sec wide"><h3>2027 по месяцам<small>личный год '+py+' · '+Y[py].name.toLowerCase()+'</small></h3><div class="fr-months">'+months+'</div>'+lockItem('Главные задачи года и три шага на 2027')+'</article>';total+=1;
+    $('frGrid').innerHTML=g;
+    $('frBar').style.width=Math.round(open/total*100)+'%';$('frCount').textContent='Открыто '+open+' из '+total+' пунктов';
+  }
+  function runFree(user){var d=+$('bd').value,m=+$('bm').value,y=+$('by').value;if(!valid(d,m,y))return;renderFree(d,m,y,user);}
+  $('calcForm').addEventListener('submit',function(){setTimeout(function(){runFree(true);},0);});
+  runFree(false);
+  $('pairLocks').innerHTML=['Кто ведёт в вашей паре и почему','Кризисные годы ваших отношений','Прогноз пары на 2027 по месяцам'].map(lockItem).join('');
+  $('mxLocks').innerHTML=['Денежный канал матрицы','Канал отношений и партнёр','Кармический хвост','Родовые линии отца и матери'].map(lockItem).join('');
 
   // v11: новогодний набор — таймер
   (function(){var end=Date.UTC(2026,11,31,20,59,59);function tick(){var ms=end-Date.now();if(ms<=0){var p=$('promo');if(p)p.hidden=true;return;}var dd=Math.floor(ms/864e5),hh=Math.floor(ms%864e5/36e5),mm=Math.floor(ms%36e5/6e4);$('cdD').textContent=dd;$('cdH').textContent=hh;$('cdM').textContent=mm;}tick();setInterval(tick,30000);})();
