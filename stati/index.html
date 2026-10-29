@@ -399,6 +399,86 @@ p{margin:0}
 .fr-cta .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .locks{display:grid;gap:10px;margin-top:4px}
 @media (max-width:900px){.fr-grid{grid-template-columns:minmax(0,1fr)}.fr-months{grid-template-columns:repeat(3,minmax(0,1fr))}.fr-cta,.fr-head{grid-template-columns:minmax(0,1fr)}.fr-cta .acts{justify-content:flex-start}.fr-meter{min-width:0}}
+
+/* v13: шапка-таблетка (navbar.gallery) */
+.top{transition:background .35s,border-color .35s}
+.top .wrap{transition:max-width .4s cubic-bezier(.2,.7,.2,1),padding .4s,margin .4s,border-radius .4s,background .4s,box-shadow .4s}
+.top.mini{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.top.mini .wrap{max-width:1040px;margin-top:10px;padding:8px 10px 8px 18px;border-radius:999px;background:rgba(20,26,70,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(174,176,220,.22);box-shadow:0 18px 50px -20px rgba(0,0,0,.7)}
+.top.mini .brand small{display:none}
+.top.mini .brand b{font-size:1.05rem}
+.top.mini .nav{gap:16px;font-size:.86rem}
+.top .btn-mine{display:none}
+.top.mini .btn-mine{display:inline-flex}
+.top.mini .js-bot{display:none}
+@media (max-width:760px){.top.mini .wrap{margin-inline:10px;padding:6px 6px 6px 14px}.top .btn-mine,.top.mini .btn-mine{display:inline-flex;margin-left:auto;padding:8px 14px;font-size:.8rem}}
+
+/* v13: бенто «Что внутри» (bentogrids) */
+.bento-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin:64px 0 18px}
+.bento-head h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:14px}
+.bt{position:relative;border-radius:20px;padding:20px;display:grid;align-content:space-between;gap:12px;overflow:hidden;background:#fff;border:1px solid var(--paper-line);color:var(--paper-ink);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;transform-style:preserve-3d;min-width:0}
+.bt:hover{box-shadow:0 24px 50px -24px rgba(122,92,232,.45)}
+.bt h4{margin:0;font-family:var(--font-display);font-weight:400;font-size:1.3rem;line-height:1.15}
+.bt p{font-size:.86rem;color:var(--paper-mist)}
+.bt .ico{font-family:var(--font-display);font-size:2.4rem;line-height:1;color:var(--violet-strong)}
+.bt.dark{background:radial-gradient(120% 120% at 100% 0,rgba(134,205,252,.3),transparent 55%),radial-gradient(120% 120% at 0 100%,rgba(146,120,242,.45),transparent 60%),#141a46;color:var(--star);border-color:transparent}
+.bt.dark p{color:var(--mist)}
+.bt.dark .ico{color:var(--sky)}
+.bt.big{grid-column:span 2;grid-row:span 2}
+.bt.wide{grid-column:span 2}
+.bars{display:flex;align-items:flex-end;gap:6px;height:130px;margin-top:6px}
+.bars i{flex:1;border-radius:6px 6px 3px 3px;background:linear-gradient(to top,rgba(146,120,242,.35),var(--sky));position:relative;transform-origin:bottom;animation:grow 1.2s cubic-bezier(.2,.7,.2,1) both}
+.bars i::after{content:attr(data-m);position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:.6rem;color:var(--mist);font-style:normal}
+.bars i:nth-child(2){animation-delay:.05s}.bars i:nth-child(3){animation-delay:.1s}.bars i:nth-child(4){animation-delay:.15s}.bars i:nth-child(5){animation-delay:.2s}.bars i:nth-child(6){animation-delay:.25s}.bars i:nth-child(7){animation-delay:.3s}.bars i:nth-child(8){animation-delay:.35s}.bars i:nth-child(9){animation-delay:.4s}.bars i:nth-child(10){animation-delay:.45s}.bars i:nth-child(11){animation-delay:.5s}.bars i:nth-child(12){animation-delay:.55s}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.romans{display:flex;gap:8px;flex-wrap:wrap}
+.romans span{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--paper-line);font-family:var(--font-display);color:var(--violet-strong)}
+.bt .chips{display:flex;gap:6px;flex-wrap:wrap}
+.bt .chips span{font-size:.72rem;border-radius:999px;padding:4px 9px;background:rgba(122,92,232,.1);color:var(--violet-strong)}
+.bt .chips span.m{background:rgba(220,80,90,.1);color:#b23b4a}
+.bt .tg{display:flex;align-items:center;gap:10px;font-size:.86rem}
+.bt .tg b{font-family:var(--font-display);font-weight:400;font-size:2.6rem;line-height:1;color:var(--violet-strong)}
+@media (max-width:980px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.bento{grid-template-columns:minmax(0,1fr)}.bt.big,.bt.wide{grid-column:auto;grid-row:auto}}
+
+/* v13: подвал (footer.design) */
+.foot-cta{position:relative;z-index:1;padding-block:24px 0}
+header.top{position:sticky;top:0;z-index:30}
+.bt.dark .btn-ghost{color:var(--star);border-color:rgba(236,234,251,.3)}
+.bt.dark .btn-ghost:hover{color:var(--sky);border-color:var(--sky)}
+.bt .tg b{white-space:nowrap}
+.foot-cta .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.foot-cta h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.foot-cta p{color:var(--mist);margin-top:8px}
+.foot-word{font-family:var(--font-display);font-size:clamp(4.2rem,17vw,15rem);line-height:.82;letter-spacing:-.02em;text-align:center;margin:40px 0 0;background:linear-gradient(180deg,rgba(236,234,251,.95),rgba(146,120,242,.25) 70%,transparent);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;white-space:nowrap;overflow:hidden}
+@media (max-width:760px){.foot-cta .wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* v13: микроанимации (60fps) */
+.btn{transition:transform .15s,background .2s,border-color .2s,color .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.tab{transition:background .2s,color .2s,border-color .2s,transform .15s}
+.tab:active{transform:scale(.96)}
+.fr-item.lock{position:relative;cursor:pointer;border-radius:10px;transition:background .2s}
+.fr-item.lock:hover{background:rgba(134,205,252,.05)}
+.fr-item.lock::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;background:linear-gradient(100deg,transparent 30%,rgba(236,234,251,.07) 50%,transparent 70%);background-size:250% 100%;animation:sweep 3.6s ease-in-out infinite}
+@keyframes sweep{from{background-position:120% 0}to{background-position:-120% 0}}
+.fr-item.lock:hover .ic{animation:wiggle .5s}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+.fr-meter .bar i{transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.fr-sec,.mini-box,.card,.art-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .25s}
+.fr-nums b{display:inline-block}
+.fr-nums .pop b{animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.fr-grid .fr-sec{animation:rise-in .6s cubic-bezier(.2,.7,.2,1) backwards}
+.fr-grid .fr-sec:nth-child(2){animation-delay:.06s}.fr-grid .fr-sec:nth-child(3){animation-delay:.12s}.fr-grid .fr-sec:nth-child(4){animation-delay:.18s}.fr-grid .fr-sec:nth-child(5){animation-delay:.24s}
+@keyframes rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* v13: объём (motionsites) */
+.tilt{transform-style:preserve-3d;will-change:transform}
+.wheel-box{transition:transform .5s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.wheel-box .portrait-c{transform:translateZ(40px)}
+@media (prefers-reduced-motion:reduce){.fr-item.lock::after,.bars i,.fr-grid .fr-sec,.fr-nums .pop b{animation:none!important}.top .wrap,.wheel-box{transition:none}}
 @media (max-width:980px){.minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.minis{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.ladder{grid-template-columns:1fr 1fr}.step{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}.step:nth-child(2n){border-right:0!important}.step:nth-child(n+5){border-bottom:0!important}}
@@ -579,6 +659,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
       <a href="/stati/">Статьи</a>
     </nav>
     <button class="btn btn-primary js-bot" type="button">Бот в Telegram</button>
+    <a class="btn btn-primary btn-mine" href="#" data-to="free">Мой разбор</a>
   </div>
 </header>
 
@@ -769,14 +850,6 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <p class="eyebrow">Разбор «Мой 2027»</p>
         <h2 style="margin-top:14px">Пять кодов и двенадцать месяцев вашего года</h2>
         <p class="lead" style="margin-top:16px">Личный разбор по дате рождения, 12–15 страниц. Пишу его так же, как разбираю клиентов на консультации: тепло, по делу, с конкретными задачами на год.</p>
-        <ul class="codes">
-          <li><span class="k">I</span><div><b>Главная задача</b><span>что важно пройти, чтобы открылись деньги и реализация</span></div></li>
-          <li><span class="k">II</span><div><b>Ваш потенциал</b><span>в чём ваша сила и что её пока сдерживает</span></div></li>
-          <li><span class="k">III</span><div><b>Код денег</b><span>откуда приходит доход и что его перекрывает</span></div></li>
-          <li><span class="k">IV</span><div><b>Код отношений</b><span>какой сценарий повторяется и как выйти в плюс</span></div></li>
-          <li><span class="k">V</span><div><b>Код реализации</b><span>что тормозит карьеру и как превратить слово в дело</span></div></li>
-          <li><span class="k">12</span><div><b>Личные месяцы 2027</b><span>когда начинать, когда договариваться, когда отдыхать</span></div></li>
-        </ul>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
           <button class="btn btn-primary js-order" data-product="report" type="button">Заказать разбор — 498 ₽</button>
           <button class="btn btn-ghost js-order" data-product="gift" type="button">Подарить близкому — 698 ₽</button>
@@ -808,6 +881,19 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
           <div class="mrow"><b>Март · 4</b><span>Наведите порядок в финансах и делах. Хороший месяц для плана на год.</span></div>
           <div class="mrow"><b>Апрель · 5</b><span>Перемены и поездки. Гибкость принесёт больше, чем контроль.</span></div>
         </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="bento-head"><div><p class="eyebrow">Что внутри разбора «Мой 2027»</p><h3>Весь ваш год — на 12–15 страницах</h3></div><button class="btn btn-primary js-order" data-product="report" type="button">Заказать — 498 ₽</button></div>
+      <div class="bento">
+        <div class="bt big dark tilt"><div><p class="eyebrow">12 личных месяцев</p><h4 style="margin-top:8px;font-size:1.7rem">Когда начинать, когда договариваться, когда отдыхать</h4></div><div class="bars" aria-hidden="true"><i style="height:45%" data-m="я"></i><i style="height:52%" data-m="ф"></i><i style="height:60%" data-m="м"></i><i style="height:68%" data-m="а"></i><i style="height:75%" data-m="м"></i><i style="height:82%" data-m="и"></i><i style="height:90%" data-m="и"></i><i style="height:98%" data-m="а"></i><i style="height:38%" data-m="с"></i><i style="height:45%" data-m="о"></i><i style="height:52%" data-m="н"></i><i style="height:60%" data-m="д"></i></div><p>Число и подсказка на каждый месяц 2027 года — по вашей дате.</p></div>
+        <div class="bt tilt"><div class="romans" aria-hidden="true"><span>I</span><span>II</span><span>III</span><span>IV</span><span>V</span></div><div><h4>Пять кодов даты</h4><p>Главная задача, потенциал, деньги, отношения, реализация.</p></div></div>
+        <div class="bt tilt"><span class="ico" aria-hidden="true">₽</span><div><h4>Код денег</h4><div class="chips" style="margin-top:8px"><span>что открывает</span><span class="m">что блокирует</span></div></div></div>
+        <div class="bt tilt"><span class="ico" aria-hidden="true">∞</span><div><h4>Код отношений</h4><p>Какой сценарий повторяется и как выйти в плюс.</p></div></div>
+        <div class="bt tilt"><span class="ico" aria-hidden="true">✦</span><div><h4>Главная задача</h4><p>Что важно пройти, чтобы открылись деньги и реализация.</p></div></div>
+        <div class="bt wide tilt"><div class="tg"><b>24 ч</b><span>Разбор придёт в Telegram файлом в течение суток — его можно перечитывать весь год.</span></div></div>
+        <div class="bt wide dark tilt"><div><h4>Подарочная версия — 698 ₽</h4><p>Красиво оформленный файл для близкого человека: вы указываете его дату рождения.</p></div><button class="btn btn-ghost js-order" data-product="gift" type="button" style="justify-self:start">Подарить</button></div>
       </div>
     </div>
   </section>
@@ -1245,6 +1331,9 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   </div>
 </main>
 
+<section class="foot-cta">
+  <div class="foot-word" aria-hidden="true">Код года</div>
+</section>
 <footer class="site-foot">
   <div class="wrap">
     <div style="display:grid;gap:10px">
@@ -1541,7 +1630,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 
   // v12: бесплатный разбор с закрытыми пунктами
   var FILL='Здесь подробная расшифровка именно для вашей даты: что усилить, чего избегать и в какие месяцы действовать. Она откроется в полном разборе.';
-  function lockItem(t){return '<div class="fr-item lock"><span class="ic" aria-hidden="true">🔒</span><div><b>'+t+'</b><p aria-hidden="true">'+FILL+'</p></div></div>';}
+  function lockItem(t){return '<div class="fr-item lock" role="button" tabindex="0" title="Откроется в полном разборе"><span class="ic" aria-hidden="true">🔒</span><div><b>'+t+'</b><p aria-hidden="true">'+FILL+'</p></div></div>';}
   function openItem(t,x){return '<div class="fr-item open"><span class="ic" aria-hidden="true">✓</span><div><b>'+t+'</b><p>'+x+'</p></div></div>';}
   var CH=[null,
     [['Сильная сторона','Вы умеете начинать и вести за собой — люди идут за вашей уверенностью.'],['Что мешает','Привычка всё делать самой: просить о помощи для вас — испытание.']],
@@ -1593,7 +1682,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     open+=mo;total+=12;
     g+='<article class="fr-sec wide"><h3>2027 по месяцам<small>личный год '+py+' · '+Y[py].name.toLowerCase()+'</small></h3><div class="fr-months">'+months+'</div>'+lockItem('Главные задачи года и три шага на 2027')+'</article>';total+=1;
     $('frGrid').innerHTML=g;
-    $('frBar').style.width=Math.round(open/total*100)+'%';$('frCount').textContent='Открыто '+open+' из '+total+' пунктов';
+    var fb=$('frBar');fb.style.width='0%';void fb.offsetWidth;fb.style.width=Math.round(open/total*100)+'%';var fn=$('frNums');fn.classList.remove('pop');void fn.offsetWidth;fn.classList.add('pop');$('frCount').textContent='Открыто '+open+' из '+total+' пунктов';
   }
   function runFree(user){var d=+$('bd').value,m=+$('bm').value,y=+$('by').value;if(!valid(d,m,y))return;renderFree(d,m,y,user);}
   $('calcForm').addEventListener('submit',function(){setTimeout(function(){runFree(true);},0);});
@@ -1609,6 +1698,19 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   document.querySelectorAll('[data-c]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.c,c=CERT[k];
     document.querySelectorAll('[data-c]').forEach(function(x){var on=x===b;x.setAttribute('aria-checked',on?'true':'false');x.setAttribute('aria-selected',on?'true':'false');});
     $('certName').textContent=c[0];$('certPrice').textContent=c[1];var cb=$('certBtn');cb.dataset.product=k;cb.textContent='Подарить — '+c[1];});});
+
+
+  // v13: шапка-таблетка
+  (function(){var top=document.querySelector('.top');function onS(){top.classList.toggle('mini',window.scrollY>80);}window.addEventListener('scroll',onS,{passive:true});onS();})();
+  // v13: закрытые пункты кликабельны — ведут к заказу полного разбора
+  document.addEventListener('click',function(e){var l=e.target.closest('.fr-item.lock');if(!l)return;var inMx=l.closest('#mxLocks'),inPair=l.closest('#pairLocks');openDlg(inMx?'matrix':(inPair?'pair':'report'),l);});
+  // v13: объём — наклон за курсором
+  (function(){if(reduce||!window.matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+    function bind(el,max){el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(900px) rotateX('+(-y*max).toFixed(2)+'deg) rotateY('+(x*max).toFixed(2)+'deg)';});
+      el.addEventListener('pointerleave',function(){el.style.transform='';});}
+    var wb=document.querySelector('.wheel-box');if(wb){setTimeout(function(){wb.classList.remove('rise','d2');},1600);bind(wb,10);}
+    document.querySelectorAll('.bt.tilt,.cert,.fr-sec').forEach(function(el){bind(el,el.classList.contains('fr-sec')?3:7);});
+  })();
 
   // year subpage
   function renderYear(n){
