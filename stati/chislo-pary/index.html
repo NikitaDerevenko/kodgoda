@@ -310,6 +310,58 @@ p{margin:0}
 .art-more h2{font-size:1.4rem;margin-bottom:12px}
 @media (max-width:900px){.world,.today,.mini-box{grid-template-columns:minmax(0,1fr)}.mini-res{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}.world .big{text-align:center}}
 @media (max-width:560px){.art-cta{grid-template-columns:minmax(0,1fr)}.today-card .n{font-size:4rem}.article .abc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v11 */
+.promo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;border:1px solid rgba(134,205,252,.45);border-radius:var(--r);padding:20px 24px;margin-bottom:22px;background:linear-gradient(110deg,rgba(146,120,242,.22),rgba(134,205,252,.10) 60%,rgba(20,26,70,.6))}
+.promo h3{font-size:1.35rem}
+.promo p{color:var(--mist);font-size:.92rem;margin-top:4px}
+.promo .old{text-decoration:line-through;color:var(--mist);margin-left:8px;font-size:.9rem}
+.promo .cd{display:flex;gap:8px;margin-top:10px}
+.promo .cd span{background:rgba(13,16,48,.7);border:1px solid var(--line);border-radius:8px;padding:6px 8px;min-width:52px;text-align:center;font-variant-numeric:tabular-nums;font-weight:600}
+.promo .cd small{display:block;font-size:.66rem;color:var(--mist);font-weight:500}
+.promo .act{display:grid;gap:8px;justify-items:end}
+.promo .act b{font-family:var(--font-display);font-size:1.9rem;line-height:1}
+.cal-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.cal{max-width:440px;width:100%;justify-self:end;border:1px solid var(--line);border-radius:var(--r);padding:18px;background:var(--deep)}
+.cal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.cal-head b{font-family:var(--font-display);font-size:1.3rem;font-weight:400}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.cal-grid .wd{font-size:.7rem;color:var(--mist);text-align:center;padding-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+.cal-grid .d{aspect-ratio:1;border-radius:9px;border:1px solid transparent;display:grid;place-items:center;position:relative;font-size:.86rem;font-variant-numeric:tabular-nums;color:var(--mist)}
+.cal-grid .d i{position:absolute;right:4px;bottom:2px;font-style:normal;font-size:.62rem;opacity:.7}
+.cal-grid .d.g1{background:rgba(134,205,252,.16);border-color:rgba(134,205,252,.5);color:var(--star)}
+.cal-grid .d.g3{background:rgba(146,120,242,.22);border-color:rgba(146,120,242,.6);color:var(--star)}
+.cal-grid .d.g8{background:rgba(242,201,120,.16);border-color:rgba(242,201,120,.55);color:var(--star)}
+.cal-grid .d.today{outline:2px solid var(--star);outline-offset:1px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.8rem;color:var(--mist)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend .l1::before{background:rgba(134,205,252,.6)}.legend .l3::before{background:rgba(146,120,242,.8)}.legend .l8::before{background:rgba(242,201,120,.7)}
+.mx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.mx-svg{width:100%;max-width:460px;justify-self:center;aspect-ratio:1}
+.mx-svg text{font-family:var(--font-display);fill:var(--star)}
+.mx-list{display:grid;gap:10px;margin-top:6px}
+.mx-list div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:10px}
+.mx-list b{font-family:var(--font-display);font-size:1.7rem;color:var(--sky);line-height:1}
+.mx-list span{font-size:.9rem;color:var(--mist)}
+.mx-list span strong{color:var(--star);display:block;font-size:.95rem}
+.how{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:how}
+.how li{list-style:none;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:8px;align-content:start;background:var(--deep);counter-increment:how}
+.how li::before{content:counter(how);font-family:var(--font-display);font-size:2.2rem;color:var(--sky);line-height:1}
+.how h3{font-size:1.1rem}
+.how p{font-size:.88rem;color:var(--mist)}
+.cert-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.cert{position:relative;aspect-ratio:1.6;border-radius:18px;padding:26px 28px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;background:radial-gradient(120% 120% at 100% 0,rgba(134,205,252,.35),transparent 55%),radial-gradient(120% 120% at 0 100%,rgba(146,120,242,.45),transparent 55%),#141a46;border:1px solid rgba(236,234,251,.25);box-shadow:0 30px 80px -30px rgba(146,120,242,.7)}
+.cert::after{content:"";position:absolute;inset:10px;border:1px solid rgba(236,234,251,.18);border-radius:12px;pointer-events:none}
+.cert .brandc{display:flex;gap:10px;align-items:center;font-size:.85rem}
+.cert .brandc svg{width:30px;height:30px}
+.cert h3{font-size:clamp(1.4rem,3vw,2rem);align-self:center}
+.cert h3 small{display:block;font-family:var(--font-body);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:8px}
+.cert .foot{display:flex;justify-content:space-between;align-items:end;font-size:.8rem;color:var(--mist);gap:12px}
+.cert .foot b{font-family:var(--font-display);font-size:1.6rem;color:var(--star);font-weight:400}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+@media (max-width:980px){.how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.cal-wrap,.mx,.cert-wrap{grid-template-columns:minmax(0,1fr)}.cal{justify-self:stretch;max-width:none}.promo{grid-template-columns:minmax(0,1fr)}.promo .act{justify-items:start}}
+@media (max-width:520px){.how{grid-template-columns:minmax(0,1fr)}.cert{padding:20px}.cal{padding:12px}.cal-grid{gap:3px}.cal-grid .d{font-size:.78rem}}
 @media (max-width:980px){.minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.minis{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.ladder{grid-template-columns:1fr 1fr}.step{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}.step:nth-child(2n){border-right:0!important}.step:nth-child(n+5){border-bottom:0!important}}
@@ -464,6 +516,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   .pre{opacity:1;transform:none}
 }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Число пары: как посчитать совместимость по дате рождения", "description": "Простой расчёт числа пары по двум датам рождения и расшифровка от 1 до 9: что объединяет вас и где в отношениях зона роста.", "inLanguage": "ru", "mainEntityOfPage": "https://kodgoda.ru/stati/chislo-pary/", "author": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "publisher": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "image": "https://kodgoda.ru/og-image.jpg", "datePublished": "2026-10-29"}</script>
 </head>
 <body>
 
@@ -483,6 +536,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     <nav class="nav" aria-label="Разделы">
       <a href="#" data-to="calc">Прогноз 2027</a>
       <a href="#" data-to="compat">Совместимость</a>
+      <a href="#" data-to="matrix">Матрица</a>
       <a href="#" data-to="report">Разбор</a>
       <a href="#" data-to="mandala">Мандала</a>
       <a href="#" data-to="prices">Цены</a>
@@ -595,6 +649,23 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     </div>
   </section>
 
+  <section class="band tight" id="calendar">
+    <div class="wrap cal-wrap">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="eyebrow">Бесплатно</p>
+        <h2>Календарь удачных дней на <span id="calMonthName">ноябрь</span></h2>
+        <p class="lead">По вашей дате рождения я отметила дни, которые лучше всего подходят для начинаний, для общения и для денег. Полный календарь с подсказкой на каждый день — бесплатно в Telegram.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary js-bot" type="button">Получить календарь в Telegram</button><button class="btn btn-ghost" type="button" id="calBtn">Пересчитать по моей дате</button></div>
+        <p class="note" id="calNote"></p>
+      </div>
+      <div class="cal glow" aria-live="polite">
+        <div class="cal-head"><b id="calTitle"></b><span class="note">личный год <span id="calPY"></span></span></div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="legend"><span class="l1">начинания</span><span class="l3">общение и встречи</span><span class="l8">деньги и сделки</span></div>
+      </div>
+    </div>
+  </section>
+
   <section class="band tight" id="compat">
     <div class="wrap compat">
       <div style="display:grid;gap:18px;min-width:0">
@@ -622,6 +693,20 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <p class="note">Это общий расчёт по двум числам. На парной консультации я разбираю обе матрицы целиком: этапы отношений, сильные и уязвимые места, прогноз пары на год.</p>
         <button class="btn btn-ghost js-order" data-product="pair" type="button" style="justify-self:start">Записаться на парную консультацию — 6 888 ₽</button>
       </article>
+    </div>
+  </section>
+
+  <section class="band tight" id="matrix">
+    <div class="wrap mx">
+      <svg class="mx-svg" id="mxSvg" viewBox="0 0 400 400" role="img" aria-label="Схема матрицы судьбы"></svg>
+      <div style="display:grid;gap:16px;min-width:0">
+        <p class="eyebrow">Матрица судьбы</p>
+        <h2>Ваша матрица из 22 энергий</h2>
+        <p class="lead">Матрица строится по дате рождения: каждое число — одна из 22 энергий (арканов). Посмотрите свои ключевые точки бесплатно, а полный разбор — предназначение, деньги, отношения, родовые задачи — я подготовлю лично.</p>
+        <form class="calc" id="mxForm" novalidate style="max-width:none"><div class="date-in"><select id="xd" aria-label="День"></select><select id="xm" aria-label="Месяц"></select><select id="xy" aria-label="Год"></select></div><button class="btn btn-primary" type="submit" style="justify-self:start">Построить матрицу</button><p class="note" id="mxNote"></p></form>
+        <div class="mx-list" id="mxList"></div>
+        <button class="btn btn-primary js-order" data-product="matrix" type="button" style="justify-self:start">Полный разбор матрицы — 2 498 ₽</button>
+      </div>
     </div>
   </section>
 
@@ -737,6 +822,11 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <p class="eyebrow">Форматы и цены</p>
         <h2>Начните бесплатно, углубляйтесь по желанию</h2>
       </div>
+      <div class="promo glow" id="promo">
+        <div style="min-width:0"><p class="eyebrow">Новогодний набор · до 31 декабря</p><h3>«Мой 2027» + «Наша Мандала 2027»</h3><p>Разбор года по месяцам и место на семинаре-интенсиве — вместе выгоднее.</p>
+          <div class="cd" id="cd" aria-label="До конца акции"><span><b id="cdD">0</b><small>дней</small></span><span><b id="cdH">0</b><small>часов</small></span><span><b id="cdM">0</b><small>минут</small></span></div></div>
+        <div class="act"><div><b>3 498 ₽</b><span class="old">3 831 ₽</span></div><button class="btn btn-primary js-order" data-product="bundle" type="button">Взять набор</button></div>
+      </div>
       <div class="ladder">
         <div class="step glow"><span class="price">0 ₽</span><h3>Прогноз дня</h3><p>Каждое утро в Telegram: ваш личный день, на что опереться и чего избегать.</p><button class="btn btn-ghost js-bot" type="button">Открыть бота</button></div>
         <div class="step hl glow"><span class="pill">Сезон 2027</span><span class="price">498 ₽</span><h3>Разбор «Мой 2027»</h3><p>Пять кодов и двенадцать личных месяцев в одном файле. Подарочный вариант — 698 ₽.</p><button class="btn btn-primary js-order" data-product="report" type="button">Заказать</button></div>
@@ -751,6 +841,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <button class="tab" role="tab" type="button" aria-selected="true" data-k="money">Денежный код</button>
         <button class="tab" role="tab" type="button" aria-selected="false" data-k="soul">Три числа души</button>
         <button class="tab" role="tab" type="button" aria-selected="false" data-k="wedding">Дата свадьбы</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-k="child">Число ребёнка</button>
         <button class="tab" role="tab" type="button" aria-selected="false" data-k="business">Число бизнеса</button>
         <a class="tab" href="#" data-to="compat">Число пары ↑</a>
       </div>
@@ -768,6 +859,41 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
           <div class="acts" id="mActs"></div>
           <a class="textlink" id="mArt" href="/stati/" style="font-size:.88rem">Как это считается →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="how">
+    <div class="wrap">
+      <div class="band-head"><p class="eyebrow">Личная и парная консультация</p><h2>Как проходит консультация</h2></div>
+      <ol class="how">
+        <li><h3>Запись</h3><p>Оставляете заявку на сайте. Я пишу вам в Telegram, договариваемся о времени и уточняю ваш запрос.</p></li>
+        <li><h3>Расчёт</h3><p>До встречи я делаю полный расчёт вашей даты рождения (для пары — обеих дат) и готовлю вопросы.</p></li>
+        <li><h3>Встреча онлайн</h3><p>60 минут (для пары — 90): разбираем ваш запрос через числа и МАК-карты, отвечаю на вопросы.</p></li>
+        <li><h3>Выводы текстом</h3><p>После встречи присылаю короткие выводы и задачи на ближайшие месяцы — чтобы ничего не забылось.</p></li>
+      </ol>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px"><button class="btn btn-primary js-order" data-product="session" type="button">Личная сессия — 4 888 ₽</button><button class="btn btn-ghost js-order" data-product="pair" type="button">Парная — 6 888 ₽</button></div>
+    </div>
+  </section>
+
+  <section class="band tight" id="gift">
+    <div class="wrap cert-wrap">
+      <div class="cert" aria-hidden="true">
+        <div class="brandc"><svg><use href="#logo"/></svg><span>Светлана Деревенко · нумеролог</span></div>
+        <h3><small>Подарочный сертификат</small><span id="certName">Разбор «Мой 2027»</span></h3>
+        <div class="foot"><span>Для самого близкого человека<br>Действует 6 месяцев</span><b id="certPrice">698 ₽</b></div>
+      </div>
+      <div style="display:grid;gap:16px;min-width:0">
+        <p class="eyebrow">Подарок на Новый год</p>
+        <h2>Подарите год, в котором всё понятно</h2>
+        <p class="lead">Красивый сертификат придёт вам в Telegram сразу после оплаты — его можно распечатать или переслать. Получатель сам выбирает удобное время и присылает дату рождения.</p>
+        <div class="pills" role="radiogroup" aria-label="Что подарить">
+          <button class="tab" type="button" role="radio" aria-checked="true" aria-selected="true" data-c="gift">Разбор «Мой 2027»</button>
+          <button class="tab" type="button" role="radio" aria-checked="false" aria-selected="false" data-c="cert-mandala">«Наша Мандала»</button>
+          <button class="tab" type="button" role="radio" aria-checked="false" aria-selected="false" data-c="cert-session">Личная сессия</button>
+          <button class="tab" type="button" role="radio" aria-checked="false" aria-selected="false" data-c="cert-matrix">Матрица судьбы</button>
+        </div>
+        <button class="btn btn-primary js-order" id="certBtn" data-product="gift" type="button" style="justify-self:start">Подарить — 698 ₽</button>
       </div>
     </div>
   </section>
@@ -1027,7 +1153,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     <h3>1. Общие положения</h3>
     <p>Настоящий документ — публичная оферта самозанятой Деревенко Светланы Ивановны (ИНН: будет указан; далее — Исполнитель) о заключении договора оказания информационно-консультационных услуг. Оплата услуги означает полное согласие с условиями оферты.</p>
     <h3>2. Предмет</h3>
-    <p>Исполнитель оказывает услуги: персональный нумерологический разбор «Мой 2027», групповой онлайн-семинар «Наша Мандала», мини-разборы, подписка «Мой месяц», личные и парные онлайн-консультации. Услуги носят информационно-развлекательный характер и не являются медицинской, психологической, юридической или финансовой помощью.</p>
+    <p>Исполнитель оказывает услуги: персональный нумерологический разбор «Мой 2027», групповой онлайн-семинар «Наша Мандала», мини-разборы, разбор матрицы судьбы, подарочные сертификаты, новогодний набор, подписка «Мой месяц», личные и парные онлайн-консультации. Услуги носят информационно-развлекательный характер и не являются медицинской, психологической, юридической или финансовой помощью.</p>
     <h3>3. Стоимость и оплата</h3>
     <p>Цены указаны на сайте в рублях. Оплата — банковской картой или через СБП. Чек формируется в приложении «Мой налог» и отправляется Заказчику.</p>
     <h3>4. Порядок оказания</h3>
@@ -1072,7 +1198,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
       <a class="brand" href="/"><svg class="logo" aria-hidden="true"><use href="#logo"/></svg><span><b>Светлана Деревенко</b><small>нумеролог · МАК-терапевт</small></span></a>
       <p>Самозанятая Деревенко Светлана Ивановна. ИНН: будет указан. Чеки выдаются через «Мой налог». Сайт: kodgoda.ru</p>
     </div>
-    <div><h4>Разделы</h4><ul><li><a href="#" data-to="calc">Прогноз 2027</a></li><li><a href="#" data-to="compat">Совместимость</a></li><li><a href="#" data-to="report">Разбор «Мой 2027»</a></li><li><a href="#" data-to="mandala">«Наша Мандала»</a></li><li><a href="#" data-to="prices">Цены</a></li><li><a href="/stati/">Статьи</a></li></ul></div>
+    <div><h4>Разделы</h4><ul><li><a href="#" data-to="calc">Прогноз 2027</a></li><li><a href="#" data-to="compat">Совместимость</a></li><li><a href="#" data-to="report">Разбор «Мой 2027»</a></li><li><a href="#" data-to="mandala">«Наша Мандала»</a></li><li><a href="#" data-to="matrix">Матрица судьбы</a></li><li><a href="#" data-to="gift">Подарочный сертификат</a></li><li><a href="#" data-to="prices">Цены</a></li><li><a href="/stati/">Статьи</a></li></ul></div>
     <div><h4>Документы</h4><ul><li><a href="#oferta">Договор-оферта</a></li><li><a href="#privacy">Политика конфиденциальности</a></li></ul><h4 style="margin-top:18px">Личные годы</h4><ul id="footYears" style="display:flex;flex-wrap:wrap;gap:6px 12px"></ul></div>
     <div class="legal">
       <p class="demo-note">Демонстрационная версия: оплата и бот подключатся после запуска; тексты о годах и парах — черновые, их заменят тексты Светланы; даты потоков Мандалы — примерные.</p>
@@ -1135,7 +1261,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
    {t:'Пара-сила',x:'Вместе вы добиваетесь результата: карьера, деньги, статус растут быстрее.',p:'амбиции, ресурсы, решительность',g:'борьба за власть',tip:'делите ответственность и хвалите друг друга'},
    {t:'Пара-служение',x:'Вас объединяет большое и общее: помощь людям, вера, идеи больше вас двоих.',p:'великодушие, принятие, мудрость',g:'жертвенность и старые обиды',tip:'отпускайте прошлое и прощайте быстро'}
   ];
-  var PRODUCTS={report:{e:'Разбор',t:'Разбор «Мой 2027»',p:'498 ₽ · придёт в Telegram в течение суток',date:true},gift:{e:'Подарок',t:'Подарочный разбор «Мой 2027»',p:'698 ₽ · укажите дату рождения того, кому дарите',date:true},mandala:{e:'Запись',t:'«Наша Мандала 2027»',p:'3 333 ₽ · онлайн в Telegram, разбор в подарок',date:true},club:{e:'Подписка',t:'Клуб «Мой месяц»',p:'393 ₽ в месяц · отмена в боте в любой момент',date:true},session:{e:'Запись',t:'Личная сессия',p:'4 888 ₽ · 60 минут онлайн',date:true},'mini-money':{e:'Мини-разбор',t:'Денежный код',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-pair':{e:'Мини-разбор',t:'Число пары',p:'198 ₽ · понадобятся обе даты рождения',date:true},'mini-soul':{e:'Мини-разбор',t:'Три числа души',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-wedding':{e:'Мини-разбор',t:'Дата свадьбы',p:'198 ₽ · укажите дату регистрации',date:true},'mini-business':{e:'Мини-разбор',t:'Число бизнеса',p:'198 ₽ · укажите название компании',date:false},'wedding-pick':{e:'Подбор',t:'Подбор даты свадьбы',p:'1 498 ₽ · подберу даты с учётом дат рождения обоих',date:true},pair:{e:'Запись',t:'Парная консультация',p:'6 888 ₽ · 90 минут онлайн',date:false}};
+  var PRODUCTS={report:{e:'Разбор',t:'Разбор «Мой 2027»',p:'498 ₽ · придёт в Telegram в течение суток',date:true},gift:{e:'Подарок',t:'Подарочный разбор «Мой 2027»',p:'698 ₽ · укажите дату рождения того, кому дарите',date:true},mandala:{e:'Запись',t:'«Наша Мандала 2027»',p:'3 333 ₽ · онлайн в Telegram, разбор в подарок',date:true},club:{e:'Подписка',t:'Клуб «Мой месяц»',p:'393 ₽ в месяц · отмена в боте в любой момент',date:true},session:{e:'Запись',t:'Личная сессия',p:'4 888 ₽ · 60 минут онлайн',date:true},'mini-money':{e:'Мини-разбор',t:'Денежный код',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-pair':{e:'Мини-разбор',t:'Число пары',p:'198 ₽ · понадобятся обе даты рождения',date:true},'mini-soul':{e:'Мини-разбор',t:'Три числа души',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-wedding':{e:'Мини-разбор',t:'Дата свадьбы',p:'198 ₽ · укажите дату регистрации',date:true},'mini-child':{e:'Мини-разбор',t:'Число ребёнка',p:'198 ₽ · укажите дату рождения ребёнка',date:true},'matrix':{e:'Разбор',t:'Матрица судьбы',p:'2 498 ₽ · полный разбор придёт в Telegram в течение трёх дней',date:true},'bundle':{e:'Новогодний набор',t:'«Мой 2027» + «Наша Мандала 2027»',p:'3 498 ₽ вместо 3 831 ₽ · до 31 декабря',date:true},'cert-mandala':{e:'Сертификат',t:'Сертификат на «Нашу Мандалу 2027»',p:'3 333 ₽ · придёт в Telegram сразу после оплаты',date:false},'cert-session':{e:'Сертификат',t:'Сертификат на личную сессию',p:'4 888 ₽ · придёт в Telegram сразу после оплаты',date:false},'cert-matrix':{e:'Сертификат',t:'Сертификат на разбор матрицы судьбы',p:'2 498 ₽ · придёт в Telegram сразу после оплаты',date:false},'mini-business':{e:'Мини-разбор',t:'Число бизнеса',p:'198 ₽ · укажите название компании',date:false},'wedding-pick':{e:'Подбор',t:'Подбор даты свадьбы',p:'1 498 ₽ · подберу даты с учётом дат рождения обоих',date:true},pair:{e:'Запись',t:'Парная консультация',p:'6 888 ₽ · 90 минут онлайн',date:false}};
 
   var $=function(id){return document.getElementById(id);};
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1278,6 +1404,11 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
       x:[null,'Не всё сразу гладко, но постепенно сложатся долгие доверительные отношения.','Вы всегда сможете договориться — гармония и общие интересы.','Очень позитивное число: крепкая семья и оптимизм обоих.','Прочный союз — главное, находить то, что интересно обоим.','Сила пары в слове «вместе»; следите за эгоизмом.','Искренние чувства, верность и взаимоуважение.','Придётся учиться терпению — и прожить в ладу всю жизнь.','Прочный фундамент, в том числе материальный.','Делайте то, что откликается обоим, не ждите одобрения.'],
       lock:'Дата ещё не выбрана? Подберу удачные дни с учётом дат рождения обоих. 2027 — год союзов, лучшие даты разбирают заранее.',
       buy:[['mini-wedding','Разбор даты — 198 ₽'],['wedding-pick','Подобрать дату — 1 498 ₽']]},
+    child:{hint:'Дата рождения ребёнка: какие у него таланты и какой подход ему нужен.',name:null,date:'Дата рождения ребёнка',years:[2026,1990],ex:[null,8,6,2018],art:'tri-chisla',
+      t:[null,'Маленький лидер','Чуткий дипломат','Творец и артист','Строитель','Исследователь','Хранитель дома','Мыслитель','Организатор','Мечтатель'],
+      x:[null,'Хочет решать сам. Давайте выбор и ответственность, хвалите за инициативу.','Тонко чувствует настроение взрослых. Нужны мягкость, объяснения и поддержка.','Яркая фантазия и тяга к сцене. Творческие кружки и свобода самовыражения.','Любит порядок и понятные правила. Режим, конструкторы, предсказуемость.','Непоседа и экспериментатор. Нужны движение, поездки и разнообразие.','Заботливый и семейный. Традиции, животные, музыка, красота вокруг.','Задаёт много вопросов. Книги, время наедине, не торопите с ответами.','Деловой и целеустремлённый. Цели, карманные деньги, спорт с результатом.','Добрый и мечтательный. Искусство, помощь другим, широкий кругозор.'],
+      lock:'В полном разборе: таланты ребёнка, как с ним договариваться, какие кружки и занятия подойдут и что учесть в 2027 году.',
+      buy:[['mini-child','Разбор для родителей — 198 ₽']]},
     business:{hint:'Название компании, магазина или проекта — так, как его видят клиенты.',name:'Название',date:null,ex:['Трио'],art:'denezhnyy-kod',
       t:[null,'Лидерство','Работа с детьми','Семейное дело','Масштаб','Отдых и досуг','Красота и забота','Премиум','Финансовый магнит','Помощь людям'],
       x:[null,'Сильное число для медиа, маркетинга и всего, где нужно быть на шаг впереди.','Сферы, связанные с детьми: школы, кружки, детские пространства.','Успешен семейный бизнес и места, куда приходят всей семьёй.','Амбициозные цели и масштаб — при условии большой работы.','Всё, что помогает людям отдыхать и разгружаться.','Красота, молодость и забота: салоны, студии, клиники красоты.','Дорогие товары и «аристократические» направления.','Число денег: юридические услуги, недвижимость, финансы.','Сферы помощи: медицина, консультирование, поддержка.'],
@@ -1311,6 +1442,58 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   document.querySelectorAll('.tab[data-k]').forEach(function(t){t.addEventListener('click',function(){miniTab(t.dataset.k);});});
   $('miniForm').addEventListener('submit',function(e){e.preventDefault();miniShow(mk,true);});
   miniTab('money');
+
+
+  // v11: календарь удачных дней
+  var WD=['пн','вт','ср','чт','пт','сб','вс'],MN=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+  function runCal(user){
+    var d=+$('bd').value,m=+$('bm').value,y=+$('by').value;
+    if(!valid(d,m,y)){toast('Проверьте дату рождения в калькуляторе наверху');return;}
+    var now=new Date(),tm=now.getMonth(),ty=now.getFullYear();
+    if(now.getDate()>=25){tm++;if(tm>11){tm=0;ty++;}}
+    var py=chainOf(digits(pad(d)+pad(m)+ty)).value,days=new Date(ty,tm+1,0).getDate(),first=(new Date(ty,tm,1).getDay()+6)%7;
+    var html=WD.map(function(w){return '<span class="wd">'+w+'</span>';}).join('');
+    for(var i=0;i<first;i++)html+='<span></span>';
+    for(var k=1;k<=days;k++){var n=chainOf(digits(String(py)+pad(tm+1)+pad(k))).value;var cls=(n===1||n===3||n===8)?' g'+n:'';var isT=(ty===now.getFullYear()&&tm===now.getMonth()&&k===now.getDate())?' today':'';
+      html+='<span class="d'+cls+isT+'" title="'+k+' '+MONTHS[tm]+': день '+n+'">'+k+'<i>'+n+'</i></span>';}
+    $('calGrid').innerHTML=html;$('calTitle').textContent=MN[tm][0].toUpperCase()+MN[tm].slice(1)+' '+ty;$('calMonthName').textContent=MN[tm];$('calPY').textContent=py;
+    $('calNote').textContent=user?('Для даты рождения '+pad(d)+'.'+pad(m)+'.'+y+'.'):'Пример для даты 14.03.1987. Поменяйте дату в калькуляторе наверху.';
+  }
+  $('calBtn').addEventListener('click',function(){runCal(true);});
+  runCal(false);
+  $('calcForm').addEventListener('submit',function(){setTimeout(function(){runToday(true);runCal(true);},0);});
+
+  // v11: матрица судьбы
+  var ARC=[null,['Маг','воля, инициатива, умение начинать'],['Верховная Жрица','интуиция, тайные знания, мудрость'],['Императрица','женственность, изобилие, творчество'],['Император','структура, власть, ответственность'],['Иерофант','учитель, традиции, наставничество'],['Влюблённые','выбор, любовь, отношения'],['Колесница','движение, победа, цель'],['Справедливость','равновесие, закон, честность'],['Отшельник','мудрость, глубина, уединение'],['Колесо Фортуны','удача, перемены, поток'],['Сила','выносливость, энергия, смелость'],['Повешенный','другой взгляд, служение, творчество'],['Трансформация','обновление, перемены, отпускание'],['Умеренность','гармония, терпение, исцеление души'],['Дьявол','страсть, сила желаний, магнетизм'],['Башня','перестройка, освобождение, новый фундамент'],['Звезда','надежда, талант, вдохновение'],['Луна','воображение, интуиция, тонкий мир'],['Солнце','радость, успех, лидерство'],['Суд','род, перерождение, призвание'],['Мир','целостность, путешествия, масштаб'],['Шут','лёгкость, свобода, детская искренность']];
+  function r22(n){while(n>22)n=sum(digits(n));return n;}
+  (function(){var D=$('xd'),M=$('xm'),Yy=$('xy'),i;for(i=1;i<=31;i++)D.add(new Option(i,i));MONTHS.forEach(function(n,k){M.add(new Option(n,k+1));});for(i=2010;i>=1930;i--)Yy.add(new Option(i,i));D.value=14;M.value=3;Yy.value=1987;})();
+  function runMx(user){
+    var d=+$('xd').value,m=+$('xm').value,y=+$('xy').value;
+    if(!valid(d,m,y)){toast('В этом месяце нет '+d+'-го числа');return;}
+    var A=r22(d),B=r22(m),C=r22(sum(digits(y))),Dd=r22(A+B+C),E=r22(A+B+C+Dd),F=r22(A+B),G=r22(B+C),H=r22(C+Dd),I=r22(Dd+A);
+    var cx=200,cy=200,R=150,r=106,pts={A:[cx-R,cy],B:[cx,cy-R],C:[cx+R,cy],D:[cx,cy+R],F:[cx-r,cy-r],G:[cx+r,cy-r],H:[cx+r,cy+r],I:[cx-r,cy+r],E:[cx,cy]};
+    var vals={A:A,B:B,C:C,D:Dd,E:E,F:F,G:G,H:H,I:I};
+    function ln(p,q,o){return '<line x1="'+pts[p][0]+'" y1="'+pts[p][1]+'" x2="'+pts[q][0]+'" y2="'+pts[q][1]+'" stroke="rgba(174,176,220,'+(o||.35)+')" stroke-width="1.4"/>';}
+    var g='<defs><radialGradient id="mxg"><stop offset="0" stop-color="#86cdfc" stop-opacity=".35"/><stop offset="1" stop-color="#86cdfc" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="190" fill="url(#mxg)"/>';
+    g+=ln('A','B')+ln('B','C')+ln('C','D')+ln('D','A')+ln('F','G')+ln('G','H')+ln('H','I')+ln('I','F')+ln('A','C',.2)+ln('B','D',.2)+ln('F','H',.15)+ln('G','I',.15);
+    Object.keys(pts).forEach(function(k){var main='ABCDE'.indexOf(k)>=0,rad=k==='E'?30:(main?25:19),col=k==='E'?'#9278f2':(main?'#1b2259':'#141a46'),st=main?'#86cdfc':'rgba(174,176,220,.5)';
+      g+='<circle cx="'+pts[k][0]+'" cy="'+pts[k][1]+'" r="'+rad+'" fill="'+col+'" stroke="'+st+'" stroke-width="1.5"/><text x="'+pts[k][0]+'" y="'+(pts[k][1]+(k==='E'?8:6))+'" text-anchor="middle" font-size="'+(k==='E'?22:(main?18:14))+'">'+vals[k]+'</text>';});
+    $('mxSvg').innerHTML=g;
+    var rows=[['A','Личные качества','как вас видят и в чём ваша сила'],['B','Энергия таланта','что дано от природы'],['C','Задача по году','что важно развить в этой жизни'],['D','Точка проработки','что даётся через опыт'],['E','Центр матрицы','зона комфорта, ваша суть']];
+    $('mxList').innerHTML=rows.map(function(rw){var n=vals[rw[0]];return '<div><b>'+n+'</b><span><strong>'+rw[1]+' · '+ARC[n][0]+'</strong>'+ARC[n][1]+' — '+rw[2]+'</span></div>';}).join('');
+    $('mxNote').textContent=(user?'Матрица для ':'Пример для ')+pad(d)+'.'+pad(m)+'.'+y+'. Внешний квадрат — родовые линии, их я разбираю в полном разборе.';
+  }
+  $('mxForm').addEventListener('submit',function(e){e.preventDefault();runMx(true);});
+  runMx(false);
+
+  // v11: новогодний набор — таймер
+  (function(){var end=Date.UTC(2026,11,31,20,59,59);function tick(){var ms=end-Date.now();if(ms<=0){var p=$('promo');if(p)p.hidden=true;return;}var dd=Math.floor(ms/864e5),hh=Math.floor(ms%864e5/36e5),mm=Math.floor(ms%36e5/6e4);$('cdD').textContent=dd;$('cdH').textContent=hh;$('cdM').textContent=mm;}tick();setInterval(tick,30000);})();
+
+  // v11: сертификат
+  var CERT={gift:['Разбор «Мой 2027»','698 ₽'],'cert-mandala':['«Наша Мандала 2027»','3 333 ₽'],'cert-session':['Личная сессия','4 888 ₽'],'cert-matrix':['Разбор матрицы судьбы','2 498 ₽']};
+  document.querySelectorAll('[data-c]').forEach(function(b){b.addEventListener('click',function(){var k=b.dataset.c,c=CERT[k];
+    document.querySelectorAll('[data-c]').forEach(function(x){var on=x===b;x.setAttribute('aria-checked',on?'true':'false');x.setAttribute('aria-selected',on?'true':'false');});
+    $('certName').textContent=c[0];$('certPrice').textContent=c[1];var cb=$('certBtn');cb.dataset.product=k;cb.textContent='Подарить — '+c[1];});});
 
   // year subpage
   function renderYear(n){
