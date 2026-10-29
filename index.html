@@ -256,6 +256,59 @@ p{margin:0}
 .mini .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
 .mini .row b{font-variant-numeric:tabular-nums}
 .mini .btn{padding:8px 14px;font-size:.82rem}
+
+/* v10 */
+.world{display:grid;grid-template-columns:auto minmax(0,1fr);gap:48px;align-items:center}
+.world .big{font-family:var(--font-display);font-size:clamp(7rem,15vw,11rem);line-height:.8;color:var(--sky);text-shadow:0 0 40px rgba(134,205,252,.45)}
+.world .sum{font-size:.95rem;color:var(--mist);margin-top:10px;text-align:center;font-variant-numeric:tabular-nums}
+.world ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.world li{padding-left:22px;position:relative;color:var(--mist)}
+.world li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--sky);box-shadow:0 0 10px var(--sky)}
+.world li b{color:var(--star)}
+.world .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.today{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.today-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center}
+.today-card .n{font-family:var(--font-display);font-size:5rem;line-height:.85;color:var(--sky)}
+.today-card h3{font-size:1.4rem}
+.today-card p{color:var(--mist);font-size:.95rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{text-decoration:none;background:transparent;border:1px solid var(--line);color:var(--mist);border-radius:999px;padding:9px 16px;font:600 .86rem var(--font-body);cursor:pointer}
+.tab:hover{color:var(--star);border-color:var(--sky)}
+.tab[aria-selected="true"]{background:var(--sky);border-color:var(--sky);color:var(--night)}
+.mini-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;border:1px solid var(--line);border-radius:var(--r);padding:24px;background:rgba(255,255,255,.02)}
+.mini-box form{display:grid;gap:12px;align-content:start}
+.mini-box .hint{font-size:.88rem;color:var(--mist)}
+.mini-res{display:grid;gap:10px;align-content:start;border-left:1px solid var(--line);padding-left:24px;min-width:0}
+.mini-res .mtop{display:flex;gap:16px;align-items:baseline}
+.mini-res .n{font-family:var(--font-display);font-size:3.6rem;line-height:.85;color:var(--sky)}
+.mini-res h4{margin:0;font-size:1.15rem}
+.mini-res p{color:var(--mist);font-size:.92rem}
+.mini-res .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.mini-res .lock{font-size:.82rem;color:var(--mist);border-top:1px dashed var(--line);padding-top:10px}
+.arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin-top:8px}
+.art-card{border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start;text-decoration:none;color:inherit;background:var(--deep)}
+.art-card:hover{border-color:var(--sky)}
+.art-card h3{font-size:1.2rem}
+.art-card p{color:var(--mist);font-size:.9rem}
+.art-card span{color:var(--sky);font-size:.85rem;font-weight:600}
+.article{max-width:760px}
+.article h1{font-size:clamp(2rem,4.4vw,3.2rem);margin:6px 0 16px}
+.article h2{font-size:1.6rem;margin:36px 0 12px}
+.article p,.article li{color:var(--mist);line-height:1.65}
+.article p+p{margin-top:12px}
+.article ul{padding-left:20px;display:grid;gap:10px}
+.article .ex{background:var(--deep);border:1px solid var(--line);border-left:3px solid var(--sky);border-radius:10px;padding:14px 16px;color:var(--star);margin-top:12px;font-variant-numeric:tabular-nums}
+.article ol.nums{list-style:none;padding:0;display:grid;gap:10px}
+.article ol.nums li b{color:var(--sky);font-family:var(--font-display);font-size:1.15rem;margin-right:6px}
+.article .abc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}
+.article .abc div{border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:flex;gap:10px;align-items:center}
+.article .abc b{color:var(--sky);font-family:var(--font-display);font-size:1.2rem}
+.article .abc span{color:var(--star);letter-spacing:.08em;font-size:.9rem}
+.art-cta{margin-top:40px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.art-more{margin-top:40px}
+.art-more h2{font-size:1.4rem;margin-bottom:12px}
+@media (max-width:900px){.world,.today,.mini-box{grid-template-columns:minmax(0,1fr)}.mini-res{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}.world .big{text-align:center}}
+@media (max-width:560px){.art-cta{grid-template-columns:minmax(0,1fr)}.today-card .n{font-size:4rem}.article .abc{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:980px){.minis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.minis{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.ladder{grid-template-columns:1fr 1fr}.step{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}.step:nth-child(2n){border-right:0!important}.step:nth-child(n+5){border-bottom:0!important}}
@@ -422,7 +475,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="Светлана Деревенко, на главную">
+    <a class="brand" href="/" aria-label="Светлана Деревенко, на главную">
       <svg class="logo" aria-hidden="true"><use href="#logo"/></svg>
       <span><b>Светлана Деревенко</b><small>нумеролог · МАК-терапевт</small></span>
     </a>
@@ -432,7 +485,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
       <a href="#" data-to="report">Разбор</a>
       <a href="#" data-to="mandala">Мандала</a>
       <a href="#" data-to="prices">Цены</a>
-      <a href="#" data-to="about">Обо мне</a>
+      <a href="/stati/">Статьи</a>
     </nav>
     <button class="btn btn-primary js-bot" type="button">Бот в Telegram</button>
   </div>
@@ -500,6 +553,23 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     </div>
   </section>
 
+  <section class="band tight" id="world">
+    <div class="wrap world">
+      <div><div class="big" aria-hidden="true">2</div><p class="sum">2 + 0 + 2 + 7 = 11 → 2</p></div>
+      <div style="min-width:0">
+        <p class="eyebrow">Общее число года</p>
+        <h2>2027 — год двойки: время союзов</h2>
+        <p class="lead" style="margin-top:14px">2025 был годом девятки — годом очищения и завершений. 2026 — год единицы, старт нового девятилетнего цикла. А 2027 — год двойки: на первый план выходят отношения и умение договариваться.</p>
+        <ul>
+          <li><b>Отношения.</b> Хорошее время укрепить союз, договориться о важном, создать семью.</li>
+          <li><b>Работа.</b> Выигрывает тот, кто строит партнёрства, а не тянет всё в одиночку.</li>
+          <li><b>Решения.</b> Двойка не любит спешки: то, что начали в 2026, важно растить терпением.</li>
+        </ul>
+        <div class="acts"><a class="btn btn-ghost" href="/stati/2027-god-dvoyki/">Читать подробнее</a><a class="btn btn-primary" href="#" data-to="calc">Узнать свой личный год</a></div>
+      </div>
+    </div>
+  </section>
+
   <section class="band tight">
     <div class="wrap">
       <div class="band-head">
@@ -508,6 +578,19 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <p class="lead">После девятого года цикл начинается заново. Откройте любую ступень, чтобы прочитать, что она приносит в деньгах, отношениях и делах.</p>
       </div>
       <nav class="cycle" id="cycle" aria-label="Личные годы"></nav>
+    </div>
+  </section>
+
+  <section class="band tight" id="today">
+    <div class="wrap today">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="eyebrow">Прогноз дня</p>
+        <h2>Ваш день сегодня</h2>
+        <p class="lead">Каждый день тоже имеет своё число. Оно складывается из вашего личного года и сегодняшней даты. Посчитаю по дате рождения, которую вы указали в калькуляторе наверху.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary" type="button" id="todayBtn">Посчитать мой день</button><button class="btn btn-ghost js-bot" type="button">Получать каждое утро</button></div>
+        <p class="note" id="todayNote"></p>
+      </div>
+      <article class="card glow today-card" aria-live="polite"><span class="n" id="tN">1</span><div style="display:grid;gap:8px;min-width:0"><p class="eyebrow" id="tDate"></p><h3 id="tTitle"></h3><p id="tText"></p></div></article>
     </div>
   </section>
 
@@ -662,12 +745,28 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
         <div class="step glow"><span class="price">6 888 ₽</span><h3>Парная консультация</h3><p>90 минут для двоих. Числа каждого и число пары, сильные стороны и зоны трения, личные годы обоих и общий прогноз пары на 2027. После — выводы текстом.</p><button class="btn btn-ghost js-order" data-product="pair" type="button">Записаться</button></div>
       </div>
 
-      <div class="minis-head"><div><p class="eyebrow">Мини-разборы</p><h3>Одна тема — один ответ</h3></div><p>Короткий разбор по одному вопросу: придёт в Telegram в течение суток. Хорошо, чтобы познакомиться с нумерологией.</p></div>
-      <div class="minis">
-        <div class="mini glow"><span class="num" aria-hidden="true">₽</span><h4>Денежный код</h4><p>Через какую сферу к вам легче приходят деньги и что мешает их удерживать. Считается по имени и дню рождения.</p><div class="row"><b>198 ₽</b><button class="btn btn-ghost js-order" data-product="mini-money" type="button">Заказать</button></div></div>
-        <div class="mini glow"><span class="num" aria-hidden="true">∞</span><h4>Число пары</h4><p>Какие отношения у вас в паре, где поддержка, а где трение. Нужны две даты рождения.</p><div class="row"><b>198 ₽</b><button class="btn btn-ghost js-order" data-product="mini-pair" type="button">Заказать</button></div></div>
-        <div class="mini glow"><span class="num" aria-hidden="true">3</span><h4>Три числа души</h4><p>День, день + месяц и вся дата: три главные задачи, которые вы пришли решать.</p><div class="row"><b>198 ₽</b><button class="btn btn-ghost js-order" data-product="mini-soul" type="button">Заказать</button></div></div>
-        <div class="mini glow"><span class="num" aria-hidden="true">♡</span><h4>Дата свадьбы</h4><p>Что число дня регистрации говорит о будущем семьи. Можно проверить уже прошедшую дату или выбрать новую.</p><div class="row"><b>198 ₽</b><button class="btn btn-ghost js-order" data-product="mini-wedding" type="button">Заказать</button></div></div>
+      <div class="minis-head" id="minis"><div><p class="eyebrow">Мини-разборы</p><h3>Число — бесплатно, полный разбор — 198 ₽</h3></div><p>Посчитайте своё число прямо здесь. Полный разбор по теме придёт в Telegram в течение суток.</p></div>
+      <div class="tabs" role="tablist" aria-label="Мини-разборы">
+        <button class="tab" role="tab" type="button" aria-selected="true" data-k="money">Денежный код</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-k="soul">Три числа души</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-k="wedding">Дата свадьбы</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-k="business">Число бизнеса</button>
+        <a class="tab" href="#" data-to="compat">Число пары ↑</a>
+      </div>
+      <div class="mini-box" role="tabpanel">
+        <form id="miniForm" novalidate>
+          <p class="hint" id="miniHint"></p>
+          <div class="field" id="miniNameWrap"><label for="miniName" id="miniNameLbl">Имя</label><input id="miniName" autocomplete="given-name" placeholder="Ирина"></div>
+          <div class="field" id="miniDateWrap"><label id="miniDateLbl">Дата</label><div class="date-in"><select id="md" aria-label="День"></select><select id="mm" aria-label="Месяц"></select><select id="my" aria-label="Год"></select></div></div>
+          <button class="btn btn-primary" type="submit" style="justify-self:start">Посчитать</button>
+        </form>
+        <div class="mini-res" aria-live="polite">
+          <div class="mtop"><span class="n" id="mN">7</span><div style="display:grid;gap:4px;min-width:0"><p class="eyebrow" id="mCalc"></p><h4 id="mTitle"></h4></div></div>
+          <p id="mText"></p>
+          <p class="lock" id="mLock"></p>
+          <div class="acts" id="mActs"></div>
+          <a class="textlink" id="mArt" href="/stati/" style="font-size:.88rem">Как это считается →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -720,7 +819,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 <!-- СТРАНИЦА ЛИЧНОГО ГОДА -->
 <main class="view sub" data-view="year" hidden>
   <div class="wrap">
-    <p class="crumbs"><a href="#">Главная</a> / Личные годы / <span id="yCrumb"></span></p>
+    <p class="crumbs"><a href="/">Главная</a> / Личные годы / <span id="yCrumb"></span></p>
     <div class="year-hero"><span class="big" id="yNum">1</span><div style="display:grid;gap:12px;min-width:0"><p class="eyebrow">Личный год в 2027 году</p><h1 id="yTitle" style="font-size:clamp(2.2rem,4.6vw,3.6rem)"></h1><p class="lead" id="yLead"></p></div></div>
     <div class="yr-grid">
       <article class="card glow"><h3>Деньги и работа</h3><p id="yMoney"></p></article>
@@ -740,10 +839,188 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   </div>
 </main>
 
+<!-- СТАТЬИ -->
+<main class="view sub" data-view="stati" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / Расчёты нумеролога</p>
+    <p class="eyebrow">Статьи</p>
+    <h1 style="font-size:clamp(2.2rem,4.6vw,3.6rem);margin:6px 0 14px">Расчёты нумеролога</h1>
+    <p class="lead">Простые расчёты по дате рождения и имени, которые можно сделать самостоятельно. Посчитайте — и напишите мне, сошлось ли у вас.</p>
+    <div class="arts" style="margin-top:28px">
+      <a class="art-card glow" href="/stati/2027-god-dvoyki/"><h3>2027 — год двойки: чего ждать всем</h3><p>Общее число 2027 года — 2. Что это значит для отношений, работы и решений и почему после старта 2026 года важно не торопиться.</p><span>Читать →</span></a>
+      <a class="art-card glow" href="/stati/chislo-pary/"><h3>Число пары: как посчитать совместимость по дате рождения</h3><p>Простой расчёт числа пары по двум датам рождения и расшифровка от 1 до 9: что объединяет вас и где в отношениях зона роста.</p><span>Читать →</span></a>
+      <a class="art-card glow" href="/stati/denezhnyy-kod/"><h3>Денежный код: считаем по имени и дню рождения</h3><p>Как посчитать денежный код по имени и дню рождения и что означают числа от 1 до 9 в отношениях с деньгами.</p><span>Читать →</span></a>
+      <a class="art-card glow" href="/stati/data-svadby/"><h3>Дата свадьбы в нумерологии: что говорит день регистрации</h3><p>Как по дате регистрации брака понять тему будущей семьи: расчёт и значения чисел от 1 до 9. Проверка даты и подбор дня свадьбы.</p><span>Читать →</span></a>
+      <a class="art-card glow" href="/stati/tri-chisla/"><h3>Три главных числа даты рождения и задачи души</h3><p>Как посчитать три главных числа вашей даты рождения — день, день с месяцем и всю дату — и какие задачи они показывают.</p><span>Читать →</span></a>
+    </div>
+  </div>
+</main>
+
+<main class="view sub" data-view="stati-2027-god-dvoyki" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / <a href="/stati/">Расчёты нумеролога</a> / 2027 — год двойки: чего ждать всем</p>
+    <article class="article">
+      <p class="eyebrow">Расчёты нумеролога · Светлана Деревенко</p>
+      <h1>2027 — год двойки: чего ждать всем</h1>
+      <p class="lead">Каждый календарный год тоже имеет своё число. Складываем цифры: 2 + 0 + 2 + 7 = 11, 1 + 1 = 2. 2027 — год двойки.</p>
+
+<p>Нумерология — это не гадание, а расчёт. Всё в мире циклично, и числа помогают увидеть, какой урок приходит в тот или иной период. Общее число года задаёт фон для всех, а личный год показывает, как этот фон проживёте именно вы.</p>
+<h2>Откуда мы идём: 2025 и 2026</h2>
+<p>2025 год был годом девятки — годом очищения и завершений: уходило то, что отжило своё, и важно было отпустить, а не держать. 2026 — год единицы, старт нового девятилетнего цикла: время начинать, решаться, закладывать новое.</p>
+<h2>Что приносит двойка</h2>
+<p>Двойка — число союза, партнёрства и баланса двоих. Если единица говорит «я», то двойка говорит «мы». В 2027 году на первый план выходят отношения: в паре, в семье, с коллегами и партнёрами.</p>
+<ul>
+<li><b>Отношения.</b> Хорошее время, чтобы укрепить союз, договориться о важном, создать семью. Многие пары захотят узаконить отношения.</li>
+<li><b>Работа и деньги.</b> Выигрывает тот, кто умеет договариваться и строить партнёрства по принципу «выигрывают оба». Одиночные рывки даются тяжелее.</li>
+<li><b>Внутреннее состояние.</b> Двойка — про чувствительность и интуицию. Прислушивайтесь к себе, но не застревайте в сомнениях между двумя вариантами.</li>
+</ul>
+<h2>Чего лучше избегать</h2>
+<p>Давления и позиции «я сама знаю, как лучше». Двойка не любит спешки: то, что начали в 2026 году, в 2027-м важно не форсировать, а выращивать — терпением, диалогом, вниманием к деталям.</p>
+<h2>А какой год будет лично у вас?</h2>
+<p>Общее число одинаково для всех, а личный год у каждого свой: он считается по дню и месяцу рождения. У кого-то 2027 — год начала, у кого-то — год итогов. Узнать свой можно бесплатно в калькуляторе на главной.</p>
+
+    </article>
+    <div class="card glow art-cta"><div><h3>Хотите разбор по вашей дате?</h3><p class="muted">Посчитаю и пришлю в Telegram.</p></div><button class="btn btn-primary js-order" data-product="report" type="button">Мой 2027 по месяцам — 498 ₽</button></div>
+    <div class="art-more"><h2>Ещё расчёты</h2><div class="arts"><a class="art-card glow" href="/stati/chislo-pary/"><h3>Число пары: как посчитать совместимость по дате рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/denezhnyy-kod/"><h3>Денежный код: считаем по имени и дню рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/data-svadby/"><h3>Дата свадьбы в нумерологии: что говорит день регистрации</h3><span>Читать →</span></a></div></div>
+  </div>
+</main>
+
+<main class="view sub" data-view="stati-chislo-pary" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / <a href="/stati/">Расчёты нумеролога</a> / Число пары: как посчитать совместимость по дате рождения</p>
+    <article class="article">
+      <p class="eyebrow">Расчёты нумеролога · Светлана Деревенко</p>
+      <h1>Число пары: как посчитать совместимость по дате рождения</h1>
+      <p class="lead">Число пары показывает главную тему ваших отношений: что вас держит вместе и над чем вам вдвоём предстоит работать.</p>
+
+<h2>Как посчитать</h2>
+<p>Сложите все цифры даты рождения каждого партнёра и сведите к одной цифре. Потом сложите два получившихся числа и снова сведите к одной цифре.</p>
+<p class="ex">Пример: он родился 21.01.1980 → 2 + 1 + 0 + 1 + 1 + 9 + 8 + 0 = 22 → 2 + 2 = 4. Она родилась 22.05.1985 → 2 + 2 + 0 + 5 + 1 + 9 + 8 + 5 = 32 → 3 + 2 = 5. Число пары: 4 + 5 = 9.</p>
+<h2>Что означает число пары</h2>
+<ol class="nums">
+<li><b>1.</b> В основе — любовь и доверие. Сильные ссоры редки. Берегите это: не копите недосказанности и тайны.</li>
+<li><b>2.</b> Отношения как качели: каждый доказывает свою правоту. Споры делают пару крепче, если за ними стоит любовь.</li>
+<li><b>3.</b> В отношения часто вмешиваются «третьи» — родные, друзья, даже питомцы. Важно выстроить границы вашей пары.</li>
+<li><b>4.</b> Эмоционально вы разные, но вместе устойчивы. Учитесь понимать язык друг друга, иначе связь может ослабнуть.</li>
+<li><b>5.</b> Ровные, крепкие отношения без лишних конфликтов. Чтобы не стало скучно, добавляйте новизну и общие приключения.</li>
+<li><b>6.</b> Задача пары — гармония и равновесие, при этом каждый сохраняет свою свободу. Работайте с ревностью.</li>
+<li><b>7.</b> Яркие эмоции и разные темпераменты. Ваш плюс — терпение к недостаткам друг друга, поэтому союз бывает долгим.</li>
+<li><b>8.</b> Вас объединяет общая цель: семья, дети, дело. Важно, чтобы, кроме цели, между вами оставалось тепло.</li>
+<li><b>9.</b> Непросто вместе и невозможно порознь. Пара с глубокой связью, которую стоит беречь.</li>
+</ol>
+<p>Число пары — общий фон. Полную картину дают обе даты целиком: личные годы партнёров, этапы отношений и прогноз пары на год. Это я разбираю на парной консультации.</p>
+
+    </article>
+    <div class="card glow art-cta"><div><h3>Хотите разбор по вашей дате?</h3><p class="muted">Посчитаю и пришлю в Telegram.</p></div><button class="btn btn-primary js-order" data-product="pair" type="button">Парная консультация — 6 888 ₽</button></div>
+    <div class="art-more"><h2>Ещё расчёты</h2><div class="arts"><a class="art-card glow" href="/stati/2027-god-dvoyki/"><h3>2027 — год двойки: чего ждать всем</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/denezhnyy-kod/"><h3>Денежный код: считаем по имени и дню рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/data-svadby/"><h3>Дата свадьбы в нумерологии: что говорит день регистрации</h3><span>Читать →</span></a></div></div>
+  </div>
+</main>
+
+<main class="view sub" data-view="stati-denezhnyy-kod" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / <a href="/stati/">Расчёты нумеролога</a> / Денежный код: считаем по имени и дню рождения</p>
+    <article class="article">
+      <p class="eyebrow">Расчёты нумеролога · Светлана Деревенко</p>
+      <h1>Денежный код: считаем по имени и дню рождения</h1>
+      <p class="lead">На отношения с деньгами влияют разные числа, но основную тенденцию хорошо видно по сочетанию имени и дня рождения.</p>
+
+<h2>Как посчитать</h2>
+<p>1. Переведите буквы имени в числа по таблице и сведите сумму к одной цифре.</p>
+<div class="abc" role="table" aria-label="Таблица букв">
+<div role="row"><b>1</b><span>А И С Ъ</span></div><div role="row"><b>2</b><span>Б Й Т Ы</span></div><div role="row"><b>3</b><span>В К У Ь</span></div>
+<div role="row"><b>4</b><span>Г Л Ф Э</span></div><div role="row"><b>5</b><span>Д М Х Ю</span></div><div role="row"><b>6</b><span>Е Н Ц Я</span></div>
+<div role="row"><b>7</b><span>Ё О Ч</span></div><div role="row"><b>8</b><span>Ж П Ш</span></div><div role="row"><b>9</b><span>З Р Щ</span></div>
+</div>
+<p>2. День рождения (только число) тоже сведите к одной цифре. 3. Сложите два числа и снова сведите к одной цифре.</p>
+<p class="ex">Пример: ИРИНА = 1 + 9 + 1 + 6 + 1 = 18 → 9. День рождения 25 → 2 + 5 = 7. 9 + 7 = 16 → 1 + 6 = 7. Денежный код — 7.</p>
+<h2>Что означает денежный код</h2>
+<ol class="nums">
+<li><b>1.</b> Ничего не даётся просто так, но собственный проект или карьера могут выстрелить высоко — за счёт вашего ума и труда.</li>
+<li><b>2.</b> Деньги приходят через гармонию и доверие. Конфликт в коллективе — первый, что перекрывает поток.</li>
+<li><b>3.</b> Деньги даются легко благодаря идеям и позитиву. Хотите больше — помогайте расти другим.</li>
+<li><b>4.</b> Деньги будут всегда, если не разбрасываться ими. Ваш путь к достатку — бережливость и умение считать.</li>
+<li><b>5.</b> Всё решает настрой и движение. Вы умеете делать деньги из воздуха, но они так же быстро уходят.</li>
+<li><b>6.</b> Деньги приносят красота, искусство, воспитание и обучение — если работа по сердцу, а не «как надо».</li>
+<li><b>7.</b> Деньги приходят через развитие и исследование. Берегитесь импульсивных трат: ходите в магазин со списком.</li>
+<li><b>8.</b> Очень денежное число — при условии, что вы думаете не только о себе, но и о команде вокруг.</li>
+<li><b>9.</b> Вам дано ровно столько, сколько нужно для ваших задач. Деньги приходят, когда вы помогаете другим.</li>
+</ol>
+
+    </article>
+    <div class="card glow art-cta"><div><h3>Хотите разбор по вашей дате?</h3><p class="muted">Посчитаю и пришлю в Telegram.</p></div><button class="btn btn-primary js-order" data-product="mini-money" type="button">Полный разбор денежного кода — 198 ₽</button></div>
+    <div class="art-more"><h2>Ещё расчёты</h2><div class="arts"><a class="art-card glow" href="/stati/2027-god-dvoyki/"><h3>2027 — год двойки: чего ждать всем</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/chislo-pary/"><h3>Число пары: как посчитать совместимость по дате рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/data-svadby/"><h3>Дата свадьбы в нумерологии: что говорит день регистрации</h3><span>Читать →</span></a></div></div>
+  </div>
+</main>
+
+<main class="view sub" data-view="stati-data-svadby" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / <a href="/stati/">Расчёты нумеролога</a> / Дата свадьбы в нумерологии: что говорит день регистрации</p>
+    <article class="article">
+      <p class="eyebrow">Расчёты нумеролога · Светлана Деревенко</p>
+      <h1>Дата свадьбы в нумерологии: что говорит день регистрации</h1>
+      <p class="lead">Когда-то на курсе нам дали этот материал, и я отнеслась к нему скептически: просто день, дата. Но проверила — и у меня всё сошлось.</p>
+
+<h2>Как посчитать</h2>
+<p>Сложите все восемь цифр даты регистрации и сведите к одной цифре. Считаем именно день свадьбы, без дат рождения партнёров: этот день и задаёт тему будущей семьи.</p>
+<p class="ex">Пример: 17.07.2027 → 1 + 7 + 0 + 7 + 2 + 0 + 2 + 7 = 26 → 2 + 6 = 8.</p>
+<h2>Что означает число дня свадьбы</h2>
+<ol class="nums">
+<li><b>1.</b> Не всё будет гладко сразу, но постепенно сложатся долгие доверительные отношения, где вы — опора друг другу.</li>
+<li><b>2.</b> Вы всегда сможете договориться: общие интересы, гармония, а разногласия заканчиваются примирением.</li>
+<li><b>3.</b> Очень позитивное число: счастливый брак, крепкая семья, оптимизм обоих.</li>
+<li><b>4.</b> Крепкий союз, где каждый увлечён своим. Чтобы не было «бури в стакане», ищите то, что интересно обоим.</li>
+<li><b>5.</b> Сила пары — в слове «вместе». Следите за эгоизмом с обеих сторон и находите общее.</li>
+<li><b>6.</b> Большие искренние чувства, верность и взаимоуважение. Разбавляйте рутину нежностью.</li>
+<li><b>7.</b> Придётся учиться доверию и терпению. Научитесь проходить трудности вместе — и проживёте в ладу всю жизнь.</li>
+<li><b>8.</b> Союз с прочным фундаментом, в том числе материальным. Чтобы сохранить его надолго, будьте чутче друг к другу.</li>
+<li><b>9.</b> Важно не ждать одобрения и не бояться быть отвергнутым — делайте то, что откликается обоим.</li>
+</ol>
+<h2>Проверить или подобрать дату</h2>
+<p>Проверяйте свою дату — мне интересно, как это сыграет у вас. А если день свадьбы ещё не выбран, я подберу удачные даты с учётом дат рождения обоих партнёров. 2027 год двойки — год союзов, поэтому даты лучше выбирать заранее.</p>
+
+    </article>
+    <div class="card glow art-cta"><div><h3>Хотите разбор по вашей дате?</h3><p class="muted">Посчитаю и пришлю в Telegram.</p></div><button class="btn btn-primary js-order" data-product="wedding-pick" type="button">Подобрать дату свадьбы — 1 498 ₽</button></div>
+    <div class="art-more"><h2>Ещё расчёты</h2><div class="arts"><a class="art-card glow" href="/stati/2027-god-dvoyki/"><h3>2027 — год двойки: чего ждать всем</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/chislo-pary/"><h3>Число пары: как посчитать совместимость по дате рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/denezhnyy-kod/"><h3>Денежный код: считаем по имени и дню рождения</h3><span>Читать →</span></a></div></div>
+  </div>
+</main>
+
+<main class="view sub" data-view="stati-tri-chisla" hidden>
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Главная</a> / <a href="/stati/">Расчёты нумеролога</a> / Три главных числа даты рождения и задачи души</p>
+    <article class="article">
+      <p class="eyebrow">Расчёты нумеролога · Светлана Деревенко</p>
+      <h1>Три главных числа даты рождения и задачи души</h1>
+      <p class="lead">Дата рождения — не случайный набор цифр, а код: задачи, которые нам важно решить, и качества, которые стоит в себе развить.</p>
+
+<h2>Как посчитать три числа</h2>
+<p><b>Первое — день рождения.</b> Если число двузначное, сведите к одной цифре: 25 → 2 + 5 = 7.</p>
+<p><b>Второе — день и месяц.</b> 25 ноября → 2 + 5 + 1 + 1 = 9.</p>
+<p><b>Третье — вся дата.</b> 25.11.1983 → 2 + 5 + 1 + 1 + 1 + 9 + 8 + 3 = 30 → 3.</p>
+<p class="ex">Для 25.11.1983 получаются три числа: 7, 9, 3. Каждое показывает свою задачу — смотрите расшифровку.</p>
+<h2>Что означают числа</h2>
+<ol class="nums">
+<li><b>1.</b> Лидер от природы. Задача — вести за собой силой личности, а не подавлением, и не уходить в роль спасателя.</li>
+<li><b>2.</b> Число союза и баланса. Задача — научиться делать выбор и стоять за своими решениями, понимая других.</li>
+<li><b>3.</b> Энергия ребёнка: лёгкость, творчество, драйв. Задача — повзрослеть и взять ответственность за свою жизнь.</li>
+<li><b>4.</b> Устойчивость и порядок, надёжность. Задача — развить гибкость и не бояться перемен.</li>
+<li><b>5.</b> Движение и новаторство. Задача — докапываться до сути и не разрушать там, где можно перестроить.</li>
+<li><b>6.</b> Изобилие и любовь. Задача — заботиться о благополучии других и действовать из любви, а не из расчёта.</li>
+<li><b>7.</b> Мудрец и мистик, тонкая интуиция. Задача — развивать осознанность и слышать мнение других.</li>
+<li><b>8.</b> Финансовый гуру и трудоголик. Задача — найти гармонию материального и духовного, щедро делиться.</li>
+<li><b>9.</b> Глобальное мышление и большие задачи. Задача — укротить гордыню и научиться доверять жизни.</li>
+</ol>
+<p>Какие числа получились у вас? Что стало инсайтом? Полный разбор трёх чисел — с тем, как они сочетаются между собой, — можно заказать за 198 ₽.</p>
+
+    </article>
+    <div class="card glow art-cta"><div><h3>Хотите разбор по вашей дате?</h3><p class="muted">Посчитаю и пришлю в Telegram.</p></div><button class="btn btn-primary js-order" data-product="mini-soul" type="button">Разбор трёх чисел — 198 ₽</button></div>
+    <div class="art-more"><h2>Ещё расчёты</h2><div class="arts"><a class="art-card glow" href="/stati/2027-god-dvoyki/"><h3>2027 — год двойки: чего ждать всем</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/chislo-pary/"><h3>Число пары: как посчитать совместимость по дате рождения</h3><span>Читать →</span></a><a class="art-card glow" href="/stati/denezhnyy-kod/"><h3>Денежный код: считаем по имени и дню рождения</h3><span>Читать →</span></a></div></div>
+  </div>
+</main>
+
 <!-- ОФЕРТА -->
 <main class="view sub" data-view="oferta" hidden>
   <div class="wrap doc">
-    <p class="crumbs"><a href="#">Главная</a> / Договор-оферта</p>
+    <p class="crumbs"><a href="/">Главная</a> / Договор-оферта</p>
     <h2>Договор-оферта</h2>
     <p class="muted">Редакция от 28 октября 2026 года</p>
     <h3>1. Общие положения</h3>
@@ -767,7 +1044,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 <!-- ПОЛИТИКА -->
 <main class="view sub" data-view="privacy" hidden>
   <div class="wrap doc">
-    <p class="crumbs"><a href="#">Главная</a> / Политика конфиденциальности</p>
+    <p class="crumbs"><a href="/">Главная</a> / Политика конфиденциальности</p>
     <h2>Политика обработки персональных данных</h2>
     <p class="muted">Редакция от 28 октября 2026 года</p>
     <h3>1. Оператор</h3>
@@ -791,10 +1068,10 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 <footer class="site-foot">
   <div class="wrap">
     <div style="display:grid;gap:10px">
-      <a class="brand" href="#"><svg class="logo" aria-hidden="true"><use href="#logo"/></svg><span><b>Светлана Деревенко</b><small>нумеролог · МАК-терапевт</small></span></a>
+      <a class="brand" href="/"><svg class="logo" aria-hidden="true"><use href="#logo"/></svg><span><b>Светлана Деревенко</b><small>нумеролог · МАК-терапевт</small></span></a>
       <p>Самозанятая Деревенко Светлана Ивановна. ИНН: будет указан. Чеки выдаются через «Мой налог». Сайт: kodgoda.ru</p>
     </div>
-    <div><h4>Разделы</h4><ul><li><a href="#" data-to="calc">Прогноз 2027</a></li><li><a href="#" data-to="compat">Совместимость</a></li><li><a href="#" data-to="report">Разбор «Мой 2027»</a></li><li><a href="#" data-to="mandala">«Наша Мандала»</a></li><li><a href="#" data-to="prices">Цены</a></li></ul></div>
+    <div><h4>Разделы</h4><ul><li><a href="#" data-to="calc">Прогноз 2027</a></li><li><a href="#" data-to="compat">Совместимость</a></li><li><a href="#" data-to="report">Разбор «Мой 2027»</a></li><li><a href="#" data-to="mandala">«Наша Мандала»</a></li><li><a href="#" data-to="prices">Цены</a></li><li><a href="/stati/">Статьи</a></li></ul></div>
     <div><h4>Документы</h4><ul><li><a href="#oferta">Договор-оферта</a></li><li><a href="#privacy">Политика конфиденциальности</a></li></ul><h4 style="margin-top:18px">Личные годы</h4><ul id="footYears" style="display:flex;flex-wrap:wrap;gap:6px 12px"></ul></div>
     <div class="legal">
       <p class="demo-note">Демонстрационная версия: оплата и бот подключатся после запуска; тексты о годах и парах — черновые, их заменят тексты Светланы; даты потоков Мандалы — примерные.</p>
@@ -857,7 +1134,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
    {t:'Пара-сила',x:'Вместе вы добиваетесь результата: карьера, деньги, статус растут быстрее.',p:'амбиции, ресурсы, решительность',g:'борьба за власть',tip:'делите ответственность и хвалите друг друга'},
    {t:'Пара-служение',x:'Вас объединяет большое и общее: помощь людям, вера, идеи больше вас двоих.',p:'великодушие, принятие, мудрость',g:'жертвенность и старые обиды',tip:'отпускайте прошлое и прощайте быстро'}
   ];
-  var PRODUCTS={report:{e:'Разбор',t:'Разбор «Мой 2027»',p:'498 ₽ · придёт в Telegram в течение суток',date:true},gift:{e:'Подарок',t:'Подарочный разбор «Мой 2027»',p:'698 ₽ · укажите дату рождения того, кому дарите',date:true},mandala:{e:'Запись',t:'«Наша Мандала 2027»',p:'3 333 ₽ · онлайн в Telegram, разбор в подарок',date:true},club:{e:'Подписка',t:'Клуб «Мой месяц»',p:'393 ₽ в месяц · отмена в боте в любой момент',date:true},session:{e:'Запись',t:'Личная сессия',p:'4 888 ₽ · 60 минут онлайн',date:true},'mini-money':{e:'Мини-разбор',t:'Денежный код',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-pair':{e:'Мини-разбор',t:'Число пары',p:'198 ₽ · понадобятся обе даты рождения',date:true},'mini-soul':{e:'Мини-разбор',t:'Три числа души',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-wedding':{e:'Мини-разбор',t:'Дата свадьбы',p:'198 ₽ · укажите дату регистрации',date:true},pair:{e:'Запись',t:'Парная консультация',p:'6 888 ₽ · 90 минут онлайн',date:false}};
+  var PRODUCTS={report:{e:'Разбор',t:'Разбор «Мой 2027»',p:'498 ₽ · придёт в Telegram в течение суток',date:true},gift:{e:'Подарок',t:'Подарочный разбор «Мой 2027»',p:'698 ₽ · укажите дату рождения того, кому дарите',date:true},mandala:{e:'Запись',t:'«Наша Мандала 2027»',p:'3 333 ₽ · онлайн в Telegram, разбор в подарок',date:true},club:{e:'Подписка',t:'Клуб «Мой месяц»',p:'393 ₽ в месяц · отмена в боте в любой момент',date:true},session:{e:'Запись',t:'Личная сессия',p:'4 888 ₽ · 60 минут онлайн',date:true},'mini-money':{e:'Мини-разбор',t:'Денежный код',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-pair':{e:'Мини-разбор',t:'Число пары',p:'198 ₽ · понадобятся обе даты рождения',date:true},'mini-soul':{e:'Мини-разбор',t:'Три числа души',p:'198 ₽ · придёт в Telegram в течение суток',date:true},'mini-wedding':{e:'Мини-разбор',t:'Дата свадьбы',p:'198 ₽ · укажите дату регистрации',date:true},'mini-business':{e:'Мини-разбор',t:'Число бизнеса',p:'198 ₽ · укажите название компании',date:false},'wedding-pick':{e:'Подбор',t:'Подбор даты свадьбы',p:'1 498 ₽ · подберу даты с учётом дат рождения обоих',date:true},pair:{e:'Запись',t:'Парная консультация',p:'6 888 ₽ · 90 минут онлайн',date:false}};
 
   var $=function(id){return document.getElementById(id);};
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -957,6 +1234,83 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   $('pairForm').addEventListener('submit',function(e){e.preventDefault();runPair(true);});
   runPair(false);
 
+
+  // v10: прогноз дня
+  var DAY=[null,
+    {t:'День начинаний',x:'Хорошо начинать, решаться, делать первый шаг. Действуйте сами, не ждите разрешения.'},
+    {t:'День договорённостей',x:'Время слушать и договариваться. Не торопите события и не принимайте резких решений.'},
+    {t:'День общения',x:'Лёгкий, творческий день: встречи, идеи, переписки. Делитесь — вас услышат.'},
+    {t:'День порядка',x:'Спокойный день для рутины, планов и документов. Не спешите и не распыляйтесь.'},
+    {t:'День перемен',x:'Возможны неожиданности. Будьте гибкими и пробуйте новое, но без риска.'},
+    {t:'День заботы',x:'День семьи, дома и близких. Уделите время тем, кто рядом, и себе.'},
+    {t:'День тишины',x:'Лучше побыть наедине с собой, подвести итоги, послушать интуицию.'},
+    {t:'День результата',x:'Хороший день для денег, сделок и важных разговоров о деле.'},
+    {t:'День завершений',x:'Закрывайте хвосты, отпускайте лишнее, благодарите. Новое — завтра.'}];
+  function runToday(user){
+    var d=+$('bd').value,m=+$('bm').value,y=+$('by').value;
+    if(!valid(d,m,y)){toast('Проверьте дату рождения в калькуляторе наверху');return;}
+    var now=new Date(),cy=now.getFullYear(),py=chainOf(digits(pad(d)+pad(m)+cy)).value;
+    var n=chainOf(digits(String(py)+pad(now.getMonth()+1)+pad(now.getDate()))).value,t=DAY[n];
+    $('tN').textContent=n;$('tTitle').textContent=t.t;$('tText').textContent=t.x;
+    $('tDate').textContent=now.getDate()+' '+MONTHS[now.getMonth()]+' · личный год '+py;
+    $('todayNote').textContent=user?('Для даты рождения '+pad(d)+'.'+pad(m)+'.'+y+'.'):'Пример для даты 14.03.1987. Поменяйте дату в калькуляторе наверху.';
+  }
+  $('todayBtn').addEventListener('click',function(){runToday(true);});
+  runToday(false);
+
+  // v10: мини-разборы
+  var ABC={'а':1,'и':1,'с':1,'ъ':1,'б':2,'й':2,'т':2,'ы':2,'в':3,'к':3,'у':3,'ь':3,'г':4,'л':4,'ф':4,'э':4,'д':5,'м':5,'х':5,'ю':5,'е':6,'н':6,'ц':6,'я':6,'ё':7,'о':7,'ч':7,'ж':8,'п':8,'ш':8,'з':9,'р':9,'щ':9};
+  function nameNum(n){var a=[];String(n).toLowerCase().split('').forEach(function(ch){if(ABC[ch])a.push(ABC[ch]);});return a;}
+  var MINI={
+    money:{hint:'Имя, которым вас чаще всего называют, и день рождения.',name:'Ваше имя',date:'Дата рождения',years:[2010,1930],ex:['Ирина',25,4,1985],art:'denezhnyy-kod',
+      t:[null,'Деньги через собственный путь','Деньги через гармонию','Деньги через идеи','Деньги через бережливость','Деньги через движение','Деньги через дело по сердцу','Деньги через развитие','Самое денежное число','Деньги через помощь другим'],
+      x:[null,'Ничего не даётся просто так, но свой проект или карьера могут выстрелить высоко.','Поток открывается там, где доверие и мир в коллективе.','Деньги приходят легко через идеи и позитивный настрой.','Деньги будут всегда, если не разбрасываться ими.','Вы умеете делать деньги из воздуха — важно их удержать.','Деньги приносит работа по сердцу: красота, обучение, забота.','Деньги приходят через развитие и исследование.','Очень денежное число — при условии, что вы думаете и о команде.','Вам дано столько, сколько нужно для ваших задач.'],
+      lock:'В полном разборе: что открывает и что перекрывает ваш денежный поток, какие сферы подходят и на что обратить внимание в 2027 году.',
+      buy:[['mini-money','Полный разбор — 198 ₽']]},
+    soul:{hint:'Три числа: день, день + месяц и вся дата рождения.',name:null,date:'Дата рождения',years:[2010,1930],ex:[null,25,11,1983],art:'tri-chisla',
+      t:[null,'Лидер','Дипломат','Творец','Строитель','Новатор','Хранитель изобилия','Мудрец','Финансист','Мыслитель'],
+      x:[null,'Задача — вести за собой силой личности, а не подавлением.','Задача — научиться выбирать и стоять за своим решением.','Задача — повзрослеть и взять ответственность за свою жизнь.','Задача — развить гибкость и не бояться перемен.','Задача — докапываться до сути и строить новое.','Задача — действовать из любви, а не из расчёта.','Задача — развивать осознанность и слышать других.','Задача — найти гармонию материального и духовного.','Задача — доверять жизни и укротить гордыню.'],
+      lock:'В полном разборе: все три задачи, как числа сочетаются между собой и что развивать в первую очередь.',
+      buy:[['mini-soul','Разбор трёх чисел — 198 ₽']]},
+    wedding:{hint:'Дата регистрации брака — уже прошедшая или запланированная.',name:null,date:'Дата свадьбы',years:[2030,1960],ex:[null,17,7,2027],art:'data-svadby',
+      t:[null,'Союз-опора','Союз согласия','Счастливый союз','Крепкий союз','Союз «мы вместе»','Союз верности','Союз доверия','Союз-фундамент','Союз свободы'],
+      x:[null,'Не всё сразу гладко, но постепенно сложатся долгие доверительные отношения.','Вы всегда сможете договориться — гармония и общие интересы.','Очень позитивное число: крепкая семья и оптимизм обоих.','Прочный союз — главное, находить то, что интересно обоим.','Сила пары в слове «вместе»; следите за эгоизмом.','Искренние чувства, верность и взаимоуважение.','Придётся учиться терпению — и прожить в ладу всю жизнь.','Прочный фундамент, в том числе материальный.','Делайте то, что откликается обоим, не ждите одобрения.'],
+      lock:'Дата ещё не выбрана? Подберу удачные дни с учётом дат рождения обоих. 2027 — год союзов, лучшие даты разбирают заранее.',
+      buy:[['mini-wedding','Разбор даты — 198 ₽'],['wedding-pick','Подобрать дату — 1 498 ₽']]},
+    business:{hint:'Название компании, магазина или проекта — так, как его видят клиенты.',name:'Название',date:null,ex:['Трио'],art:'denezhnyy-kod',
+      t:[null,'Лидерство','Работа с детьми','Семейное дело','Масштаб','Отдых и досуг','Красота и забота','Премиум','Финансовый магнит','Помощь людям'],
+      x:[null,'Сильное число для медиа, маркетинга и всего, где нужно быть на шаг впереди.','Сферы, связанные с детьми: школы, кружки, детские пространства.','Успешен семейный бизнес и места, куда приходят всей семьёй.','Амбициозные цели и масштаб — при условии большой работы.','Всё, что помогает людям отдыхать и разгружаться.','Красота, молодость и забота: салоны, студии, клиники красоты.','Дорогие товары и «аристократические» направления.','Число денег: юридические услуги, недвижимость, финансы.','Сферы помощи: медицина, консультирование, поддержка.'],
+      lock:'В полном разборе: сильные и слабые стороны названия, подходящие сферы и что усилить.',
+      buy:[['mini-business','Разбор названия — 198 ₽']]}
+  };
+  var mk='money';
+  (function(){var D=$('md'),M=$('mm'),i;for(i=1;i<=31;i++)D.add(new Option(i,i));MONTHS.forEach(function(n,k){M.add(new Option(n,k+1));});})();
+  function setYears(a,b){var Yy=$('my'),v=Yy.value;Yy.innerHTML='';for(var i=a;i>=b;i--)Yy.add(new Option(i,i));if(v&&+v<=a&&+v>=b)Yy.value=v;}
+  function miniShow(k,user){
+    var c=MINI[k],n,calc;
+    if(k==='money'){var nm=$('miniName').value.trim(),d=+$('md').value;var a=nameNum(nm);if(!a.length){toast('Напишите имя русскими буквами');return;}
+      var A=chainOf(a).value,B=chainOf(digits(d)).value;n=chainOf(digits(A+B)).value;calc='Имя '+A+' + день '+B+' → '+n;}
+    else if(k==='business'){var b=nameNum($('miniName').value);if(!b.length){toast('Напишите название русскими буквами');return;}n=chainOf(b).value;calc='Сумма букв → '+n;}
+    else{var dd=+$('md').value,mm=+$('mm').value,yy=+$('my').value;if(!valid(dd,mm,yy)){toast('В этом месяце нет '+dd+'-го числа');return;}
+      if(k==='soul'){var n1=chainOf(digits(dd)).value,n2=chainOf(digits(pad(dd)+pad(mm))).value,n3=chainOf(digits(pad(dd)+pad(mm)+yy)).value;n=n3;calc='Ваши числа: '+n1+' · '+n2+' · '+n3;}
+      else{n=chainOf(digits(pad(dd)+pad(mm)+yy)).value;calc=pad(dd)+'.'+pad(mm)+'.'+yy+' → '+n;}}
+    var el=$('mN');el.textContent=n;el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');
+    $('mCalc').textContent=(user?'':'Пример · ')+calc;$('mTitle').textContent=c.t[n];$('mText').textContent=c.x[n];$('mLock').textContent=c.lock;
+    $('mActs').innerHTML=c.buy.map(function(b,i){return '<button class="btn '+(i?'btn-ghost':'btn-primary')+' js-order" data-product="'+b[0]+'" type="button">'+b[1]+'</button>';}).join('');
+    $('mArt').href='#stati-'+c.art;
+  }
+  function miniTab(k){
+    mk=k;var c=MINI[k];
+    document.querySelectorAll('.tab[data-k]').forEach(function(t){t.setAttribute('aria-selected',t.dataset.k===k?'true':'false');});
+    $('miniHint').textContent=c.hint;
+    $('miniNameWrap').hidden=!c.name;if(c.name){$('miniNameLbl').textContent=c.name;$('miniName').placeholder=c.ex[0];$('miniName').value=c.ex[0];}
+    $('miniDateWrap').hidden=!c.date;if(c.date){$('miniDateLbl').textContent=c.date;setYears(c.years[0],c.years[1]);$('md').value=c.ex[1];$('mm').value=c.ex[2];$('my').value=c.ex[3];}
+    miniShow(k,false);
+  }
+  document.querySelectorAll('.tab[data-k]').forEach(function(t){t.addEventListener('click',function(){miniTab(t.dataset.k);});});
+  $('miniForm').addEventListener('submit',function(e){e.preventDefault();miniShow(mk,true);});
+  miniTab('money');
+
   // year subpage
   function renderYear(n){
     var d=Y[n];
@@ -967,11 +1321,13 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     $('yNav').innerHTML=[1,2,3,4,5,6,7,8,9].map(function(k){return '<a href="#god-'+k+'"'+(k===n?' class="on" aria-current="page"':'')+' aria-label="Личный год '+k+'">'+k+'</a>';}).join('');
     document.title='Личный год '+n+' в 2027 году — Светлана Деревенко';
   }
+  var ARTS={'stati-2027-god-dvoyki':'2027 — год двойки: чего ждать всем — Светлана Деревенко','stati-chislo-pary':'Число пары: как посчитать совместимость по дате рождения — Светлана Деревенко','stati-denezhnyy-kod':'Денежный код: считаем по имени и дню рождения — Светлана Деревенко','stati-data-svadby':'Дата свадьбы в нумерологии: что говорит день регистрации — Светлана Деревенко','stati-tri-chisla':'Три главных числа даты рождения и задачи души — Светлана Деревенко'};
   var views=document.querySelectorAll('.view');
   function route(){
     var h=(location.hash||'').slice(1),v='home',m=h.match(/^god-([1-9])$/);
-    if(m){v='year';renderYear(+m[1]);}else if(h==='oferta'||h==='privacy'){v=h;}
-    if(v!=='year')document.title='Светлана Деревенко — нумеролог';
+    if(!h&&window.PAGE_INIT&&!window.__initDone){h=window.PAGE_INIT;}window.__initDone=1;
+    if(m){v='year';renderYear(+m[1]);}else if(h==='oferta'||h==='privacy'){v=h;}else if(h==='stati'||ARTS[h]){v=h;document.title=ARTS[h]||'Расчёты нумеролога — Светлана Деревенко';}
+    if(v==='home'||v==='oferta'||v==='privacy')document.title='Светлана Деревенко — нумеролог';
     Array.prototype.forEach.call(views,function(el){el.hidden=el.dataset.view!==v;});
     if(v!=='home'||h==='')window.scrollTo(0,0);
     if(v==='home'){drawWheel(0);drawMandala();}
@@ -980,6 +1336,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
   window.addEventListener('hashchange',route);
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-to]');if(!t)return;e.preventDefault();
+    if(window.PAGE_INIT&&location.pathname!=='/'){location.href='/#'+t.dataset.to;return;}
     var go=function(){var el=$(t.dataset.to);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'});};
     if(location.hash&&location.hash!=='#'){history.replaceState(null,'',location.pathname+location.search);route();setTimeout(go,30);}else go();
   });
@@ -1049,7 +1406,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
     $('oErr').hidden=true;dlg.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){$('oName').focus();},30);
   }
   function closeDlg(){dlg.hidden=true;document.body.style.overflow='';if(lastBtn)lastBtn.focus();}
-  document.querySelectorAll('.js-order').forEach(function(b){b.addEventListener('click',function(){openDlg(b.dataset.product,b);});});
+  document.addEventListener('click',function(e){var b=e.target.closest('.js-order');if(b)openDlg(b.dataset.product,b);});
   $('dlgClose').addEventListener('click',closeDlg);
   dlg.addEventListener('click',function(e){if(e.target===dlg)closeDlg();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dlg.hidden)closeDlg();});
