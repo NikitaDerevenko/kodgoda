@@ -1800,7 +1800,10 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 
   // order dialog
   var dlg=$('dlg'),lastBtn=null,cur='report';
+  var KG_BOT='';
+  function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
   function openDlg(kind,btn){
+    if(KG_BOT){tg(kind);return;}
     var p=PRODUCTS[kind]||PRODUCTS.report;cur=kind;lastBtn=btn;
     $('dlgEyebrow').textContent=p.e;$('dlgTitle').textContent=p.t;$('dlgPrice').textContent=p.p;
     $('oDateWrap').querySelector('label').textContent=kind==='gift'?'Дата рождения получателя':(kind==='pair'?'Ваша дата рождения':'Дата рождения');
@@ -1824,7 +1827,7 @@ main,.top,.site-foot,.final{position:relative;z-index:1}
 
   var tm=null;
   function toast(msg){var t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('show');},3200);}
-  document.querySelectorAll('.js-bot').forEach(function(b){b.addEventListener('click',function(){toast('Бот запустится в ноябре — здесь будет ссылка на него');});});
+  document.querySelectorAll('.js-bot').forEach(function(b){b.addEventListener('click',function(){if(KG_BOT){tg(b.closest('#calendar')?'calendar':'start');return;}toast('Бот запустится в ноябре — здесь будет ссылка на него');});});
 
   // звёздное небо
   var sky=$('sky'),sc=sky.getContext('2d'),stars=[],shoot=null,nextShoot=4000;
