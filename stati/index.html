@@ -1607,6 +1607,9 @@ section[hidden]{display:none!important}
     <img src="/img/veda-front.webp" alt="" class="on" data-k="front" width="76" height="76" decoding="async">
     <img src="/img/veda-q3.webp" alt="" data-k="q3" width="76" height="76" decoding="async" loading="lazy">
     <img src="/img/veda-prof.webp" alt="" data-k="prof" width="76" height="76" decoding="async" loading="lazy">
+    <img src="/img/veda-front-up.webp" alt="" data-k="front-up" width="76" height="76" decoding="async" loading="lazy">
+    <img src="/img/veda-q3-up.webp" alt="" data-k="q3-up" width="76" height="76" decoding="async" loading="lazy">
+    <img src="/img/veda-prof-up.webp" alt="" data-k="prof-up" width="76" height="76" decoding="async" loading="lazy">
     <span class="veda-tag">Веда</span>
   </button>
 </div>
@@ -2112,13 +2115,18 @@ section[hidden]{display:none!important}
     if(cf)cf.addEventListener('submit',function(){setTimeout(function(){
       var n=+(($('resNum')||{}).textContent||0);if(n){year={n:n,name:(($('resTitle')||{}).textContent||'')};lastKey='calc';hidden=false;open(TIPS.calc(),true);}
     },700);});
-    // голова поворачивается за курсором: прямо → три четверти → профиль
+    // голова поворачивается за курсором: 6 кадров — прямо / вполоборота / профиль, ровно и вверх
     if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
       var idle=null;
       addEventListener('mousemove',function(e){
         var r=face.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=e.clientX-cx,dy=e.clientY-cy;
         var d=Math.sqrt(dx*dx+dy*dy);
-        look(dx>-60||d<140?'front':(dx<-innerWidth*.45?'prof':'q3'));
+        if(d<120||dx>40){look('front');}
+        else{
+          var h=dx>-90?'front':(dx<-innerWidth*.42?'prof':'q3');
+          var up=-dy>Math.max(110,-dx*.5);
+          look(up?h+'-up':h);
+        }
         clearTimeout(idle);idle=setTimeout(function(){look('front');},2500);
       },{passive:true});
     }
