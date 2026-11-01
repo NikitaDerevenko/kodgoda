@@ -520,6 +520,36 @@ header.top{position:sticky;top:0;z-index:30}
 @media (max-width:760px){.site-foot .wrap{grid-template-columns:1fr}}
 .demo-note{background:rgba(134,205,252,.1);border:1px solid rgba(134,205,252,.35);color:var(--sky);border-radius:10px;padding:10px 14px}
 
+/* Веда — ИИ-помощница */
+.veda{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:26;display:flex;align-items:flex-end;gap:12px;pointer-events:none}
+.veda>*{pointer-events:auto}
+.veda-face{position:relative;width:76px;height:76px;flex:none;border-radius:50%;padding:0;border:0;background:#2a2116;cursor:pointer;
+  box-shadow:0 0 0 2px rgba(227,190,120,.85),0 0 0 6px rgba(227,190,120,.12),0 10px 30px rgba(0,0,0,.45);transition:transform .25s ease}
+.veda-face:hover{transform:translateY(-2px)}
+.veda-face:focus-visible{outline:2px solid var(--sky);outline-offset:4px}
+.veda-face img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.veda-face img.on{opacity:1}
+.veda-face .veda-tag{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);background:var(--night);color:#e3be78;border:1px solid rgba(227,190,120,.6);
+  font:600 .62rem/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:99px;white-space:nowrap}
+.veda-bub{position:relative;max-width:300px;background:rgba(20,26,70,.97);border:1px solid rgba(227,190,120,.35);border-radius:16px 16px 4px 16px;padding:14px 16px 14px;
+  box-shadow:0 18px 50px rgba(0,0,0,.45);color:var(--star);opacity:0;transform:translateY(8px) scale(.98);transform-origin:100% 100%;transition:opacity .3s ease,transform .3s ease;visibility:hidden}
+.veda.open .veda-bub{opacity:1;transform:none;visibility:visible}
+.veda-bub .vn{font:600 .7rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:#e3be78;margin:0 22px 8px 0}
+.veda-bub .vt{font-size:.95rem;line-height:1.5;margin:0}
+.veda-bub .va{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.veda-bub .va button,.veda-bub .va a{font:600 .85rem/1 var(--font-body);padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--star);cursor:pointer;text-decoration:none}
+.veda-bub .va .p{background:var(--violet-strong);border-color:var(--violet-strong);color:#fff}
+.veda-bub .vx{position:absolute;top:6px;right:6px;width:32px;height:32px;border:0;background:transparent;color:var(--mist);font-size:1.2rem;cursor:pointer;border-radius:8px}
+.veda-bub .vx:hover{color:var(--star)}
+.veda-bub .vs{display:block;margin-top:10px;font-size:.7rem;color:var(--mist);opacity:.8}
+@media (max-width:760px){
+  .veda{right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));gap:8px}
+  .veda-face{width:58px;height:58px}
+  .veda-bub{max-width:calc(100vw - 96px);padding:12px 14px}
+  .veda-bub .vt{font-size:.9rem}
+}
+@media print{.veda{display:none!important}}
+@media (prefers-reduced-motion:reduce){.veda-face,.veda-face img,.veda-bub{transition:none}}
 /* sticky mobile CTA */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:25;display:none;gap:10px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(13,16,48,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 .mbar .btn{flex:1;padding:12px 10px;font-size:.88rem}
@@ -1565,6 +1595,21 @@ section[hidden]{display:none!important}
     <button class="btn btn-primary" type="submit">Перейти к оплате</button>
   </form>
 </div>
+<div class="veda" id="veda" aria-live="polite">
+  <div class="veda-bub" id="vedaBub" role="dialog" aria-label="Подсказка Веды">
+    <button class="vx" id="vedaX" type="button" aria-label="Скрыть подсказку">×</button>
+    <p class="vn">Веда · ИИ-помощница</p>
+    <p class="vt" id="vedaText"></p>
+    <div class="va" id="vedaAct"></div>
+    <span class="vs">Помощница нумеролога Светланы Деревенко</span>
+  </div>
+  <button class="veda-face" id="vedaFace" type="button" aria-label="Веда — ИИ-помощница. Показать подсказку" aria-controls="vedaBub" aria-expanded="false">
+    <img src="/img/veda-front.webp" alt="" class="on" data-k="front" width="76" height="76" decoding="async">
+    <img src="/img/veda-q3.webp" alt="" data-k="q3" width="76" height="76" decoding="async" loading="lazy">
+    <img src="/img/veda-prof.webp" alt="" data-k="prof" width="76" height="76" decoding="async" loading="lazy">
+    <span class="veda-tag">Веда</span>
+  </button>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script src="/js/lenis-1.3.26.min.js" defer></script>
@@ -1999,6 +2044,86 @@ section[hidden]{display:none!important}
   });
 
   var tm=null;
+  // ---- Веда: подсказки и поворот головы ----
+  (function(){
+    var root=$('veda');if(!root)return;
+    var face=$('vedaFace'),bub=$('vedaBub'),tx=$('vedaText'),act=$('vedaAct');
+    var imgs={};Array.prototype.forEach.call(face.querySelectorAll('img'),function(i){imgs[i.dataset.k]=i;});
+    var pose='front',hidden=false,lastKey='',lastShow=0,year=null,autoT=null;
+    try{hidden=sessionStorage.getItem('kg-veda-off')==='1';}catch(e){}
+    function look(k){if(k===pose)return;pose=k;for(var n in imgs)imgs[n].classList.toggle('on',n===k);}
+    function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+    var TIPS={
+      calc:function(){return year?{t:'Ваш 2027 — год '+year.n+(year.name?' («'+year.name.toLowerCase()+'»)':'')+'. В полном разборе — страница на каждый месяц и ваш личный календарь дней.',a:[['Получить разбор — 498 ₽','order:report',1],['Что ещё есть','go:prices']]}
+                              :{t:'Здравствуйте, я Веда. Выберите дату рождения и нажмите «Рассчитать» — покажу, каким будет ваш 2027 год.',a:[['Рассчитать мой год','calc',1]]};},
+      free:function(){return {t:'Часть пунктов открыта бесплатно. Остальное — в полном разборе «Мой 2027»: около 26 страниц, придёт в Telegram за 1–2 минуты.',a:[['Открыть всё — 498 ₽','order:report',1]]};},
+      compat:function(){return {t:'Введите две даты — посчитаю число вашей пары. Полный разбор пары с кризисными годами — 698 ₽.',a:[['Разбор пары — 698 ₽','order:pair-report',1]]};},
+      matrix:function(){return {t:'Ключевые точки матрицы — бесплатно. Полный разбор 22 энергий Светлана готовит лично.',a:[['Записаться','order:matrix',1]]};},
+      report:function(){return {t:'«Мой 2027» — главный разбор года. Если сомневаетесь, начните с него.',a:[['Получить — 498 ₽','order:report',1]]};},
+      mandala:function(){return {t:'«Наша Мандала» — живой семинар. Оставьте заявку, Светлана напишет вам сама.',a:[['Оставить заявку','order:mandala',1]]};},
+      kviz:function(){return {t:'Не знаете, с чего начать? Пройдите короткий тест — подскажу подходящий разбор.',a:[]};},
+      prices:function(){return {t:'Разборы в PDF приходят в Telegram за 1–2 минуты. Личные форматы — по заявке Светлане.',a:[['Открыть бота','bot',1]]};},
+      gift:function(){return {t:'Подарок близкому: разбор «Мой 2027» придёт файлом сразу после оплаты.',a:[['Подарить — 698 ₽','order:gift',1]]};},
+      sub:function(){return {t:'Хотите узнавать свой личный день каждое утро? Это бесплатно — в боте Светланы.',a:[['Открыть бота','bot',1],['Посчитать мой год','home']]};}
+    };
+    function render(tip){
+      tx.textContent=tip.t;act.innerHTML='';
+      tip.a.forEach(function(b){var el=document.createElement('button');el.type='button';el.textContent=b[0];if(b[2])el.className='p';el.dataset.do=b[1];act.appendChild(el);});
+    }
+    function open(tip,force){
+      if(!tip)return;
+      if(hidden&&!force)return;
+      render(tip);root.classList.add('open');face.setAttribute('aria-expanded','true');lastShow=Date.now();
+      clearTimeout(autoT);autoT=setTimeout(function(){if(!root.matches(':hover')&&!root.contains(document.activeElement))close(false);},matchMedia('(max-width:760px)').matches?9000:16000);
+      look(matchMedia('(hover:hover)').matches?pose:'q3');
+    }
+    function close(remember){root.classList.remove('open');face.setAttribute('aria-expanded','false');if(remember){hidden=true;try{sessionStorage.setItem('kg-veda-off','1');}catch(e){}}if(!matchMedia('(hover:hover)').matches)look('front');}
+    face.addEventListener('click',function(){if(root.classList.contains('open'))close(false);else{hidden=false;try{sessionStorage.removeItem('kg-veda-off');}catch(e){}open(TIPS[lastKey||'calc'](),true);}});
+    $('vedaX').addEventListener('click',function(){close(true);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&root.classList.contains('open'))close(false);});
+    act.addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b)return;var d=b.dataset.do;
+      if(d==='calc'){go('calc');setTimeout(function(){var f=$('bd');if(f)f.focus();},500);}
+      else if(d==='home'){location.href='/';}
+      else if(d==='bot'){if(typeof tg==='function')tg('veda');}
+      else if(d.indexOf('go:')===0){go(d.slice(3));}
+      else if(d.indexOf('order:')===0){if(typeof openDlg==='function')openDlg(d.slice(6),b);}
+      close(false);
+    });
+    // какой раздел сейчас на экране
+    var ids=['calc','free','compat','matrix','report','mandala','kviz','prices','gift'];
+    function current(){
+      var sub=document.querySelector('main.view.sub:not([hidden])');if(sub)return 'sub';
+      var best='',bv=0,h=innerHeight;
+      ids.forEach(function(id){var el=document.getElementById(id);if(!el||el.closest('[hidden]'))return;var r=el.getBoundingClientRect();var v=Math.min(r.bottom,h*.75)-Math.max(r.top,h*.15);if(v>bv){bv=v;best=id;}});
+      return best;
+    }
+    var t0=null;
+    function check(){
+      var k=current();if(!k||k===lastKey)return;lastKey=k;
+      if(root.classList.contains('open'))render(TIPS[k]());
+      else if(!hidden&&Date.now()-lastShow>25000)open(TIPS[k]());
+    }
+    addEventListener('scroll',function(){if(t0)return;t0=setTimeout(function(){t0=null;check();},350);},{passive:true});
+    addEventListener('hashchange',function(){setTimeout(function(){lastKey='';check();},300);});
+    setTimeout(function(){lastKey=current()||'calc';open(TIPS[lastKey]());},3500);
+    // результат расчёта года
+    var cf=$('calcForm');
+    if(cf)cf.addEventListener('submit',function(){setTimeout(function(){
+      var n=+(($('resNum')||{}).textContent||0);if(n){year={n:n,name:(($('resTitle')||{}).textContent||'')};lastKey='calc';hidden=false;open(TIPS.calc(),true);}
+    },700);});
+    // голова поворачивается за курсором: прямо → три четверти → профиль
+    if(matchMedia('(hover:hover)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+      var idle=null;
+      addEventListener('mousemove',function(e){
+        var r=face.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=e.clientX-cx,dy=e.clientY-cy;
+        var d=Math.sqrt(dx*dx+dy*dy);
+        look(dx>-60||d<140?'front':(dx<-innerWidth*.45?'prof':'q3'));
+        clearTimeout(idle);idle=setTimeout(function(){look('front');},2500);
+      },{passive:true});
+    }
+  })();
+
   function toast(msg){var t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('show');},3200);}
   document.querySelectorAll('.js-bot').forEach(function(b){b.addEventListener('click',function(){if(KG_BOT){tg(b.closest('#calendar')?'calendar':'start');return;}toast('Бот запустится в ноябре — здесь будет ссылка на него');});});
 
