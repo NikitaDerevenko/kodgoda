@@ -891,6 +891,67 @@ section[hidden]{display:none!important}
 @media (max-width:760px){.cpill{display:none}}
 .mbar .mb-ask{gap:8px;padding-left:8px}.mbar .mb-ask img{width:28px;height:28px;border-radius:50%;object-fit:cover}
 
+/* ===== v31: короче страница, понятнее навигация ===== */
+.code-scene{height:180vh}
+@media (max-width:760px){.code-scene{height:160vh}}
+.sstep{min-height:46vh}
+@media (max-width:860px){.sstep[data-i="1"] .mphone,.sstep[data-i="3"] .mphone,.sstep[data-i="4"] .mphone{display:none}.sstep{padding:20px 0}.sstep .mphone .phone{width:200px}}
+/* принципы — один экран, четыре карточки */
+.prin{height:auto;padding:88px 0}
+.prin-stick{position:relative;height:auto;overflow:visible}
+.prin-in{max-width:1180px}
+.prin-items{min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;text-align:left}
+.pr{position:static;opacity:1;transform:none;align-content:start;gap:10px;padding:24px;border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.03)}
+.pr h2{font-size:clamp(1.35rem,2.1vw,1.7rem);line-height:1.15}
+.pr p{font-size:.98rem;margin:0}
+.prin-dots{display:none}
+.nav a,.top .btn,.menu-btn{white-space:nowrap}
+@media (max-width:980px){.prin-items{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.prin-items{grid-template-columns:minmax(0,1fr)}.prin{padding:64px 0}}
+/* «Что внутри» в тёмной теме */
+#report .in-it b{color:var(--mist)}
+#report .in-it:hover b,#report .in-it.on b{color:var(--star)}
+#report .in-it span{color:var(--mist)}
+#report .in-it.on{background:rgba(255,255,255,.05);border-color:var(--line);box-shadow:none}
+#report .in-foot>div{background:rgba(255,255,255,.03);border-color:var(--line)}
+#report .in-foot p{color:var(--mist)}
+#report .in-fig{border-color:var(--line);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.guar{margin:14px 0 0;font-size:.92rem;color:var(--mist)}
+.final-acts{display:flex;gap:12px;flex-wrap:wrap}
+/* подсказки шагов в калькуляторе */
+.stepn{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--violet-strong,#7a5ce8);color:#fff;font-size:.8rem;font-weight:600;margin-right:8px;vertical-align:1px}
+.hint2{margin:10px 0 0;font-size:.92rem;color:var(--mist)}
+@media (max-width:760px){.calc select{min-height:48px;font-size:1.02rem}.calc .btn{min-height:50px;font-size:1.02rem}}
+/* первый экран на телефоне: сначала заголовок и форма */
+@media (max-width:900px){.wheel-box{order:0;max-width:260px}}
+/* кнопка «Меню» */
+.menu-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--star);font:inherit;font-size:.9rem;cursor:pointer;flex:none}
+.menu-btn:hover{border-color:var(--sky)}
+.top .btn-primary.js-bot{display:none}
+@media (max-width:760px){.top .menu-btn{display:none}}
+/* лист меню */
+.nsheet{position:fixed;inset:0;z-index:60;background:rgba(6,8,28,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;justify-items:end}
+.nsheet[hidden]{display:none!important}
+.ns-in{width:min(460px,100%);height:100%;overflow-y:auto;background:var(--night);border-left:1px solid var(--line);padding:18px 18px calc(24px + env(safe-area-inset-bottom,0px));display:grid;align-content:start;gap:14px;overscroll-behavior:contain}
+.ns-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ns-top b{font:400 1.6rem/1.1 var(--font-display)}
+.ns-x{font:inherit;font-size:1rem;color:var(--star);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:10px 16px;cursor:pointer}
+.ns-how{margin:0;padding:12px 14px 12px 34px;border-radius:var(--r);background:rgba(146,120,242,.12);border:1px solid rgba(146,120,242,.3);font-size:.95rem;display:grid;gap:4px}
+.ns-list{display:grid;gap:8px}
+.ns-list a{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:12px;min-height:64px;padding:10px 14px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.03);text-decoration:none;color:var(--star)}
+.ns-list a:hover,.ns-list a:focus-visible{border-color:var(--sky);background:rgba(255,255,255,.06)}
+.ns-list i{font-style:normal;font-size:1.5rem;text-align:center}
+.ns-list b{display:block;font-weight:600;font-size:1.08rem;line-height:1.25}
+.ns-list small{display:block;color:var(--mist);font-size:.88rem}
+.ns-ask{min-height:56px;font-size:1.05rem}
+.ns-up{font:inherit;color:var(--mist);background:none;border:0;padding:10px;cursor:pointer;text-decoration:underline}
+/* нижняя панель: три кнопки с подписями */
+.mbar{gap:8px}
+.mbar .btn{padding:12px 8px;font-size:.9rem;min-height:50px}
+.mbar .mb-menu{flex:0 0 auto;gap:6px;padding-inline:14px}
+.mbar .mb-ask{flex:0 0 auto;padding-inline:10px}
+/* Веда: на телефоне не занимает экран */
+@media (max-width:760px){.veda{display:none}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Число пары: как посчитать совместимость по дате рождения", "description": "Простой расчёт числа пары по двум датам рождения и расшифровка от 1 до 9: что объединяет вас и где в отношениях зона роста.", "inLanguage": "ru", "mainEntityOfPage": "https://kodgoda.ru/stati/chislo-pary/", "author": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "publisher": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "image": "https://kodgoda.ru/og-image.jpg", "datePublished": "2026-10-29"}</script>
 </head>
@@ -913,19 +974,33 @@ section[hidden]{display:none!important}
     <nav class="nav" aria-label="Разделы">
       <a href="#" data-to="calc">Прогноз 2027</a>
       <a href="#" data-to="compat">Совместимость</a>
-      <a href="#" data-to="matrix">Матрица</a>
-      <a href="#" data-to="report">Разбор</a>
       <a href="#" data-to="mandala">Мандала</a>
       <a href="#" data-to="prices">Цены</a>
-      <a href="/stati/">Статьи</a>
+      <a href="#" data-to="faq">Вопросы</a>
     </nav>
     <button class="btn btn-primary js-bot" type="button">Бот в Telegram</button>
     <a class="btn btn-primary btn-mine" href="#" data-to="free">Мой разбор</a>
+    <button class="menu-btn js-menu" type="button" aria-haspopup="dialog" aria-controls="navSheet"><span aria-hidden="true">☰</span> Меню</button>
   </div>
 </header>
 
 <!-- ГЛАВНАЯ -->
 <main class="view" data-view="home" hidden>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Мандала участницы"><button class="x" type="button" id="lbClose" aria-label="Закрыть">×</button><img id="lbImg" alt=""></div>
   <section class="hero" id="calc">
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
@@ -935,7 +1010,7 @@ section[hidden]{display:none!important}
           <h1 class="rise d1">Каким будет ваш <em>2027</em> год</h1>
           <p class="lead rise d2">Каждый год человек проходит одну ступень девятилетнего цикла. Введите дату рождения — я покажу, какая ступень ждёт вас в 2027 году и на чём стоит сосредоточиться.</p>
           <form class="calc rise d3 glow" id="calcForm" novalidate>
-            <label for="bd">Дата рождения</label>
+            <label for="bd"><span class="stepn">1</span>Выберите день, месяц и год рождения</label>
             <div class="calc-row">
               <div class="date-in">
                 <select id="bd" aria-label="День"></select>
@@ -944,6 +1019,7 @@ section[hidden]{display:none!important}
               </div>
               <button class="btn btn-primary" type="submit">Рассчитать</button>
             </div>
+            <p class="hint2"><span class="stepn">2</span>Нажмите «Рассчитать» — результат появится ниже</p>
             <p class="note" id="calcNote">Сейчас показан пример для 14 марта 1987 года. Личный год идёт по календарю, с 1 января, а его настроение обычно чувствуется ещё в конце предыдущего года.</p>
           </form>
           <div class="hero-sign rise d4"><span>Считаю и пишу каждый разбор лично — <b>Светлана Деревенко</b>, нумеролог</span></div>
@@ -1001,7 +1077,6 @@ section[hidden]{display:none!important}
     </div>
   </section>
 
-
   <section class="band tight" id="free">
     <div class="wrap">
       <div class="fr-head">
@@ -1017,117 +1092,18 @@ section[hidden]{display:none!important}
     </div>
   </section>
 
-  <section class="band tight" id="world" hidden>
-    <div class="wrap world">
-      <div><div class="big" aria-hidden="true">2</div><p class="sum">2 + 0 + 2 + 7 = 11 → 2</p></div>
-      <div style="min-width:0">
-        <p class="eyebrow">Общее число года</p>
-        <h2>2027 — год двойки: время союзов</h2>
-        <p class="lead" style="margin-top:14px">2025 был годом девятки — годом очищения и завершений. 2026 — год единицы, старт нового девятилетнего цикла. А 2027 — год двойки: на первый план выходят отношения и умение договариваться.</p>
-        <ul>
-          <li><b>Отношения.</b> Хорошее время укрепить союз, договориться о важном, создать семью.</li>
-          <li><b>Работа.</b> Выигрывает тот, кто строит партнёрства, а не тянет всё в одиночку.</li>
-          <li><b>Решения.</b> Двойка не любит спешки: то, что начали в 2026, важно растить терпением.</li>
-        </ul>
-        <div class="acts"><a class="btn btn-ghost" href="/stati/2027-god-dvoyki/">Читать подробнее</a><a class="btn btn-primary" href="#" data-to="calc">Узнать свой личный год</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band tight">
+  <section class="band tight" id="kviz">
     <div class="wrap">
-      <div class="band-head">
-        <p class="eyebrow">Девятилетний цикл</p>
-        <h2>Девять ступеней, и каждый год — своя</h2>
-        <p class="lead">После девятого года цикл начинается заново. Откройте любую ступень, чтобы прочитать, что она приносит в деньгах, отношениях и делах.</p>
+      <div class="band-head" style="text-align:center;max-width:720px;margin:0 auto 28px">
+        <p class="eyebrow">Подбор за 30 секунд</p>
+        <h2 style="margin-top:12px">Не знаете, с чего начать?</h2>
+        <p class="lead" style="margin:14px auto 0">Три вопроса — и я подскажу, какой формат подойдёт именно вам.</p>
       </div>
-      <nav class="cycle" id="cycle" aria-label="Личные годы"></nav>
+      <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </section>
 
-  <section class="band tight" id="today" hidden>
-    <div class="wrap today">
-      <div style="display:grid;gap:14px;min-width:0">
-        <p class="eyebrow">Прогноз дня</p>
-        <h2>Ваш день сегодня</h2>
-        <p class="lead">Каждый день тоже имеет своё число. Оно складывается из вашего личного года и сегодняшней даты. Посчитаю по дате рождения, которую вы указали в калькуляторе наверху.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary" type="button" id="todayBtn">Посчитать мой день</button><button class="btn btn-ghost js-bot" type="button">Получать каждое утро</button></div>
-        <p class="note" id="todayNote"></p>
-        <a class="textlink" href="/chislo-dnya/">Общее число дня — на каждый день до конца 2027 →</a>
-      </div>
-      <article class="card glow today-card" aria-live="polite"><span class="n" id="tN">1</span><div style="display:grid;gap:8px;min-width:0"><p class="eyebrow" id="tDate"></p><h3 id="tTitle"></h3><p id="tText"></p></div></article>
-    </div>
-  </section>
-
-  <section class="band tight" id="calendar" hidden>
-    <div class="wrap cal-wrap">
-      <div style="display:grid;gap:14px;min-width:0">
-        <p class="eyebrow">Бесплатно</p>
-        <h2>Календарь удачных дней на <span id="calMonthName">ноябрь</span></h2>
-        <p class="lead">По вашей дате рождения я отметила дни, которые лучше всего подходят для начинаний, для общения и для денег. Полный календарь с подсказкой на каждый день — бесплатно в Telegram.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary js-bot" type="button">Получить календарь в Telegram</button><button class="btn btn-ghost" type="button" id="calBtn">Пересчитать по моей дате</button></div>
-        <p class="note" id="calNote"></p>
-      </div>
-      <div class="cal glow" aria-live="polite">
-        <div class="cal-head"><b id="calTitle"></b><span class="note">личный год <span id="calPY"></span></span></div>
-        <div class="cal-grid" id="calGrid"></div>
-        <div class="legend"><span class="l1">начинания</span><span class="l3">общение и встречи</span><span class="l8">деньги и сделки</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band tight" id="compat">
-    <div class="wrap compat">
-      <div style="display:grid;gap:18px;min-width:0">
-        <p class="eyebrow">Совместимость по дате рождения</p>
-        <h2>Что вас объединяет как пару</h2>
-        <p class="lead">Введите две даты рождения. Я посчитаю число судьбы каждого и число вашей пары — одну из главных тем вашего союза. Роли в паре, кризисные годы и прогноз на 2027 — в полном разборе пары.</p>
-        <form class="calc" id="pairForm" novalidate style="max-width:none">
-          <div class="pair">
-            <div><div class="who">Вы</div><div class="date-in"><select id="ad" aria-label="Ваш день"></select><select id="am" aria-label="Ваш месяц"></select><select id="ay" aria-label="Ваш год"></select></div></div>
-            <div><div class="who">Партнёр</div><div class="date-in"><select id="pd" aria-label="День партнёра"></select><select id="pm" aria-label="Месяц партнёра"></select><select id="py" aria-label="Год партнёра"></select></div></div>
-          </div>
-          <button class="btn btn-primary" type="submit" style="justify-self:start">Посчитать совместимость</button>
-          <p class="note" id="pairNote">Показан пример для пары 14.03.1987 и 02.11.1984.</p>
-        </form>
-      </div>
-      <article class="card pair-res glow" aria-live="polite">
-        <canvas class="pair-canvas" id="pairCanvas" aria-hidden="true"></canvas>
-        <div class="pair-nums"><span class="pn" id="pA">7</span><span class="muted">+</span><span class="pn" id="pB">8</span><span class="muted">=</span><span class="pn sum" id="pS">6</span></div>
-        <h3 id="pTitle"></h3>
-        <p id="pText"></p>
-        <dl class="focus">
-          <div><dt>Сила пары</dt><dd id="pPlus"></dd></div>
-          <div><dt>Зона роста</dt><dd id="pGrow"></dd></div>
-          <div><dt>Совет</dt><dd id="pTip"></dd></div>
-        </dl>
-        <div class="locks" id="pairLocks"></div>
-        <div class="pair-buy">
-          <button class="btn btn-primary js-order" data-product="pair-report" type="button">Открыть все блоки — 699 ₽</button>
-          <button class="btn btn-ghost js-order" data-product="pair" type="button">Парный разбор с экспертом — 6 888 ₽</button>
-        </div>
-        <p class="note">Разбор пары придёт файлом сразу после оплаты: роли каждого, кризисные годы, прогноз на 2027 по месяцам. На парной консультации (90 минут) я разбираю обе матрицы целиком и ваш запрос.</p>
-        <button class="share-btn" type="button" data-share="p" style="justify-self:start">Отправить партнёру ссылку</button>
-      </article>
-    </div>
-  </section>
-
-  <section class="band tight" id="matrix">
-    <div class="wrap mx">
-      <svg class="mx-svg" id="mxSvg" viewBox="0 0 400 400" role="img" aria-label="Схема матрицы судьбы"></svg>
-      <div style="display:grid;gap:16px;min-width:0">
-        <p class="eyebrow">Матрица судьбы</p>
-        <h2>Ваша матрица из 22 энергий</h2>
-        <p class="lead">Матрица строится по дате рождения: каждое число — одна из 22 энергий (арканов). Посмотрите свои ключевые точки бесплатно, а полный разбор — предназначение, деньги, отношения, родовые задачи — я подготовлю лично.</p>
-        <form class="calc" id="mxForm" novalidate style="max-width:none"><div class="date-in"><select id="xd" aria-label="День"></select><select id="xm" aria-label="Месяц"></select><select id="xy" aria-label="Год"></select></div><button class="btn btn-primary" type="submit" style="justify-self:start">Построить матрицу</button><p class="note" id="mxNote"></p></form>
-        <div class="mx-list" id="mxList"></div>
-        <div class="locks" id="mxLocks"></div>
-        <button class="btn btn-primary js-order" data-product="matrix" type="button" style="justify-self:start">Полный разбор матрицы — 1 997 ₽</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="band paper" id="report">
+  <section class="band" id="report">
     <div class="wrap report">
       <div style="min-width:0">
         <p class="eyebrow">Разбор «Мой 2027»</p>
@@ -1137,6 +1113,7 @@ section[hidden]{display:none!important}
           <button class="btn btn-primary js-order" data-product="report" type="button">Заказать разбор — 498 ₽</button>
           <button class="btn btn-ghost js-order" data-product="gift" type="button">Подарить близкому — 699 ₽</button>
         </div>
+        <p class="guar">✓ Придёт в Telegram за 1–2 минуты. Если разбор ещё не отправлен — верну деньги полностью.</p>
       </div>
       <div class="pages" aria-label="Образец страниц разбора">
         <div class="pg pg-1">
@@ -1197,75 +1174,6 @@ section[hidden]{display:none!important}
     </div>
   </section>
 
-
-  <section class="band" id="reviews">
-    <div class="wrap">
-      <div class="band-head">
-        <p class="eyebrow">Отзывы</p>
-        <h2>Что пишут участницы Мандалы</h2>
-        <p class="lead">Отзывы из чата семинара «Мандала 2024».</p>
-      </div>
-      <div class="reviews">
-        <figure class="rev glow" style="margin:0">
-          <blockquote>Сделав расчёт на 2024 год, я поняла, что всё, что происходит со мной сейчас, показала каждая позиция. Большая благодарность Светлане за время, которое она мне уделила лично, чтобы ещё раз разобрать и ответить на мои вопросы. Я получила советы, как поступить, и итог от каждого моего действия.</blockquote>
-          <footer><span class="av">Е</span><span><b>Елена</b>участница Мандалы 2024</span></footer>
-        </figure>
-        <figure class="rev glow" style="margin:0">
-          <blockquote>С вас начались мои изменения в жизни в лучшую сторону: я спокойнее стала реагировать на многие вещи, всё в жизни становится на свои места, пазлы складываются. А Мандала на год — это вообще огонь. Девочки, советую пойти и нарисовать её на следующий год, вам многое станет понятно.</blockquote>
-          <footer><span class="av">В</span><span><b>Виктория</b>участница Мандалы 2024</span></footer>
-        </figure>
-        <figure class="rev glow" style="margin:0">
-          <blockquote>Я весь вечер переваривала то, что мы вчера творили с помощью Марины и Светланы. Это что-то новое для меня. Это огромный труд, то, что вы сделали. И это работает. Благодарю вас.</blockquote>
-          <footer><span class="av">А</span><span><b>Алла</b>участница Мандалы 2024</span></footer>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="band tight" id="mandala">
-    <div class="wrap mandala">
-      <div class="mandala-art" aria-hidden="true"><canvas class="mandala-art" id="mandalaCanvas"></canvas></div>
-      <div style="display:grid;gap:18px;min-width:0">
-        <p class="eyebrow">Семинар-интенсив · проводим с 2020 года</p>
-        <h2>«Наша Мандала 2027»</h2>
-        <p class="lead">Раз в год мы собираемся онлайн, разбираем личные числа на год вперёд и рисуем свою мандалу. Это не просто красивый рисунок, а инструмент самопознания: в каждый треугольник, ромб и круг ложится число из вашей даты рождения, а цвет вы выбираете сами.</p>
-        <p class="lead">Рисование — своего рода ритуал: помогает углубиться в себя, а в группе — увидеть состояние друг друга и получить обратную связь. Готовая мандала остаётся с вами талисманом на весь год.</p>
-        <ul class="m-helps"><li>понять свои внутренние переживания</li><li>наладить гармонию в жизни</li><li>усилить свои сильные стороны</li></ul>
-        <div class="flows">
-          <div class="flow glow"><span class="muted" style="font-size:.78rem">Поток 1</span><b>20 декабря, 11:00</b><div class="seats"><i style="width:40%"></i></div><small>свободно 18 из 30 мест</small></div>
-          <div class="flow glow"><span class="muted" style="font-size:.78rem">Поток 2</span><b>10 января, 11:00</b><div class="seats"><i style="width:10%"></i></div><small>свободно 27 из 30 мест</small></div>
-        </div>
-        <dl class="facts">
-          <div><dt>Формат</dt><dd>Онлайн в Telegram, 3 часа</dd></div>
-          <div><dt>Ведущие</dt><dd>Светлана Деревенко и Марина Пирог</dd></div>
-          <div><dt>Что понадобится</dt><dd>Листы А4, цветные карандаши</dd></div>
-          <div><dt>Стоимость</dt><dd>3 333 ₽, разбор «Мой 2027» в подарок</dd></div>
-        </dl>
-        <button class="btn btn-primary js-order" data-product="mandala" type="button" style="justify-self:start">Записаться на Мандалу</button>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="m-gallery-head"><h3>Мандалы участниц</h3><p class="muted">У каждой своя: числа берутся из даты рождения, цвета — по ощущениям. Имена скрыты.</p></div>
-      <div class="m-gallery">
-        <button type="button" class="m-shot glow" data-i="0"><img src="/img/mandala-g1.jpg" alt="Мандала участницы, сиреневые и жёлтые тона" loading="lazy"></button>
-        <button type="button" class="m-shot glow" data-i="1"><img src="/img/mandala-g2.jpg" alt="Мандала участницы, зелёные и розовые тона" loading="lazy"></button>
-        <button type="button" class="m-shot glow" data-i="2"><img src="/img/mandala-g3.jpg" alt="Мандала участницы, фиолетовые и жёлтые тона" loading="lazy"></button>
-      </div>
-    </div>
-  </section>
-  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Мандала участницы"><button class="x" type="button" id="lbClose" aria-label="Закрыть">×</button><img id="lbImg" alt=""></div>
-
-  <section class="band tight" id="kviz">
-    <div class="wrap">
-      <div class="band-head" style="text-align:center;max-width:720px;margin:0 auto 28px">
-        <p class="eyebrow">Подбор за 30 секунд</p>
-        <h2 style="margin-top:12px">Не знаете, с чего начать?</h2>
-        <p class="lead" style="margin:14px auto 0">Три вопроса — и я подскажу, какой формат подойдёт именно вам.</p>
-      </div>
-      <div class="quiz" id="quiz" aria-live="polite"></div>
-    </div>
-  </section>
-
   <section class="band tight" id="prices">
     <div class="wrap">
       <div class="band-head">
@@ -1321,7 +1229,173 @@ section[hidden]{display:none!important}
     </div>
   </section>
 
-  <section class="band tight" id="how">
+  <section class="band" id="reviews">
+    <div class="wrap">
+      <div class="band-head">
+        <p class="eyebrow">Отзывы</p>
+        <h2>Что пишут участницы Мандалы</h2>
+        <p class="lead">Отзывы из чата семинара «Мандала 2024».</p>
+      </div>
+      <div class="reviews">
+        <figure class="rev glow" style="margin:0">
+          <blockquote>Сделав расчёт на 2024 год, я поняла, что всё, что происходит со мной сейчас, показала каждая позиция. Большая благодарность Светлане за время, которое она мне уделила лично, чтобы ещё раз разобрать и ответить на мои вопросы. Я получила советы, как поступить, и итог от каждого моего действия.</blockquote>
+          <footer><span class="av">Е</span><span><b>Елена</b>участница Мандалы 2024</span></footer>
+        </figure>
+        <figure class="rev glow" style="margin:0">
+          <blockquote>С вас начались мои изменения в жизни в лучшую сторону: я спокойнее стала реагировать на многие вещи, всё в жизни становится на свои места, пазлы складываются. А Мандала на год — это вообще огонь. Девочки, советую пойти и нарисовать её на следующий год, вам многое станет понятно.</blockquote>
+          <footer><span class="av">В</span><span><b>Виктория</b>участница Мандалы 2024</span></footer>
+        </figure>
+        <figure class="rev glow" style="margin:0">
+          <blockquote>Я весь вечер переваривала то, что мы вчера творили с помощью Марины и Светланы. Это что-то новое для меня. Это огромный труд, то, что вы сделали. И это работает. Благодарю вас.</blockquote>
+          <footer><span class="av">А</span><span><b>Алла</b>участница Мандалы 2024</span></footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="compat">
+    <div class="wrap compat">
+      <div style="display:grid;gap:18px;min-width:0">
+        <p class="eyebrow">Совместимость по дате рождения</p>
+        <h2>Что вас объединяет как пару</h2>
+        <p class="lead">Введите две даты рождения. Я посчитаю число судьбы каждого и число вашей пары — одну из главных тем вашего союза. Роли в паре, кризисные годы и прогноз на 2027 — в полном разборе пары.</p>
+        <form class="calc" id="pairForm" novalidate style="max-width:none">
+          <div class="pair">
+            <div><div class="who">Вы</div><div class="date-in"><select id="ad" aria-label="Ваш день"></select><select id="am" aria-label="Ваш месяц"></select><select id="ay" aria-label="Ваш год"></select></div></div>
+            <div><div class="who">Партнёр</div><div class="date-in"><select id="pd" aria-label="День партнёра"></select><select id="pm" aria-label="Месяц партнёра"></select><select id="py" aria-label="Год партнёра"></select></div></div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="justify-self:start">Посчитать совместимость</button>
+          <p class="note" id="pairNote">Показан пример для пары 14.03.1987 и 02.11.1984.</p>
+        </form>
+      </div>
+      <article class="card pair-res glow" aria-live="polite">
+        <canvas class="pair-canvas" id="pairCanvas" aria-hidden="true"></canvas>
+        <div class="pair-nums"><span class="pn" id="pA">7</span><span class="muted">+</span><span class="pn" id="pB">8</span><span class="muted">=</span><span class="pn sum" id="pS">6</span></div>
+        <h3 id="pTitle"></h3>
+        <p id="pText"></p>
+        <dl class="focus">
+          <div><dt>Сила пары</dt><dd id="pPlus"></dd></div>
+          <div><dt>Зона роста</dt><dd id="pGrow"></dd></div>
+          <div><dt>Совет</dt><dd id="pTip"></dd></div>
+        </dl>
+        <div class="locks" id="pairLocks"></div>
+        <div class="pair-buy">
+          <button class="btn btn-primary js-order" data-product="pair-report" type="button">Открыть все блоки — 699 ₽</button>
+          <button class="btn btn-ghost js-order" data-product="pair" type="button">Парный разбор с экспертом — 6 888 ₽</button>
+        </div>
+        <p class="note">Разбор пары придёт файлом сразу после оплаты: роли каждого, кризисные годы, прогноз на 2027 по месяцам. На парной консультации (90 минут) я разбираю обе матрицы целиком и ваш запрос.</p>
+        <button class="share-btn" type="button" data-share="p" style="justify-self:start">Отправить партнёру ссылку</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="band tight" id="matrix">
+    <div class="wrap mx">
+      <svg class="mx-svg" id="mxSvg" viewBox="0 0 400 400" role="img" aria-label="Схема матрицы судьбы"></svg>
+      <div style="display:grid;gap:16px;min-width:0">
+        <p class="eyebrow">Матрица судьбы</p>
+        <h2>Ваша матрица из 22 энергий</h2>
+        <p class="lead">Матрица строится по дате рождения: каждое число — одна из 22 энергий (арканов). Посмотрите свои ключевые точки бесплатно, а полный разбор — предназначение, деньги, отношения, родовые задачи — я подготовлю лично.</p>
+        <form class="calc" id="mxForm" novalidate style="max-width:none"><div class="date-in"><select id="xd" aria-label="День"></select><select id="xm" aria-label="Месяц"></select><select id="xy" aria-label="Год"></select></div><button class="btn btn-primary" type="submit" style="justify-self:start">Построить матрицу</button><p class="note" id="mxNote"></p></form>
+        <div class="mx-list" id="mxList"></div>
+        <div class="locks" id="mxLocks"></div>
+        <button class="btn btn-primary js-order" data-product="matrix" type="button" style="justify-self:start">Полный разбор матрицы — 1 997 ₽</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight">
+    <div class="wrap">
+      <div class="band-head">
+        <p class="eyebrow">Девятилетний цикл</p>
+        <h2>Девять ступеней, и каждый год — своя</h2>
+        <p class="lead">После девятого года цикл начинается заново. Откройте любую ступень, чтобы прочитать, что она приносит в деньгах, отношениях и делах.</p>
+      </div>
+      <nav class="cycle" id="cycle" aria-label="Личные годы"></nav>
+    </div>
+  </section>
+
+  <section class="band tight" id="world" hidden>
+    <div class="wrap world">
+      <div><div class="big" aria-hidden="true">2</div><p class="sum">2 + 0 + 2 + 7 = 11 → 2</p></div>
+      <div style="min-width:0">
+        <p class="eyebrow">Общее число года</p>
+        <h2>2027 — год двойки: время союзов</h2>
+        <p class="lead" style="margin-top:14px">2025 был годом девятки — годом очищения и завершений. 2026 — год единицы, старт нового девятилетнего цикла. А 2027 — год двойки: на первый план выходят отношения и умение договариваться.</p>
+        <ul>
+          <li><b>Отношения.</b> Хорошее время укрепить союз, договориться о важном, создать семью.</li>
+          <li><b>Работа.</b> Выигрывает тот, кто строит партнёрства, а не тянет всё в одиночку.</li>
+          <li><b>Решения.</b> Двойка не любит спешки: то, что начали в 2026, важно растить терпением.</li>
+        </ul>
+        <div class="acts"><a class="btn btn-ghost" href="/stati/2027-god-dvoyki/">Читать подробнее</a><a class="btn btn-primary" href="#" data-to="calc">Узнать свой личный год</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="today" hidden>
+    <div class="wrap today">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="eyebrow">Прогноз дня</p>
+        <h2>Ваш день сегодня</h2>
+        <p class="lead">Каждый день тоже имеет своё число. Оно складывается из вашего личного года и сегодняшней даты. Посчитаю по дате рождения, которую вы указали в калькуляторе наверху.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary" type="button" id="todayBtn">Посчитать мой день</button><button class="btn btn-ghost js-bot" type="button">Получать каждое утро</button></div>
+        <p class="note" id="todayNote"></p>
+        <a class="textlink" href="/chislo-dnya/">Общее число дня — на каждый день до конца 2027 →</a>
+      </div>
+      <article class="card glow today-card" aria-live="polite"><span class="n" id="tN">1</span><div style="display:grid;gap:8px;min-width:0"><p class="eyebrow" id="tDate"></p><h3 id="tTitle"></h3><p id="tText"></p></div></article>
+    </div>
+  </section>
+
+  <section class="band tight" id="calendar" hidden>
+    <div class="wrap cal-wrap">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="eyebrow">Бесплатно</p>
+        <h2>Календарь удачных дней на <span id="calMonthName">ноябрь</span></h2>
+        <p class="lead">По вашей дате рождения я отметила дни, которые лучше всего подходят для начинаний, для общения и для денег. Полный календарь с подсказкой на каждый день — бесплатно в Telegram.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary js-bot" type="button">Получить календарь в Telegram</button><button class="btn btn-ghost" type="button" id="calBtn">Пересчитать по моей дате</button></div>
+        <p class="note" id="calNote"></p>
+      </div>
+      <div class="cal glow" aria-live="polite">
+        <div class="cal-head"><b id="calTitle"></b><span class="note">личный год <span id="calPY"></span></span></div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="legend"><span class="l1">начинания</span><span class="l3">общение и встречи</span><span class="l8">деньги и сделки</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="mandala">
+    <div class="wrap mandala">
+      <div class="mandala-art" aria-hidden="true"><canvas class="mandala-art" id="mandalaCanvas"></canvas></div>
+      <div style="display:grid;gap:18px;min-width:0">
+        <p class="eyebrow">Семинар-интенсив · проводим с 2020 года</p>
+        <h2>«Наша Мандала 2027»</h2>
+        <p class="lead">Раз в год мы собираемся онлайн, разбираем личные числа на год вперёд и рисуем свою мандалу. Это не просто красивый рисунок, а инструмент самопознания: в каждый треугольник, ромб и круг ложится число из вашей даты рождения, а цвет вы выбираете сами.</p>
+        <p class="lead">Рисование — своего рода ритуал: помогает углубиться в себя, а в группе — увидеть состояние друг друга и получить обратную связь. Готовая мандала остаётся с вами талисманом на весь год.</p>
+        <ul class="m-helps"><li>понять свои внутренние переживания</li><li>наладить гармонию в жизни</li><li>усилить свои сильные стороны</li></ul>
+        <div class="flows">
+          <div class="flow glow"><span class="muted" style="font-size:.78rem">Поток 1</span><b>20 декабря, 11:00</b><div class="seats"><i style="width:40%"></i></div><small>свободно 18 из 30 мест</small></div>
+          <div class="flow glow"><span class="muted" style="font-size:.78rem">Поток 2</span><b>10 января, 11:00</b><div class="seats"><i style="width:10%"></i></div><small>свободно 27 из 30 мест</small></div>
+        </div>
+        <dl class="facts">
+          <div><dt>Формат</dt><dd>Онлайн в Telegram, 3 часа</dd></div>
+          <div><dt>Ведущие</dt><dd>Светлана Деревенко и Марина Пирог</dd></div>
+          <div><dt>Что понадобится</dt><dd>Листы А4, цветные карандаши</dd></div>
+          <div><dt>Стоимость</dt><dd>3 333 ₽, разбор «Мой 2027» в подарок</dd></div>
+        </dl>
+        <button class="btn btn-primary js-order" data-product="mandala" type="button" style="justify-self:start">Записаться на Мандалу</button>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="m-gallery-head"><h3>Мандалы участниц</h3><p class="muted">У каждой своя: числа берутся из даты рождения, цвета — по ощущениям. Имена скрыты.</p></div>
+      <div class="m-gallery">
+        <button type="button" class="m-shot glow" data-i="0"><img src="/img/mandala-g1.jpg" alt="Мандала участницы, сиреневые и жёлтые тона" loading="lazy"></button>
+        <button type="button" class="m-shot glow" data-i="1"><img src="/img/mandala-g2.jpg" alt="Мандала участницы, зелёные и розовые тона" loading="lazy"></button>
+        <button type="button" class="m-shot glow" data-i="2"><img src="/img/mandala-g3.jpg" alt="Мандала участницы, фиолетовые и жёлтые тона" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tight" id="how" hidden>
     <div class="wrap">
       <div class="band-head"><p class="eyebrow">Личная и парная консультация</p><h2>Как проходит консультация</h2></div>
       <ol class="how">
@@ -1377,14 +1451,14 @@ section[hidden]{display:none!important}
     </div>
   </section>
 
-  <section class="band tight">
+  <section class="band tight" id="faq">
     <div class="wrap">
       <div class="band-head"><p class="eyebrow">Вопросы</p><h2>Частые вопросы</h2></div>
       <div class="faq">
         <details><summary>Как считается личный год?</summary><p>Складываем цифры дня и месяца рождения с цифрами нужного года и сводим сумму к одной цифре. Например, для 14.03 в 2027 году: 1 + 4 + 0 + 3 + 2 + 0 + 2 + 7 = 19, затем 1 + 9 = 10 и 1 + 0 = 1. Это первый год нового цикла.</p></details>
         <details><summary>Нумерология — это гадание?</summary><p>Нет. Нумерология — это расчёт: работа с числами даты рождения и с циклами, которые повторяются год за годом. Она не предсказывает судьбу, а показывает, какие задачи и возможности приходят в тот или иной период, чтобы вы проходили их осознанно.</p></details>
         <details><summary>Чем разбор отличается от бесплатного расчёта?</summary><p>Бесплатно вы узнаёте одну цифру — свой личный год. В разборе пять кодов вашей даты рождения и прогноз на каждый из двенадцати месяцев 2027 года с конкретными задачами.</p></details>
-        <details><summary>Как я получу разбор и когда?</summary><p>После оплаты разбор придёт в Telegram-бот файлом в течение суток. Он останется у вас, его можно перечитывать весь год.</p></details>
+        <details><summary>Как я получу разбор и когда?</summary><p>После оплаты разбор придёт в Telegram-бот файлом за 1–2 минуты. Он останется у вас, его можно перечитывать весь год.</p></details>
         <details><summary>Можно ли подарить разбор?</summary><p>Да. Подарочный разбор стоит 699 ₽: вы указываете дату рождения близкого человека и получаете красиво оформленный файл, который можно переслать.</p></details>
         <details><summary>Можно ли вернуть деньги?</summary><p>Если разбор ещё не отправлен или до семинара больше суток — верну полностью. Подробности в <a class="textlink" href="#oferta">договоре-оферте</a>.</p></details>
         <details><summary>Это заменяет врача, психолога или финансового консультанта?</summary><p>Нет. Нумерология помогает посмотреть на свой год и задачи с другой стороны, но не ставит диагнозы и не даёт медицинских, юридических или финансовых рекомендаций. По вопросам здоровья обращайтесь к врачу.</p></details>
@@ -1395,12 +1469,13 @@ section[hidden]{display:none!important}
   <section class="final">
     <div class="wrap">
       <div style="display:grid;gap:10px;min-width:0">
-        <h2>Узнайте свой прогноз на завтра</h2>
-        <p class="lead">Подпишитесь на бота: каждое утро он пришлёт ваш личный день, рассчитанный по дате рождения.</p>
+        <h2>Узнайте, каким будет ваш 2027 год</h2>
+        <p class="lead">Расчёт по дате рождения — бесплатно, за минуту. Полный разбор «Мой 2027» придёт в Telegram за 1–2 минуты.</p>
       </div>
-      <button class="btn btn-primary js-bot" type="button">Открыть бота в Telegram</button>
+      <div class="final-acts"><a class="btn btn-primary" href="#" data-to="calc">Рассчитать бесплатно</a><button class="btn btn-ghost js-order" data-product="report" type="button">Полный разбор — 498 ₽</button></div>
     </div>
   </section>
+
 </main>
 
 <!-- СТРАНИЦА ЛИЧНОГО ГОДА -->
@@ -1673,8 +1748,27 @@ section[hidden]{display:none!important}
   </div>
 </footer>
 
+<div class="nsheet" id="navSheet" role="dialog" aria-modal="true" aria-label="Меню сайта" hidden>
+  <div class="ns-in">
+    <div class="ns-top"><b>Куда перейти?</b><button class="ns-x js-menu-x" type="button">Закрыть ✕</button></div>
+    <ol class="ns-how"><li>Выберите дату рождения</li><li>Нажмите «Рассчитать»</li><li>Нажмите «Получить разбор» — оплата и файл придут в Telegram</li></ol>
+    <nav class="ns-list" aria-label="Разделы сайта">
+      <a href="#" data-to="calc"><i>🔢</i><span><b>Узнать свой 2027 год</b><small>Бесплатно, по дате рождения</small></span></a>
+      <a href="#" data-to="free"><i>📄</i><span><b>Мой бесплатный разбор</b><small>Характер, отношения, деньги</small></span></a>
+      <a href="#" data-to="kviz"><i>🧭</i><span><b>Не знаю, с чего начать</b><small>Ответьте на 1 вопрос — подскажу</small></span></a>
+      <a href="#" data-to="prices"><i>💳</i><span><b>Цены и как заказать</b><small>Разбор «Мой 2027» — 498 ₽</small></span></a>
+      <a href="#" data-to="compat"><i>💞</i><span><b>Совместимость пары</b><small>Две даты — число вашей пары</small></span></a>
+      <a href="#" data-to="matrix"><i>✨</i><span><b>Матрица судьбы</b><small>22 энергии по дате рождения</small></span></a>
+      <a href="#" data-to="mandala"><i>🌸</i><span><b>Семинар «Наша Мандала»</b><small>Живая встреча онлайн</small></span></a>
+      <a href="#" data-to="faq"><i>❓</i><span><b>Частые вопросы</b><small>Оплата, возврат, сроки</small></span></a>
+      <a href="/stati/"><i>📚</i><span><b>Статьи</b><small>Как считаются числа</small></span></a>
+    </nav>
+    <button class="btn btn-primary ns-ask js-ask" type="button">💬 Задать вопрос Светлане</button>
+    <button class="ns-up" type="button" data-to="calc">↑ Вернуться в начало страницы</button>
+  </div>
+</div>
 <div class="cpill" id="cpill" aria-label="Связаться со Светланой"><img src="/img/mama-ava.webp" alt="" width="42" height="42"><div class="t"><b>Светлана на связи</b><span>отвечаю в Telegram-боте</span></div><button class="btn btn-primary js-ask" type="button">Задать вопрос</button></div>
-<div class="mbar"><button class="btn btn-ghost js-ask mb-ask" type="button"><img src="/img/mama-ava.webp" alt="" width="28" height="28">Спросить Светлану</button><button class="btn btn-primary js-order" data-product="report" type="button">Разбор 498 ₽</button></div>
+<div class="mbar"><button class="btn btn-ghost js-menu mb-menu" type="button" aria-controls="navSheet"><span aria-hidden="true">☰</span>Меню</button><button class="btn btn-ghost js-ask mb-ask" type="button"><img src="/img/mama-ava.webp" alt="" width="28" height="28">Вопрос</button><button class="btn btn-primary js-order" data-product="report" type="button">Разбор 498 ₽</button></div>
 
 <div class="dlg" id="dlg" hidden role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
   <form class="dlg-box" id="orderForm" novalidate>
@@ -2134,6 +2228,23 @@ section[hidden]{display:none!important}
   var dlg=$('dlg'),lastBtn=null,cur='report';
   var KG_BOT='kkodgoda_bot';
   function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
+
+  /* v31: меню */
+  (function(){
+    var sh=document.getElementById('navSheet');if(!sh)return;var last=null;
+    function openM(b){last=b;sh.hidden=false;document.documentElement.style.overflow='hidden';var x=sh.querySelector('.js-menu-x');if(x)x.focus();}
+    function closeM(){if(sh.hidden)return;sh.hidden=true;document.documentElement.style.overflow='';if(last&&last.focus)last.focus({preventScroll:true});}
+    document.addEventListener('click',function(e){
+      var b=e.target.closest('.js-menu');if(b){e.preventDefault();openM(b);return;}
+      if(e.target.closest('.js-menu-x')||e.target===sh){closeM();return;}
+      if(!sh.hidden&&e.target.closest('#navSheet a,#navSheet [data-to],#navSheet .js-ask'))closeM();
+    },true);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+  })();
+  /* v31: после «Рассчитать» на телефоне показать результат */
+  (function(){var f=document.getElementById('calcForm');if(!f)return;f.addEventListener('submit',function(){
+    if(!matchMedia('(max-width:900px)').matches)return;
+    setTimeout(function(){var r=document.querySelector('#calc .result');if(r){var t=r.getBoundingClientRect().top;if(t>innerHeight*.6)r.scrollIntoView({behavior:'smooth',block:'start'});}},350);});})();
   // ===== v30: история, «что внутри», принципы, плашка =====
   (function(){
     var steps=[].slice.call(document.querySelectorAll('.sstep')),scr=[].slice.call(document.querySelectorAll('.story-phone .scr'));
@@ -2257,15 +2368,15 @@ section[hidden]{display:none!important}
     function check(){
       var k=current();if(!k||k===lastKey)return;lastKey=k;
       if(root.classList.contains('open'))render(TIPS[k]());
-      else if(!hidden&&Date.now()-lastShow>25000)open(TIPS[k]());
+      
     }
     addEventListener('scroll',function(){if(t0)return;t0=setTimeout(function(){t0=null;check();},350);},{passive:true});
     addEventListener('hashchange',function(){setTimeout(function(){lastKey='';check();},300);});
-    setTimeout(function(){lastKey=current()||'calc';open(TIPS[lastKey]());},3500);
+    setTimeout(function(){var seen=false;try{seen=sessionStorage.getItem('kg-veda-seen')==='1';sessionStorage.setItem('kg-veda-seen','1');}catch(e){}if(seen||matchMedia('(max-width:760px)').matches)return;lastKey=current()||'calc';open(TIPS[lastKey]());},12000);
     // результат расчёта года
     var cf=$('calcForm');
     if(cf)cf.addEventListener('submit',function(){setTimeout(function(){
-      var n=+(($('resNum')||{}).textContent||0);if(n){year={n:n,name:(($('resTitle')||{}).textContent||'')};lastKey='calc';hidden=false;open(TIPS.calc(),true);}
+      var n=+(($('resNum')||{}).textContent||0);if(n){year={n:n,name:(($('resTitle')||{}).textContent||'')};lastKey='calc';if(!matchMedia('(max-width:760px)').matches){hidden=false;open(TIPS.calc(),true);}}
     },700);});
     // Веда следит за курсором (компьютер) или за касанием (телефон): 6 кадров, плавное смешивание
     var idle=null;
