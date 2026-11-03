@@ -951,11 +951,6 @@ section[hidden]{display:none!important}
 .mbar .mb-ask{flex:0 0 auto;padding-inline:10px}
 /* Веда: на телефоне не занимает экран */
 @media (max-width:760px){.veda{display:none}}
-/* ===== v32: видео звёздного неба в первом экране ===== */
-.hero-vid{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.hero-vid video{width:100%;height:100%;object-fit:cover;opacity:.85}
-.hero-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,16,48,.72) 0%,rgba(13,16,48,.3) 50%,rgba(13,16,48,.05) 100%),linear-gradient(180deg,rgba(13,16,48,.3) 0%,rgba(13,16,48,0) 25%,rgba(13,16,48,.35) 70%,var(--night) 100%)}
-@media (max-width:900px){.hero-vid{bottom:auto;height:min(100svh,900px)}.hero-vid::after{background:linear-gradient(180deg,rgba(13,16,48,.4) 0%,rgba(13,16,48,.62) 55%,var(--night) 100%)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, {"@type": "WebSite", "@id": "https://kodgoda.ru/#site", "url": "https://kodgoda.ru/", "name": "Код года — Светлана Деревенко", "inLanguage": "ru"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как считается личный год?", "acceptedAnswer": {"@type": "Answer", "text": "Складываем цифры дня и месяца рождения с цифрами нужного года и сводим сумму к одной цифре. Например, для 14.03 в 2027 году: 1 + 4 + 0 + 3 + 2 + 0 + 2 + 7 = 19, затем 1 + 9 = 10 и 1 + 0 = 1. Это первый год нового цикла."}}, {"@type": "Question", "name": "Нумерология — это гадание?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Нумерология — это расчёт: работа с числами даты рождения и с циклами, которые повторяются год за годом. Она не предсказывает судьбу, а показывает, какие задачи и возможности приходят в тот или иной период, чтобы вы проходили их осознанно."}}, {"@type": "Question", "name": "Чем разбор отличается от бесплатного расчёта?", "acceptedAnswer": {"@type": "Answer", "text": "Бесплатно вы узнаёте одну цифру — свой личный год. В разборе пять кодов вашей даты рождения и прогноз на каждый из двенадцати месяцев 2027 года с конкретными задачами."}}, {"@type": "Question", "name": "Как я получу разбор и когда?", "acceptedAnswer": {"@type": "Answer", "text": "После оплаты разбор придёт в Telegram-бот файлом за 1–2 минуты. Он останется у вас, его можно перечитывать весь год."}}, {"@type": "Question", "name": "Можно ли подарить разбор?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Подарочный разбор стоит 699 ₽: вы указываете дату рождения близкого человека и получаете красиво оформленный файл, который можно переслать."}}, {"@type": "Question", "name": "Можно ли вернуть деньги?", "acceptedAnswer": {"@type": "Answer", "text": "Если разбор ещё не отправлен или до семинара больше суток — верну полностью. Подробности в договоре-оферте."}}, {"@type": "Question", "name": "Это заменяет врача, психолога или финансового консультанта?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Нумерология помогает посмотреть на свой год и задачи с другой стороны, но не ставит диагнозы и не даёт медицинских, юридических или финансовых рекомендаций. По вопросам здоровья обращайтесь к врачу."}}]}]}</script>
 </head>
@@ -1006,7 +1001,6 @@ section[hidden]{display:none!important}
 
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Мандала участницы"><button class="x" type="button" id="lbClose" aria-label="Закрыть">×</button><img id="lbImg" alt=""></div>
   <section class="hero" id="calc">
-    <div class="hero-vid" aria-hidden="true"><video muted playsinline loop preload="none" poster="img/sky-poster.webp" data-bgv><source src="video/sky.webm" type="video/webm"><source src="video/sky.mp4" type="video/mp4"></video></div>
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
       <div class="hero-grid">
@@ -2233,13 +2227,6 @@ section[hidden]{display:none!important}
   var dlg=$('dlg'),lastBtn=null,cur='report';
   var KG_BOT='kkodgoda_bot';
   function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
-
-  /* v32: фоновые видео — играют только на экране; без них при reduced-motion и экономии трафика */
-  (function(){var vs=[].slice.call(document.querySelectorAll('video[data-bgv]'));if(!vs.length)return;
-    var save=navigator.connection&&navigator.connection.saveData;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches||save||!('IntersectionObserver' in window))return;
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(v.preload==='none'){v.preload='auto';v.load();}var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});},{rootMargin:'200px 0px'});
-    vs.forEach(function(v){io.observe(v);});})();
 
   /* v31: меню */
   (function(){

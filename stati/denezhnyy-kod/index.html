@@ -952,11 +952,6 @@ section[hidden]{display:none!important}
 .mbar .mb-ask{flex:0 0 auto;padding-inline:10px}
 /* Веда: на телефоне не занимает экран */
 @media (max-width:760px){.veda{display:none}}
-/* ===== v32: видео звёздного неба в первом экране ===== */
-.hero-vid{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-.hero-vid video{width:100%;height:100%;object-fit:cover;opacity:.85}
-.hero-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,16,48,.72) 0%,rgba(13,16,48,.3) 50%,rgba(13,16,48,.05) 100%),linear-gradient(180deg,rgba(13,16,48,.3) 0%,rgba(13,16,48,0) 25%,rgba(13,16,48,.35) 70%,var(--night) 100%)}
-@media (max-width:900px){.hero-vid{bottom:auto;height:min(100svh,900px)}.hero-vid::after{background:linear-gradient(180deg,rgba(13,16,48,.4) 0%,rgba(13,16,48,.62) 55%,var(--night) 100%)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Денежный код: считаем по имени и дню рождения", "description": "Как посчитать денежный код по имени и дню рождения и что означают числа от 1 до 9 в отношениях с деньгами.", "inLanguage": "ru", "mainEntityOfPage": "https://kodgoda.ru/stati/denezhnyy-kod/", "author": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "publisher": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, "image": "https://kodgoda.ru/og-image.jpg", "datePublished": "2026-10-29"}</script>
 </head>
@@ -1007,7 +1002,6 @@ section[hidden]{display:none!important}
 
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Мандала участницы"><button class="x" type="button" id="lbClose" aria-label="Закрыть">×</button><img id="lbImg" alt=""></div>
   <section class="hero" id="calc">
-    <div class="hero-vid" aria-hidden="true"><video muted playsinline loop preload="none" poster="/img/sky-poster.webp" data-bgv><source src="/video/sky.webm" type="video/webm"><source src="/video/sky.mp4" type="video/mp4"></video></div>
     <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap">
       <div class="hero-grid">
@@ -2234,13 +2228,6 @@ section[hidden]{display:none!important}
   var dlg=$('dlg'),lastBtn=null,cur='report';
   var KG_BOT='kkodgoda_bot';
   function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
-
-  /* v32: фоновые видео — играют только на экране; без них при reduced-motion и экономии трафика */
-  (function(){var vs=[].slice.call(document.querySelectorAll('video[data-bgv]'));if(!vs.length)return;
-    var save=navigator.connection&&navigator.connection.saveData;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches||save||!('IntersectionObserver' in window))return;
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(v.preload==='none'){v.preload='auto';v.load();}var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});},{rootMargin:'200px 0px'});
-    vs.forEach(function(v){io.observe(v);});})();
 
   /* v31: меню */
   (function(){
