@@ -951,6 +951,15 @@ section[hidden]{display:none!important}
 .mbar .mb-ask{flex:0 0 auto;padding-inline:10px}
 /* Веда: на телефоне не занимает экран */
 @media (max-width:760px){.veda{display:none}}
+/* ===== v33: подпись к кругу ступеней ===== */
+.wheel-col{display:grid;gap:14px;justify-items:center;min-width:0}
+.wheel-cap{max-width:440px;width:100%;display:grid;gap:8px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:rgba(13,16,48,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.wc-main{margin:0;display:flex;align-items:center;gap:12px;font-size:1.02rem;line-height:1.35}
+.wc-main b{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sky);color:var(--night);font:400 1.3rem/1 var(--font-display)}
+.wc-main small{display:block;color:var(--mist);font-size:.8rem}
+.wc-how{margin:0;color:var(--mist);font-size:.9rem;line-height:1.5}
+.wheel-cap.mine{border-color:rgba(134,205,252,.45)}
+@media (max-width:900px){.wheel-cap{max-width:420px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии Мары Борониной"}}, {"@type": "WebSite", "@id": "https://kodgoda.ru/#site", "url": "https://kodgoda.ru/", "name": "Код года — Светлана Деревенко", "inLanguage": "ru"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как считается личный год?", "acceptedAnswer": {"@type": "Answer", "text": "Складываем цифры дня и месяца рождения с цифрами нужного года и сводим сумму к одной цифре. Например, для 14.03 в 2027 году: 1 + 4 + 0 + 3 + 2 + 0 + 2 + 7 = 19, затем 1 + 9 = 10 и 1 + 0 = 1. Это первый год нового цикла."}}, {"@type": "Question", "name": "Нумерология — это гадание?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Нумерология — это расчёт: работа с числами даты рождения и с циклами, которые повторяются год за годом. Она не предсказывает судьбу, а показывает, какие задачи и возможности приходят в тот или иной период, чтобы вы проходили их осознанно."}}, {"@type": "Question", "name": "Чем разбор отличается от бесплатного расчёта?", "acceptedAnswer": {"@type": "Answer", "text": "Бесплатно вы узнаёте одну цифру — свой личный год. В разборе пять кодов вашей даты рождения и прогноз на каждый из двенадцати месяцев 2027 года с конкретными задачами."}}, {"@type": "Question", "name": "Как я получу разбор и когда?", "acceptedAnswer": {"@type": "Answer", "text": "После оплаты разбор придёт в Telegram-бот файлом за 1–2 минуты. Он останется у вас, его можно перечитывать весь год."}}, {"@type": "Question", "name": "Можно ли подарить разбор?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Подарочный разбор стоит 699 ₽: вы указываете дату рождения близкого человека и получаете красиво оформленный файл, который можно переслать."}}, {"@type": "Question", "name": "Можно ли вернуть деньги?", "acceptedAnswer": {"@type": "Answer", "text": "Если разбор ещё не отправлен или до семинара больше суток — верну полностью. Подробности в договоре-оферте."}}, {"@type": "Question", "name": "Это заменяет врача, психолога или финансового консультанта?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Нумерология помогает посмотреть на свой год и задачи с другой стороны, но не ставит диагнозы и не даёт медицинских, юридических или финансовых рекомендаций. По вопросам здоровья обращайтесь к врачу."}}]}]}</script>
 </head>
@@ -1023,9 +1032,15 @@ section[hidden]{display:none!important}
           </form>
           <div class="hero-sign rise d4"><span>Считаю и пишу каждый разбор лично — <b>Светлана Деревенко</b>, нумеролог</span></div>
         </div>
+        <div class="wheel-col">
         <div class="wheel-box rise d2">
           <div class="portrait-c ph" role="img" aria-label="Светлана Деревенко"></div>
           <canvas id="wheel" aria-hidden="true"></canvas>
+        </div>
+        <div class="wheel-cap rise d3" id="wheelCap" aria-live="polite">
+          <p class="wc-main"><b id="wcNum">1</b><span><small id="wcTag">Пример: 14 марта 1987</small>В 2027 году — ступень <span id="wcN">1</span>, «<span id="wcName">Начало</span>»</span></p>
+          <p class="wc-how">Круг — это 9 лет одного цикла. Каждый год человек переходит на следующую ступень: 1 → 2 → … → 9, потом всё сначала. Светлая линия — сколько цикла уже пройдено. <span id="wcHint">Введите свою дату — круг покажет вашу ступень.</span></p>
+        </div>
         </div>
       </div>
 
@@ -1892,7 +1907,7 @@ section[hidden]{display:none!important}
       c.fillStyle=on?night:mist;c.font=(on?21:16)*dpr+'px '+css('--font-display');c.textAlign='center';c.textBaseline='middle';c.fillText(String(m),p.x,p.y+dpr);
     }
     var lp=pts[active],lx=cx+Math.cos(lp.a)*R*1.3,ly=cy+Math.sin(lp.a)*R*1.3;
-    c.fillStyle=star;c.font=12*dpr+'px '+css('--font-body');c.fillText(String(YEAR),lx,ly);
+    c.fillStyle=star;c.font=12*dpr+'px '+css('--font-body');c.fillText('ваш '+YEAR,lx,ly);
   }
   var shown=1;
   var vis={wheel:true,mandala:false};
@@ -1913,7 +1928,8 @@ section[hidden]{display:none!important}
     var n=res.value,d=Y[n];active=n;
     var rn=$('resNum');rn.textContent=n;rn.classList.remove('flash');void rn.offsetWidth;rn.classList.add('flash');$('resTitle').textContent=d.name;$('resText').textContent=d.text;
     $('resFocus').textContent=d.focus;$('resHelp').textContent=d.help;$('resAvoid').textContent=d.avoid;
-    $('resTag').textContent=tag;$('resMore').href='#god-'+n;$('resMore').textContent='Подробнее о годе '+n+' →';
+    $('resTag').textContent=tag;$('resMore').href='#god-'+n;
+    (function(){var wn=$('wcNum');if(!wn)return;wn.textContent=n;$('wcN').textContent=n;$('wcName').textContent=d.name;var ex=/Пример/i.test(tag);$('wcTag').textContent=ex?'Пример: 14 марта 1987':'Ваша дата рождения';$('wheelCap').classList.toggle('mine',!ex);$('wcHint').textContent=ex?'Введите свою дату — круг покажет вашу ступень.':'Ниже — что значит ваша ступень и на чём сосредоточиться.';})();$('resMore').textContent='Подробнее о годе '+n+' →';
     var html=res.parts.join(' + ')+' = <span>'+res.chain[0]+'</span>';
     for(var j=1;j<res.chain.length;j++){html+=' → '+digits(res.chain[j-1]).join(' + ')+' = <span>'+res.chain[j]+'</span>';}
     $('resMath').innerHTML=html;
