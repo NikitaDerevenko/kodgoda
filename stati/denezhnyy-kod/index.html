@@ -985,6 +985,53 @@ section[hidden]{display:none!important}
 .in-foot.one{grid-template-columns:minmax(0,1fr)}
 .trust-row{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;color:var(--mist);font-size:.9rem}
 .step .fit{margin:0;font-size:.88rem;color:var(--sky)}
+/* ===== v37: Алана ===== */
+.veda,.cpill{display:none!important}
+.ai-note{margin:0;font-size:.82rem;color:var(--mist)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.alana{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;align-items:flex-end;gap:12px;pointer-events:none}
+.alana>*{pointer-events:auto}
+.al-face{position:relative;display:flex;align-items:center;gap:10px;flex-direction:row-reverse;padding:0;border:0;background:none;cursor:pointer;color:var(--star)}
+.al-ring{width:76px;height:76px;border-radius:50%;overflow:hidden;flex:none;box-shadow:0 0 0 2px rgba(227,190,120,.85),0 0 0 7px rgba(227,190,120,.14),0 12px 32px rgba(0,0,0,.5);background:#2a2116}
+.al-ring img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.08);will-change:transform}
+.al-hi{background:rgba(20,26,70,.96);border:1px solid rgba(227,190,120,.4);border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:.92rem;white-space:nowrap;opacity:0;transform:translateX(8px);transition:opacity .4s ease,transform .4s ease;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.alana.hello .al-hi{opacity:1;transform:none}
+.alana.open .al-hi{display:none}
+.al-chat{width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 140px));display:flex;flex-direction:column;background:rgba(14,18,52,.98);border:1px solid rgba(227,190,120,.35);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.55);overflow:hidden}
+.al-chat[hidden]{display:none}
+.al-head{display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px;border-bottom:1px solid var(--line)}
+.al-head img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.al-head b{display:block;font-size:1rem}.al-head small{color:var(--mist);font-size:.78rem}
+.al-head div{flex:1;min-width:0}
+.al-x{width:40px;height:40px;border:0;border-radius:10px;background:transparent;color:var(--mist);font-size:1.5rem;cursor:pointer}
+.al-x:hover{color:var(--star);background:rgba(255,255,255,.06)}
+.al-log{flex:1;overflow-y:auto;padding:14px;display:grid;align-content:start;gap:10px;overscroll-behavior:contain}
+.al-m{max-width:88%;display:grid;gap:8px}
+.al-m p{margin:0;padding:10px 13px;border-radius:14px;font-size:.95rem;line-height:1.5}
+.al-m.al p{background:rgba(255,255,255,.06);border-top-left-radius:4px}
+.al-m.me{justify-self:end}.al-m.me p{background:var(--violet-strong,#7a5ce8);color:#fff;border-top-right-radius:4px}
+.al-acts{display:flex;flex-wrap:wrap;gap:6px}
+.al-acts button,.al-chips button{font:inherit;font-size:.86rem;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--star);cursor:pointer;min-height:36px}
+.al-acts button.p{background:var(--violet-strong,#7a5ce8);border-color:transparent;color:#fff}
+.al-acts button:hover,.al-chips button:hover{border-color:var(--sky)}
+.al-chips{display:flex;gap:6px;overflow-x:auto;padding:0 14px 10px;scrollbar-width:none}
+.al-chips button{white-space:nowrap;flex:none}
+.al-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+.al-form input{flex:1;min-width:0;font:inherit;font-size:16px;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--star)}
+.al-form input:focus{outline:2px solid var(--sky);outline-offset:0}
+.al-form button{width:46px;border:0;border-radius:12px;background:var(--violet-strong,#7a5ce8);color:#fff;font-size:1.1rem;cursor:pointer}
+.al-fine{margin:0;padding:0 14px 10px;font-size:.72rem;color:var(--mist)}
+.al-m.typing p{display:flex;gap:4px}.al-m.typing i{width:6px;height:6px;border-radius:50%;background:var(--mist);animation:alDot 1s infinite}
+.al-m.typing i:nth-child(2){animation-delay:.15s}.al-m.typing i:nth-child(3){animation-delay:.3s}
+@keyframes alDot{0%,60%,100%{opacity:.3}30%{opacity:1}}
+@media (max-width:760px){
+  .alana{right:12px;bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+  .al-face{display:none}
+  .alana.open{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+  .al-chat{width:100%;height:calc(100svh - 24px)}
+}
+@media (prefers-reduced-motion:reduce){.al-hi{transition:none}.al-m.typing i{animation:none}}
+@media print{.alana{display:none!important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Денежный код: считаем по имени и дню рождения", "description": "Как посчитать денежный код по имени и дню рождения и что означают числа от 1 до 9 в отношениях с деньгами.", "inLanguage": "ru", "mainEntityOfPage": "https://kodgoda.ru/stati/denezhnyy-kod/", "author": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, энергопрактик, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии"}}, "publisher": {"@type": "Person", "@id": "https://kodgoda.ru/#svetlana", "name": "Светлана Деревенко", "jobTitle": "Нумеролог, энергопрактик, МАК-терапевт", "url": "https://kodgoda.ru/", "image": "https://kodgoda.ru/og-image.jpg", "hasCredential": {"@type": "EducationalOccupationalCredential", "name": "Сертификат нумеролога № 197, Академия нумерологии"}}, "image": "https://kodgoda.ru/og-image.jpg", "datePublished": "2026-10-29"}</script>
 </head>
@@ -1789,7 +1836,7 @@ section[hidden]{display:none!important}
     <div><h4>Разделы</h4><ul><li><a href="#" data-to="calc">Прогноз 2027</a></li><li><a href="#" data-to="compat">Совместимость</a></li><li><a href="#" data-to="report">Разбор «Мой 2027»</a></li><li><a href="#" data-to="mandala">«Наша Мандала»</a></li><li><a href="#" data-to="matrix">Матрица судьбы</a></li><li><a href="#" data-to="prices">Подарочный сертификат</a></li><li><a href="#" data-to="prices">Цены</a></li><li><a href="/chislo-dnya/">Число дня</a></li><li><a href="/stati/">Статьи</a></li></ul></div>
     <div><h4>Документы</h4><ul><li><a href="#oferta">Договор-оферта</a></li><li><a href="#privacy">Политика конфиденциальности</a></li></ul><h4 style="margin-top:18px">Личные годы</h4><ul id="footYears" style="display:flex;flex-wrap:wrap;gap:6px 12px"></ul></div>
     <div class="legal">
-      <p class="demo-note">Демонстрационная версия: оплата и бот подключатся после запуска; тексты о годах и парах — черновые, их заменят тексты Светланы; даты потоков Мандалы — примерные.</p>
+      <p class="ai-note">Алана — виртуальная ИИ-помощница сайта. Её ответы носят справочный характер; расчёты и разборы готовит нумеролог Светлана Деревенко.</p>
       <p>Информация на сайте носит информационно-развлекательный характер и не является медицинской, психологической, юридической или финансовой консультацией.</p>
       <p>© 2026 Светлана Деревенко</p>
     </div>
@@ -1815,8 +1862,7 @@ section[hidden]{display:none!important}
     <button class="ns-up" type="button" data-to="calc">↑ Вернуться в начало страницы</button>
   </div>
 </div>
-<div class="cpill" id="cpill" aria-label="Связаться со Светланой"><img src="/img/mama-ava.webp" alt="" width="42" height="42"><div class="t"><b>Светлана на связи</b><span>отвечаю в Telegram-боте</span></div><button class="btn btn-primary js-ask" type="button">Задать вопрос</button></div>
-<div class="mbar"><button class="btn btn-ghost js-menu mb-menu" type="button" aria-controls="navSheet"><span aria-hidden="true">☰</span>Меню</button><button class="btn btn-ghost js-ask mb-ask" type="button"><img src="/img/mama-ava.webp" alt="" width="28" height="28">Вопрос</button><button class="btn btn-primary js-order" data-product="report" type="button">Разбор 498 ₽</button></div>
+<div class="mbar"><button class="btn btn-ghost js-menu mb-menu" type="button" aria-controls="navSheet"><span aria-hidden="true">☰</span>Меню</button><button class="btn btn-ghost js-alana mb-ask" type="button"><img src="/img/alana-face.webp" alt="" width="28" height="28">Алана</button><button class="btn btn-primary js-order" data-product="report" type="button">Разбор 498 ₽</button></div>
 
 <div class="dlg" id="dlg" hidden role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
   <form class="dlg-box" id="orderForm" novalidate>
@@ -1832,24 +1878,17 @@ section[hidden]{display:none!important}
     <button class="btn btn-primary" type="submit">Перейти к оплате</button>
   </form>
 </div>
-<div class="veda" id="veda" aria-live="polite">
-  <div class="veda-bub" id="vedaBub" role="dialog" aria-label="Подсказка Веды">
-    <button class="vx" id="vedaX" type="button" aria-label="Скрыть подсказку">×</button>
-    <p class="vn">Веда · ИИ-помощница</p>
-    <p class="vt" id="vedaText"></p>
-    <div class="va" id="vedaAct"></div>
-    <span class="vs">Помощница нумеролога Светланы Деревенко</span>
-  </div>
-  <button class="veda-face" id="vedaFace" type="button" aria-label="Веда — ИИ-помощница. Показать подсказку" aria-controls="vedaBub" aria-expanded="false">
-    <span class="vf-in">
-    <img src="/img/veda-front.webp" alt="" class="on" data-k="front" width="76" height="76" decoding="async">
-    <img src="/img/veda-q3.webp" alt="" data-k="q3" width="76" height="76" decoding="async" loading="lazy">
-    <img src="/img/veda-prof.webp" alt="" data-k="prof" width="76" height="76" decoding="async" loading="lazy">
-    <img src="/img/veda-front-up.webp" alt="" data-k="front-up" width="76" height="76" decoding="async" loading="lazy">
-    <img src="/img/veda-q3-up.webp" alt="" data-k="q3-up" width="76" height="76" decoding="async" loading="lazy">
-    <img src="/img/veda-prof-up.webp" alt="" data-k="prof-up" width="76" height="76" decoding="async" loading="lazy">
-    </span>
-    <span class="veda-tag">Веда</span>
+<div class="alana" id="alana">
+  <section class="al-chat" id="alChat" role="dialog" aria-modal="false" aria-labelledby="alTitle" hidden>
+    <header class="al-head"><img src="/img/alana-face.webp" alt="" width="40" height="40"><div><b id="alTitle">Алана</b><small>ИИ-помощница Светланы Деревенко</small></div><button class="al-x" id="alX" type="button" aria-label="Закрыть чат">×</button></header>
+    <div class="al-log" id="alLog" aria-live="polite"></div>
+    <div class="al-chips" id="alChips"></div>
+    <form class="al-form" id="alForm" autocomplete="off"><label class="sr" for="alIn">Ваш вопрос Алане</label><input id="alIn" type="text" maxlength="500" placeholder="Вопрос или дата рождения"><button type="submit" aria-label="Отправить">➤</button></form>
+    <p class="al-fine">Я ИИ и могу ошибаться. Не пишите здесь паспортные и банковские данные.</p>
+  </section>
+  <button class="al-face" id="alFace" type="button" aria-label="Алана — ИИ-помощница. Задать вопрос" aria-controls="alChat" aria-expanded="false">
+    <span class="al-ring"><img src="/img/alana-face.webp" alt="" width="76" height="76" id="alImg"></span>
+    <span class="al-hi" id="alHi">Чем я могу помочь?</span>
   </button>
 </div>
 <div class="toast" id="toast" role="status"></div>
@@ -2284,6 +2323,7 @@ section[hidden]{display:none!important}
   // order dialog
   var dlg=$('dlg'),lastBtn=null,cur='report';
   var KG_BOT='kkodgoda_bot';
+  var KG_API='';   // адрес API на сервере, например 'https://api.kodgoda.ru' — тогда Алана отвечает через ИИ
   function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
 
   /* v36: ещё форматы */
@@ -2351,109 +2391,78 @@ section[hidden]{display:none!important}
   });
 
   var tm=null;
-  // ---- Веда: подсказки и поворот головы ----
+  /* ---- Алана: ИИ-помощница ---- */
   (function(){
-    var root=$('veda');if(!root)return;
-    var face=$('vedaFace'),bub=$('vedaBub'),tx=$('vedaText'),act=$('vedaAct');
-    var imgs={};Array.prototype.forEach.call(face.querySelectorAll('img'),function(i){imgs[i.dataset.k]=i;});
-    var pose='front',hidden=false,lastKey='',lastShow=0,year=null,autoT=null;
-    try{hidden=sessionStorage.getItem('kg-veda-off')==='1';}catch(e){}
-    var POSE={'front':[0,0],'q3':[1,0],'prof':[2,0],'front-up':[0,1],'q3-up':[1,1],'prof-up':[2,1]};
-    var tgt=[0,0],cur=[0,0],raf=0,smooth=!matchMedia('(prefers-reduced-motion:reduce)').matches;
-    function sharp(t){t=Math.min(1,Math.max(0,(t-.5)*3.2+.5));return t*t*(3-2*t);}
-    function paint(){
-      var h=cur[0],v=cur[1],h0=Math.min(1,Math.floor(h)),fh=sharp(h-h0),fv=sharp(v);
-      var hk=['front','q3','prof'],w={};
-      for(var n in imgs)w[n]=0;
-      var a=hk[h0],c=hk[h0+1];
-      w[a]+=(1-fh)*(1-fv);w[c]+=fh*(1-fv);w[a+'-up']+=(1-fh)*fv;w[c+'-up']+=fh*fv;
-      for(var k in imgs){imgs[k].style.opacity=w[k].toFixed(3);}
-      // лёгкий наклон и сдвиг — движение между кадрами выглядит непрерывным
-      face.style.setProperty('--vx',(-h*1.6).toFixed(2)+'px');face.style.setProperty('--vy',(-v*2.2).toFixed(2)+'px');face.style.setProperty('--vr',(-h*2.2+v*1.2).toFixed(2)+'deg');
-    }
-    function tick(){
-      var k=.11;cur[0]+=(tgt[0]-cur[0])*k;cur[1]+=(tgt[1]-cur[1])*k;paint();
-      if(Math.abs(tgt[0]-cur[0])+Math.abs(tgt[1]-cur[1])>.004)raf=requestAnimationFrame(tick);else{cur=tgt.slice();paint();raf=0;}
-    }
-    function aim(h,v){tgt=[Math.max(0,Math.min(2,h)),Math.max(0,Math.min(1,v))];if(!smooth){cur=tgt.slice();paint();return;}if(!raf)raf=requestAnimationFrame(tick);}
-    function look(k){pose=k;var p=POSE[k]||[0,0];aim(p[0],p[1]);}
-    paint();
+    var root=$('alana');if(!root)return;
+    var face=$('alFace'),chat=$('alChat'),log=$('alLog'),chips=$('alChips'),form=$('alForm'),inp=$('alIn'),img=$('alImg'),hi=$('alHi');
+    var hist=[],busy=false,greeted=false;
+    var NAMES=['','Начало','Союзы','Самовыражение','Фундамент','Перемены','Семья и забота','Осмысление','Сила и деньги','Завершение'];
+    function red(n){while(n>9){n=String(n).split('').reduce(function(x,y){return x+ +y;},0);}return n;}
+    function sumDigits(str){return str.replace(/\D/g,'').split('').reduce(function(x,y){return x+ +y;},0);}
     function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
-    var TIPS={
-      calc:function(){return year?{t:'Ваш 2027 — год '+year.n+(year.name?' («'+year.name.toLowerCase()+'»)':'')+'. В полном разборе — страница на каждый месяц и ваш личный календарь дней.',a:[['Получить разбор — 498 ₽','order:report',1],['Что ещё есть','go:prices']]}
-                              :{t:'Здравствуйте, я Веда. Выберите дату рождения и нажмите «Рассчитать» — покажу, каким будет ваш 2027 год.',a:[['Рассчитать мой год','calc',1]]};},
-      free:function(){return {t:'Часть пунктов открыта бесплатно. Остальное — в полном разборе «Мой 2027»: около 27 страниц, придёт в Telegram за 1–2 минуты.',a:[['Открыть всё — 498 ₽','order:report',1]]};},
-      compat:function(){return {t:'Введите две даты — посчитаю число вашей пары. Полный разбор пары с кризисными годами — 699 ₽.',a:[['Разбор пары — 699 ₽','order:pair-report',1]]};},
-      matrix:function(){return {t:'Ключевые точки матрицы — бесплатно. Полный разбор 22 энергий Светлана готовит лично.',a:[['Записаться','order:matrix',1]]};},
-      report:function(){return {t:'«Мой 2027» — главный разбор года. Если сомневаетесь, начните с него.',a:[['Получить — 498 ₽','order:report',1]]};},
-      mandala:function(){return {t:'«Наша Мандала» — живой семинар. Оставьте заявку, Светлана напишет вам сама.',a:[['Оставить заявку','order:mandala',1]]};},
-      kviz:function(){return {t:'Не знаете, с чего начать? Пройдите короткий тест — подскажу подходящий разбор.',a:[]};},
-      prices:function(){return {t:'Разборы в PDF приходят в Telegram за 1–2 минуты. Личные форматы — по заявке Светлане.',a:[['Открыть бота','bot',1]]};},
-      gift:function(){return {t:'Подарок близкому: разбор «Мой 2027» придёт файлом сразу после оплаты.',a:[['Подарить — 699 ₽','order:gift',1]]};},
-      sub:function(){return {t:'Хотите узнавать свой личный день каждое утро? Это бесплатно — в боте Светланы.',a:[['Открыть бота','bot',1],['Посчитать мой год','home']]};}
-    };
-    function render(tip){
-      tx.textContent=tip.t;act.innerHTML='';
-      tip.a.forEach(function(b){var el=document.createElement('button');el.type='button';el.textContent=b[0];if(b[2])el.className='p';el.dataset.do=b[1];act.appendChild(el);});
+    function add(who,text,acts){
+      var m=document.createElement('div');m.className='al-m '+who;var p=document.createElement('p');p.textContent=text;m.appendChild(p);
+      if(acts&&acts.length){var r=document.createElement('div');r.className='al-acts';acts.forEach(function(x){var bt=document.createElement('button');bt.type='button';bt.textContent=x[0];bt.dataset.do=x[1];if(x[2])bt.className='p';r.appendChild(bt);});m.appendChild(r);}
+      log.appendChild(m);log.scrollTop=log.scrollHeight;hist.push({role:who==='me'?'user':'assistant',content:text});if(hist.length>16)hist=hist.slice(-16);
     }
-    function open(tip,force){
-      if(!tip)return;
-      if(hidden&&!force)return;
-      render(tip);root.classList.add('open');face.setAttribute('aria-expanded','true');lastShow=Date.now();
-      clearTimeout(autoT);autoT=setTimeout(function(){if(!root.matches(':hover')&&!root.contains(document.activeElement))close(false);},matchMedia('(max-width:760px)').matches?9000:16000);
-      look(matchMedia('(hover:hover)').matches?pose:'q3');
+    var CH=[['Каким будет мой 2027?','q:Каким будет мой 2027 год?'],['Что такое матрица судьбы?','q:Что такое матрица судьбы?'],['Сколько стоит?','q:Сколько стоят разборы?'],['Как оплатить?','q:Как оплатить и когда придёт файл?'],['Написать Светлане','ask']];
+    function showChips(){chips.innerHTML='';CH.forEach(function(c){var bt=document.createElement('button');bt.type='button';bt.textContent=c[0];bt.dataset.do=c[1];chips.appendChild(bt);});}
+    /* ответы без сервера: справка по сайту и расчёт личного года */
+    function brain(q){
+      var t=q.toLowerCase().replace(/ё/g,'е');
+      var d=q.match(/(\d{1,2})[.\/\- ](\d{1,2})[.\/\- ](\d{4})/);
+      if(d){var dd=+d[1],mm=+d[2],yy=+d[3];if(dd>=1&&dd<=31&&mm>=1&&mm<=12&&yy>1900&&yy<2030){
+        var py=red(sumDigits(String(dd)+String(mm))+2+0+2+7),soul=red(dd),mis=red(sumDigits(d[1]+d[2]+d[3]));
+        return {t:'По дате '+d[1]+'.'+d[2]+'.'+d[3]+': ваш 2027 — год '+py+' («'+NAMES[py]+'»). Число сознания — '+soul+', число миссии — '+mis+'. На главной покажу, что это значит, а полный разбор «Мой 2027» по месяцам — 498 ₽.',a:[['Посмотреть мой год','calc:'+dd+'.'+mm+'.'+yy,1],['Полный разбор — 498 ₽','order:report']]};}}
+      if(/(врач|болезн|болит|боли |здоров|давлен|самочув|лекарств|таблет|диагноз|беремен|суицид|умереть)/.test(t))return {t:'С вопросами здоровья — только к врачу. Нумерология не заменяет медицину. Если хотите, передам вопрос Светлане, она подскажет, что можно посмотреть по датам.',a:[['Написать Светлане','ask',1]]};
+      if(/(привет|здравств|добрый|хай|hello)/.test(t)&&t.length<25)return {t:'Здравствуйте! Я Алана, помощница нумеролога Светланы Деревенко. Напишите дату рождения — сразу скажу, какой у вас 2027 год. Или спросите про разборы и цены.',a:[]};
+      if(/(матриц)/.test(t))return {t:'Матрица судьбы — это 22 энергии вашей даты рождения: предназначение, деньги, отношения, линия отца и линия матери. Ключевые точки можно посмотреть бесплатно, полный разбор Светлана делает лично — 1 997 ₽.',a:[['Построить матрицу','go:matrix',1],['Заказать разбор','order:matrix']]};
+      if(/(совмест|пара|пары|муж|жена|партн|любим|отношен)/.test(t))return {t:'Совместимость считаю по двум датам рождения: складываем числа судьбы обоих. Число пары — бесплатно, полный разбор пары с трудными годами — 699 ₽, парная консультация со Светланой — 6 888 ₽.',a:[['Посчитать пару','go:compat',1],['Разбор пары — 699 ₽','order:pair-report']]};
+      if(/(мандал|семинар|групп)/.test(t))return {t:'«Наша Мандала» — живой семинар Светланы и Марины Пирог онлайн: заранее рассчитывают каждого, на встрече разбирают энергии года и расставляют ваши числа по кругу. 3 509 ₽, для постоянных участников 3 005 ₽.',a:[['Подробнее','go:mandala',1],['Оставить заявку','order:mandala']]};
+      if(/(прогност|личн|консульт|сесси|созвон|индивид)/.test(t))return {t:'Лично со Светланой: индивидуальная прогностика на год — 2 499 ₽ (присылает файл), личная сессия 60 минут — 4 886 ₽, парная консультация — 6 888 ₽.',a:[['Прогностика — 2 499 ₽','order:forecast',1],['Личная сессия','order:session']]};
+      if(/(деньг|финанс|доход|денежн)/.test(t))return {t:'Про деньги есть два бесплатных расчёта: денежный код по имени и дню рождения и денежный потенциал. Полный разбор по каждому — 197 ₽.',a:[['Денежный код','go:minis',1]]};
+      if(/(фио|имя|фамил|отчеств)/.test(t))return {t:'Число по ФИО считаю бесплатно: напишите фамилию, имя и отчество в калькуляторе — каждая буква превращается в число.',a:[['Открыть калькулятор','go:minis',1]]};
+      if(/(не приш|не получ|возврат|вернуть|верните|ошибк|не работа|оплатил)/.test(t))return {t:'Простите за неудобство. Напишите Светлане в боте номер заказа или дату оплаты — она проверит и всё решит. Если разбор не был отправлен, деньги возвращаются полностью.',a:[['Написать Светлане','ask',1]]};
+      if(/(оплат|карт|сбп|чек|как купить|как заказ|когда прид|файл|pdf)/.test(t))return {t:'Нажмите «Заказать» у нужного разбора — откроется бот Светланы в Telegram, там оплата картой или по СБП через ЮKassa. Разбор «Мой 2027» приходит файлом за 1–2 минуты, личные форматы Светлана делает сама.',a:[['К ценам','go:prices',1]]};
+      if(/(цен|стоит|стоим|сколько|прайс|дорог)/.test(t))return {t:'Главное: «Мой 2027» — 498 ₽, матрица судьбы — 1 997 ₽, прогностика на год — 2 499 ₽. Мини-разборы — 197 ₽, многое считается бесплатно прямо на сайте.',a:[['Все цены','go:prices',1]]};
+      if(/(2027|год|прогноз|будущ)/.test(t))return {t:'Напишите дату рождения в формате 14.03.1987 — скажу, какой у вас 2027 год, или посчитайте на главной.',a:[['Посчитать на главной','go:calc',1]]};
+      if(/(светлан|челове|живой|связ|позвон|телефон|ватсап|whatsapp)/.test(t))return {t:'Светлана отвечает сама в своём Telegram-боте: напишите вопрос, и она ответит там же, обычно в течение дня.',a:[['Написать Светлане','ask',1]]};
+      if(/(кто ты|ты кто|бот|робот|ии|нейросет)/.test(t))return {t:'Я Алана — виртуальная ИИ-помощница сайта. Подсказываю по расчётам и разборам. Сами разборы готовит нумеролог Светлана Деревенко.',a:[]};
+      return {t:'Я подсказываю по расчётам, разборам и ценам. Напишите дату рождения — посчитаю ваш 2027 год. А сложный вопрос лучше задать Светлане: она ответит в боте.',a:[['Написать Светлане','ask',1]]};
     }
-    function close(remember){root.classList.remove('open');face.setAttribute('aria-expanded','false');if(remember){hidden=true;try{sessionStorage.setItem('kg-veda-off','1');}catch(e){}}if(!matchMedia('(hover:hover)').matches)look('front');}
-    face.addEventListener('click',function(){if(root.classList.contains('open'))close(false);else{hidden=false;try{sessionStorage.removeItem('kg-veda-off');}catch(e){}open(TIPS[lastKey||'calc'](),true);}});
-    $('vedaX').addEventListener('click',function(){close(true);});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&root.classList.contains('open'))close(false);});
-    act.addEventListener('click',function(e){
-      var b=e.target.closest('button');if(!b)return;var d=b.dataset.do;
-      if(d==='calc'){go('calc');setTimeout(function(){var f=$('bd');if(f)f.focus();},500);}
-      else if(d==='home'){location.href='/';}
-      else if(d==='bot'){if(typeof tg==='function')tg('veda');}
-      else if(d.indexOf('go:')===0){go(d.slice(3));}
-      else if(d.indexOf('order:')===0){if(typeof openDlg==='function')openDlg(d.slice(6),b);}
-      close(false);
+    function answer(q){
+      if(!KG_API){var r=brain(q);setTimeout(function(){busy=false;typing(false);add('al',r.t,r.a);},450);return;}
+      fetch(KG_API.replace(/\/$/,'')+'/api/alana',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:hist,page:location.pathname})})
+        .then(function(x){if(!x.ok)throw 0;return x.json();})
+        .then(function(j){busy=false;typing(false);add('al',j.text||'…',j.actions||[]);})
+        .catch(function(){busy=false;typing(false);var r=brain(q);add('al',r.t,r.a);});
+    }
+    var tp=null;function typing(on){if(on){tp=document.createElement('div');tp.className='al-m al typing';tp.innerHTML='<p><i></i><i></i><i></i></p>';log.appendChild(tp);log.scrollTop=log.scrollHeight;}else if(tp){tp.remove();tp=null;}}
+    function ask(q){q=(q||'').trim();if(!q||busy)return;add('me',q);busy=true;typing(true);answer(q);}
+    function openChat(){chat.hidden=false;root.classList.add('open');face.setAttribute('aria-expanded','true');hi.hidden=true;
+      if(!greeted){greeted=true;add('al','Здравствуйте! Я Алана, помощница нумеролога Светланы Деревенко. Чем я могу помочь? Можно просто написать дату рождения — посчитаю ваш 2027 год.');showChips();}
+      setTimeout(function(){if(matchMedia('(hover:hover)').matches)inp.focus();},60);try{sessionStorage.setItem('kg-al-seen','1');}catch(e){}}
+    function closeChat(){chat.hidden=true;root.classList.remove('open');face.setAttribute('aria-expanded','false');face.focus({preventScroll:true});}
+    face.addEventListener('click',function(){chat.hidden?openChat():closeChat();});
+    $('alX').addEventListener('click',closeChat);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!chat.hidden)closeChat();});
+    document.addEventListener('click',function(e){var b=e.target.closest('.js-alana');if(b){e.preventDefault();openChat();}});
+    form.addEventListener('submit',function(e){e.preventDefault();var q=inp.value;inp.value='';ask(q);});
+    root.addEventListener('click',function(e){
+      var b=e.target.closest('button[data-do]');if(!b)return;var d=b.dataset.do;
+      if(d.indexOf('q:')===0){ask(d.slice(2));return;}
+      if(d==='ask'){if(typeof tg==='function')tg('ask');return;}
+      if(d.indexOf('go:')===0){go(d.slice(3));if(matchMedia('(max-width:760px)').matches)closeChat();return;}
+      if(d.indexOf('order:')===0){if(typeof openDlg==='function')openDlg(d.slice(6),b);return;}
+      if(d.indexOf('calc:')===0){var p=d.slice(5).split('.');var bd=$('bd'),bm=$('bm'),by=$('by');if(bd&&bm&&by){bd.value=p[0];bm.value=p[1];by.value=p[2];var f=$('calcForm');if(f){if(f.requestSubmit)f.requestSubmit();else f.dispatchEvent(new Event('submit',{cancelable:true}));}}go('calc');if(matchMedia('(max-width:760px)').matches)closeChat();}
     });
-    // какой раздел сейчас на экране
-    var ids=['calc','free','compat','matrix','report','mandala','kviz','prices','gift'];
-    function current(){
-      var sub=document.querySelector('main.view.sub:not([hidden])');if(sub)return 'sub';
-      var best='',bv=0,h=innerHeight;
-      ids.forEach(function(id){var el=document.getElementById(id);if(!el||el.closest('[hidden]'))return;var r=el.getBoundingClientRect();var v=Math.min(r.bottom,h*.75)-Math.max(r.top,h*.15);if(v>bv){bv=v;best=id;}});
-      return best;
-    }
-    var t0=null;
-    function check(){
-      var k=current();if(!k||k===lastKey)return;lastKey=k;
-      if(root.classList.contains('open'))render(TIPS[k]());
-      
-    }
-    addEventListener('scroll',function(){if(t0)return;t0=setTimeout(function(){t0=null;check();},350);},{passive:true});
-    addEventListener('hashchange',function(){setTimeout(function(){lastKey='';check();},300);});
-    setTimeout(function(){var seen=false;try{seen=sessionStorage.getItem('kg-veda-seen')==='1';sessionStorage.setItem('kg-veda-seen','1');}catch(e){}if(seen||matchMedia('(max-width:760px)').matches)return;lastKey=current()||'calc';open(TIPS[lastKey]());},12000);
-    // результат расчёта года
-    var cf=$('calcForm');
-    if(cf)cf.addEventListener('submit',function(){setTimeout(function(){
-      var n=+(($('resNum')||{}).textContent||0);if(n){year={n:n,name:(($('resTitle')||{}).textContent||'')};lastKey='calc';if(!matchMedia('(max-width:760px)').matches){hidden=false;open(TIPS.calc(),true);}}
-    },700);});
-    // Веда следит за курсором (компьютер) или за касанием (телефон): 6 кадров, плавное смешивание
-    var idle=null;
-    function follow(x,y){
-      var r=face.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=x-cx,dy=y-cy;
-      if(dx>40||Math.sqrt(dx*dx+dy*dy)<90){aim(0,0);}
-      else{
-        var h=(-dx-70)/Math.max(160,innerWidth*.21);                       // 0 прямо → 1 вполоборота → 2 профиль
-        var v=(-dy-130)/Math.max(180,innerHeight*.3);                      // 0 — на уровне глаз, 1 — заметно выше
-        if(-dx<220&&-dy>160)h=Math.min(h,.35);                             // курсор почти над ней — смотрит вверх, а не вбок
-        aim(h,v);
-      }
-      clearTimeout(idle);idle=setTimeout(function(){aim(0,0);},2600);
-    }
-    addEventListener('mousemove',function(e){if(!e.sourceCapabilities||!e.sourceCapabilities.firesTouchEvents)follow(e.clientX,e.clientY);},{passive:true});
-    var tp=function(e){var t=e.touches&&e.touches[0];if(t)follow(t.clientX,t.clientY);};
-    addEventListener('touchstart',tp,{passive:true});addEventListener('touchmove',tp,{passive:true});
+    // подсказка «Чем я могу помочь?» — один раз за визит
+    var seen=false;try{seen=sessionStorage.getItem('kg-al-seen')==='1';}catch(e){}
+    if(seen)hi.hidden=true;else setTimeout(function(){root.classList.add('hello');},6000);
+    // голова следит за курсором
+    var tx=0,ty=0,cx=0,cy=0,raf=0,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function tick(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;img.style.transform='perspective(220px) rotateY('+cx.toFixed(2)+'deg) rotateX('+cy.toFixed(2)+'deg) translate('+(cx*.35).toFixed(2)+'px,'+(-cy*.35).toFixed(2)+'px) scale(1.08)';if(Math.abs(tx-cx)+Math.abs(ty-cy)>.05)raf=requestAnimationFrame(tick);else raf=0;}
+    if(!rm)addEventListener('mousemove',function(e){var r=face.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);tx=Math.max(-20,Math.min(20,dx/innerWidth*46));ty=Math.max(-14,Math.min(14,-dy/innerHeight*30));if(!raf)raf=requestAnimationFrame(tick);},{passive:true});
   })();
 
   function toast(msg){var t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('show');},3200);}
