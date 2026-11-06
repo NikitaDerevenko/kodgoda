@@ -2351,7 +2351,9 @@ section[hidden]{display:none!important}
   var dlg=$('dlg'),lastBtn=null,cur='report';
   var KG_BOT='kkodgoda_bot';
   var KG_API='';   // адрес API на сервере, например 'https://api.kodgoda.ru' — тогда Алана отвечает через ИИ
-  function tg(start){window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
+  var KG_PASS_DATE=false, kgBirth='';
+  document.addEventListener('submit',function(e){if(e.target&&e.target.id==='calcForm'){var d=$('bd').value,m=$('bm').value,y=$('by').value;if(d&&m&&y)kgBirth=(d.length<2?'0'+d:d)+(m.length<2?'0'+m:m)+y;}},true);
+  function tg(start){var NODATE={ask:1,start:1,calendar:1,day:1,gift:1,'cert-forecast':1,'cert-mandala':1,'mini-business':1,'mini-wedding':1,'mini-child':1,pair:1,club:1};if(KG_PASS_DATE&&kgBirth&&!NODATE[start])start=start+'__'+kgBirth;window.open('https://t.me/'+KG_BOT+'?start='+encodeURIComponent(start),'_blank','noopener');}
 
   /* v36: ещё форматы */
   (function(){var b=document.getElementById('moreBtn'),l=document.getElementById('ladder');if(!b||!l)return;b.addEventListener('click',function(){var on=l.classList.toggle('all');b.setAttribute('aria-expanded',on?'true':'false');b.textContent=on?'Свернуть ↑':'Ещё: личные сессии, парная консультация, клуб, прогноз дня ↓';});})();
