@@ -490,6 +490,14 @@ header.top{position:sticky;top:0;z-index:30}
 .portrait .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(to top,rgba(13,16,48,.88),rgba(13,16,48,0))}
 .portrait .cap b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.35rem;color:#fff}
 .portrait .cap span{font-size:.82rem;color:var(--mist)}
+.vcard{background:#0d1030;box-shadow:0 0 0 1px var(--line),0 30px 80px -24px rgba(146,120,242,.45)}
+.vcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vplay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:12px;background:linear-gradient(to top,rgba(13,16,48,.35),rgba(13,16,48,0) 45%);border:0;color:#fff;cursor:pointer;font:inherit;padding:0 0 22%}
+.vplay-i{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:rgba(146,120,242,.92);box-shadow:0 0 0 10px rgba(146,120,242,.22),0 12px 40px rgba(13,16,48,.5);transition:transform .2s}
+.vplay-i svg{margin-left:4px}
+.vplay:hover .vplay-i,.vplay:focus-visible .vplay-i{transform:scale(1.07)}
+.vplay-t{font-size:.95rem;font-weight:600;background:rgba(13,16,48,.6);padding:6px 14px;border-radius:999px}
+.vcard.playing .vplay,.vcard.playing .cap{display:none}
 .creds{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--line)}
 .creds li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline}
 .creds li span{color:var(--mist);font-size:.88rem;text-align:right}
@@ -1552,7 +1560,7 @@ section[hidden]{display:none!important}
 
   <section class="band tight" id="about">
     <div class="wrap about">
-      <div class="portrait ph" role="img" aria-label="Светлана Деревенко"><div class="cap"><b>Светлана Деревенко</b><span>нумеролог · энергопрактик</span></div></div>
+      <div class="portrait vcard" id="svCard"><video id="svVid" src="/video/svetlana.mp4" poster="/img/svetlana-poster.webp" playsinline preload="none" aria-label="Видео: Светлана Деревенко о себе"></video><button type="button" class="vplay" id="svPlay" aria-label="Смотреть видео: Светлана о себе, 43 секунды"><span class="vplay-i"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span><span class="vplay-t">Смотреть знакомство · 43 сек</span></button><div class="cap"><b>Светлана Деревенко</b><span>нумеролог · энергопрактик</span></div></div>
       <div style="min-width:0">
         <p class="eyebrow">Обо мне</p>
         <h2 style="margin-top:14px">Светлана Деревенко</h2>
@@ -1981,6 +1989,10 @@ section[hidden]{display:none!important}
   fillDate('pd','pm','py',2,11,1984);
   function valid(d,m,y){var dt=new Date(y,m-1,d);return dt.getMonth()===m-1;}
 
+  // intro video in "about"
+  (function(){var c=document.getElementById('svCard'),v=document.getElementById('svVid'),b=document.getElementById('svPlay');if(!c||!v||!b)return;
+    b.addEventListener('click',function(){c.classList.add('playing');v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});
+    v.addEventListener('ended',function(){c.classList.remove('playing');v.controls=false;v.load();});})();
   // wheel around portrait
   var wheel=$('wheel'),wctx=wheel.getContext('2d'),active=1;
   function drawWheel(t){
