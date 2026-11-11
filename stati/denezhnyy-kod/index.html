@@ -388,7 +388,10 @@ p{margin:0}
 .fr-months{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
 #koleso .wh-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:start;margin-top:22px}
 .wh-svg{width:100%;max-width:520px;margin:0 auto;display:block;overflow:visible}
-.wh-sec{cursor:pointer;transition:opacity .2s}
+.wh-sec{cursor:pointer;transition:opacity .2s;outline:none}
+.wh-sec:focus{outline:none}
+.wh-sec:focus-visible path{stroke:var(--sky);stroke-width:2.5}
+.wh-svg:focus,.wh-svg *:focus{outline:none}
 .wh-sec path{fill:rgba(146,120,242,.14);stroke:rgba(174,176,220,.28);stroke-width:1;transition:fill .2s}
 .wh-sec.lock path{fill:rgba(255,255,255,.035)}
 .wh-sec:hover path,.wh-sec:focus-visible path{fill:rgba(146,120,242,.3)}
