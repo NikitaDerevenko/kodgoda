@@ -2372,8 +2372,10 @@ section[hidden]{display:none!important}
     }
     function state(){
       var t=new Date();t.setHours(0,0,0,0);var y=t.getFullYear(),bd=new Date(y,cur.m-1,cur.d);
-      if(t<bd)return {now:py(cur.d,cur.m,y-1),next:py(cur.d,cur.m,y),until:bd,nextYr:y};
-      var nb=new Date(y+1,cur.m-1,cur.d);return {now:py(cur.d,cur.m,y),next:py(cur.d,cur.m,y+1),until:nb,nextYr:y+1};
+      // личный год = сумма цифр возраста (полных лет), меняется в день рождения (методика Светланы)
+      var age=y-cur.y-(t<bd?1:0),until=t<bd?bd:new Date(y+1,cur.m-1,cur.d);
+      function red(n){return chainOf(digits(n)).value;}
+      return {now:red(age),next:red(age+1),until:until,age:age,nextYr:until.getFullYear()};
     }
     function pick(i){
       sel=i;build();var s=SEQ[i],n=nums[i],box=$('whDetail');
@@ -2385,11 +2387,11 @@ section[hidden]{display:none!important}
     function side(){
       var st=state(),t=new Date();t.setHours(0,0,0,0);var left=Math.round((st.until-t)/864e5);
       var Yn=Y[st.now],Yx=Y[st.next];
-      $('whNow').innerHTML='<p class="eyebrow" style="margin:0">Энергия, в которой вы сейчас</p>'+
+      $('whNow').innerHTML='<p class="eyebrow" style="margin:0">Ваш личный год сейчас · по возрасту</p>'+
         '<div class="wh-now"><span class="big">'+st.now+'</span><div><h3>'+Yn.name+'</h3><span class="note">'+Yn.short+'</span></div></div>'+
-        '<p style="margin:0">'+Yn.text.split('. ')[0]+'.</p>'+
+        '<p style="margin:0">Вам '+st.age+' '+plural(st.age,['год','года','лет'])+': '+digits(st.age).join(' + ')+(st.age>9?' = '+chainOf(digits(st.age)).chain.join(' → '):'')+'. '+Yn.text.split('. ')[0]+'.</p>'+
         '<div class="wh-arrow">действует до <b style="color:var(--star)">'+fmt(st.until)+'</b><span class="wh-left">· осталось '+left+' '+plural(left,['день','дня','дней'])+'</span></div>'+
-        '<div class="wh-arrow"><i>'+st.now+'</i>→<i>'+st.next+'</i> с дня рождения начнётся энергия '+st.next+' · '+Yx.name.toLowerCase()+'</div>'+
+        '<div class="wh-arrow"><i>'+st.now+'</i>→<i>'+st.next+'</i> в день рождения начнётся личный год '+st.next+' · '+Yx.name.toLowerCase()+'</div>'+
         '<button class="btn btn-primary js-order" data-product="report" type="button">Как прожить этот период — разбор «Мой 2027»</button>';
       var fin=$('whFin'),now=new Date();
       if(now>=new Date(2027,0,1)){fin.hidden=true;return;}
